@@ -2141,83 +2141,53 @@ ol {
 	font-weight: 600;
 }
 
+/*---------------------
+  Checkout
+-----------------------*/
+
 .categories {
-  padding-bottom: 70px;
-  background: #f9f9f9;
-  overflow: hidden;
+	padding-bottom: 70px;
+	background: #f9f9f9;
+	overflow: hidden;
 }
 
-/* El contenedor general mantiene su margen negativo solo si se usa float (ya no necesario) */
 .categories__item__list {
-  margin-right: 0;
+	margin-right: -16px;
 }
 
-/* Estilo visual del card */
-.categories__item {
-  display: block;
-  text-align: center;
-  background: #ffffff;
-  border-radius: 5px;
-  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
-  padding-top: 40px;
-  padding-bottom: 15px;
-  margin-bottom: 30px;
-  transition: all 0.3s ease;
-}
-
-/* Imagen del card */
 .categories__item img {
   max-width: 80px;
   height: auto;
-  margin: 0 auto 10px auto;
-  display: block;
 }
 
-/* Título */
+.categories__item {
+	width: calc(20% - 16px);
+	float: left;
+	text-align: center;
+	margin-right: 16px;
+	-webkit-box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+	padding-top: 40px;
+	padding-bottom: 15px;
+	margin-bottom: 30px;
+	border-radius: 5px;
+	background: #ffffff;
+}
+
 .categories__item h5 {
-  color: #323232;
-  font-weight: 600;
-  margin-top: 20px;
-  margin-bottom: 4px;
-  font-size: 1rem;
+	color: #323232;
+	font-weight: 600;
+	margin-top: 20px;
+	margin-bottom: 4px;
 }
 
-/* Subtexto */
 .categories__item span {
-  font-size: 14px;
-  color: #707070;
-  display: block;
-  font-weight: 600;
+	font-size: 14px;
+	color: #707070;
+	display: block;
+	font-weight: 600;
 }
 
-/* Hover suave */
-.categories__item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 8px 35px rgba(0, 0, 0, 0.15);
-}
-
-/* Espaciado uniforme entre columnas */
-.row.g-3 > [class*="col-"] {
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
-/* --- Ajustes responsivos --- */
-
-/* Móviles: 2 por fila (ya lo maneja Bootstrap), pero aumentamos un poco el padding interno */
-@media (max-width: 576px) {
-  .categories__item {
-    padding-top: 30px;
-    padding-bottom: 10px;
-  }
-}
-
-/* Desktop grande: igual apariencia, pero el margen inferior más limpio */
-@media (min-width: 992px) {
-  .categories__item {
-    margin-bottom: 30px;
-  }
-}
 /*---------------------
   Blog
 -----------------------*/
