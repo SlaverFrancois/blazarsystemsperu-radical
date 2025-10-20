@@ -1,0 +1,7 @@
+[
+  { "img": "img/categories/cat-1.png", "title": "Food & Drink", "count": "78 Listings" },
+  { "img": "img/categories/cat-2.png", "title": "Restaurant", "count": "32 Listings" },
+  { "img": "img/categories/cat-3.png", "title": "Hotels", "count": "16 Listings" },
+  { "img": "img/categories/cat-4.png", "title": "Beauty & Spa", "count": "55 Listings" },  
+  { "img": "img/categories/cat-5.png", "title": "Shopping", "count": "45 Listings" }
+]
