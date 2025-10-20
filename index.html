@@ -123,43 +123,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="section-title">
+                    <div class="section-title text-center mb-4">
                         <h2>Gran Red Local de Anunciantes</h2>
                         <p>Compra, vende y ofrece servicios — todo en un solo lugar</p>
                     </div>
-
-
-
-
-                    <div class="row g-3 categories__item__list">
-                   <!-- <div class="col-4 col-md-3 col-lg-2 categories__item">
-                            <img src="img/categories/cat-1.png" alt="">
-                            <h5>Food & Drink</h5>
-                            <span>78 Listings</span>
-                        </div>
-                        <div class="col-4 col-md-3 col-lg-2 categories__item">
-                            <img src="img/categories/cat-2.png" alt="">
-                            <h5>Restaurent</h5>
-                            <span>32 Listings</span>
-                        </div>
-                        <div class="col-4 col-md-3 col-lg-2 categories__item">
-                            <img src="img/categories/cat-3.png" alt="">
-                            <h5>Hotels</h5>
-                            <span>16 Listings</span>
-                        </div>
-
-                         <div class="col-4 col-md-3 col-lg-2 categories__item">
-                           <img src="img/categories/cat-4.png" alt="">
-                            <h5>Beauty & Spa</h5>
-                            <span>55 Listings</span>
-                        </div>
-                         <div class="col-4 col-md-3 col-lg-2 categories__item">
-                           <img src="img/categories/cat-5.png" alt="">
-                            <h5>Shopping</h5>
-                            <span>23 Listings</span>
-                        </div>
-                    -->
-                    </div>
+                     <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3 categories__item__list"></div>
                 </div>
             </div>
         </div>
@@ -1702,20 +1670,20 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   fetch('categories.json')
-    .then(response => {
-      if (!response.ok) throw new Error('No se pudo cargar el archivo JSON');
-      return response.json();
-    })
+    .then(res => res.json())
     .then(categories => {
       const container = document.querySelector('.categories__item__list');
-      container.classList.add('row', 'g-3'); // g-3 = espacio entre columnas
       categories.forEach(cat => {
         const div = document.createElement('div');
-        div.className = 'col-4 col-md-3 col-lg-2 d-flex flex-column align-items-center categories__item';
+        div.className = 'col d-flex flex-column align-items-center';
         div.innerHTML = `
-          <img src="${cat.img}" alt="${cat.title}" class="img-fluid rounded">
-          <h5 class="mt-2 text-center">${cat.title}</h5>
-          <span class="text-muted">${cat.count}</span>
+          <div class="card border-0 text-center">
+            <img src="${cat.img}" alt="${cat.title}" class="card-img-top img-fluid rounded">
+            <div class="card-body p-2">
+              <h6 class="card-title mb-1">${cat.title}</h6>
+              <small class="text-muted">${cat.count}</small>
+            </div>
+          </div>
         `;
         container.appendChild(div);
       });
