@@ -2153,11 +2153,7 @@ ol {
 
 .categories__item__list {
 	margin-right: -16px;
-}
-
-.categories__item img {
-  max-width: 80px;
-  height: auto;
+	overflow: visible; /*nuevo*/
 }
 
 .categories__item {
@@ -2172,6 +2168,14 @@ ol {
 	margin-bottom: 30px;
 	border-radius: 5px;
 	background: #ffffff;
+	box-sizing: border-box; /*nuevo*/
+}
+
+/* Imagen nuevo */
+.categories__item img {
+  max-width: 80px;
+  height: auto;
+  display: inline-block;
 }
 
 .categories__item h5 {
@@ -2179,6 +2183,7 @@ ol {
 	font-weight: 600;
 	margin-top: 20px;
 	margin-bottom: 4px;
+	  font-size: 1rem; /*nuevo*/
 }
 
 .categories__item span {
