@@ -128,6 +128,16 @@
             <p>Compra, vende y ofrece servicios — todo en un solo lugar</p>
             </div>
 
+
+            <div class="tab-content">
+                    <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                        <div class="row"><!-- aquí se insertan los cards dinámicamente --></div>
+                    </div>
+            </div>
+
+
+
+
             <!-- Aquí mantenemos el contenedor clásico (sin row-cols ni .col) -->
             <div class="categories__item__list"></div>
 
@@ -195,33 +205,7 @@
                             <div class="row">
                                 <div class="col-lg-4 col-md-6">
                                     <div class="listing__item">
-                                        <div class="listing__item__pic set-bg" data-setbg="img/listing/list-1.jpg">
-                                            <img src="img/listing/list_icon-1.png" alt="">
-                                            <div class="listing__item__pic__tag">Popular</div>
-                                            <div class="listing__item__pic__btns">
-                                                <a href="#"><span class="icon_zoom-in_alt"></span></a>
-                                                <a href="#"><span class="icon_heart_alt"></span></a>
-                                            </div>
-                                        </div>
-                                        <div class="listing__item__text">
-                                            <div class="listing__item__text__inside">
-                                                <h5>Chinese Sausage Restaurant</h5>
-                                                <div class="listing__item__text__rating">
-                                                    <div class="listing__item__rating__star">
-                                                        <span class="icon_star"></span>
-                                                        <span class="icon_star"></span>
-                                                        <span class="icon_star"></span>
-                                                        <span class="icon_star"></span>
-                                                        <span class="icon_star-half_alt"></span>
-                                                    </div>
-                                                    <h6>$40 - $70</h6>
-                                                </div>
-                                                <ul>
-                                                    <li><span class="icon_pin_alt"></span> 236 Littleton St. New
-                                                        Philadelphia, Ohio, United States</li>
-                                                    <li><span class="icon_phone"></span> (+12) 345-678-910</li>
-                                                </ul>
-                                            </div>
+                                        <div class="listing__item__text">                                         
                                             <div class="listing__item__text__info">
                                                 <div class="listing__item__text__info__left">
                                                     <img src="img/listing/list_small_icon-1.png" alt="">
@@ -1696,6 +1680,47 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch(err => console.error('Error cargando categorías:', err));
 });
 </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  fetch('categories.json')
+    .then(res => {
+      if (!res.ok) throw new Error('No se pudo cargar el JSON');
+      return res.json();
+    })
+    .then(categories => {
+      // Contenedor donde se insertarán los cards (el .row dentro de #tabs-1)
+      const container = document.querySelector('#tabs-1 .row');
+      if (!container) {
+        console.error('No se encontró el contenedor de categorías (#tabs-1 .row)');
+        return;
+      }
+
+      container.innerHTML = ''; // limpiar por si acaso
+
+      categories.forEach(cat => {
+        const col = document.createElement('div');
+        col.className = 'col-lg-4 col-md-6';
+        col.innerHTML = `
+          <div class="listing__item">
+            <div class="listing__item__text">
+              <div class="listing__item__text__info">
+                <div class="listing__item__text__info__left">
+                  <img src="${cat.img}" alt="${cat.title}">
+                  <span>${cat.title}</span>
+                </div>
+                <div class="listing__item__text__info__right">></div>
+              </div>
+            </div>
+          </div>
+        `;
+        container.appendChild(col);
+      });
+    })
+    .catch(err => console.error('Error cargando categorías:', err));
+});
+</script>
+
 
 
 
