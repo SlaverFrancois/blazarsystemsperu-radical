@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Juan Pérez",
+    "category": "electricista",
+    "description": "Especialista en instalaciones domésticas y mantenimiento.",
+    "phone": "987654321",
+    "location": "Callao",
+    "portfolio": "https://youtu.be/wK9mV3ILnqk"
+  },
+  {
+    "name": "María López",
+    "category": "pintor",
+    "description": "Experta en pintura decorativa y acabados interiores.",
+    "phone": "999888777",
+    "location": "Bellavista",
+    "portfolio": "https://youtu.be/gh4-G-iMzTM"
+  }
+    {
+    "name": "Walter López",
+    "category": "pintor",
+    "description": "Experta en pintura decorativa y acabados interiores.",
+    "phone": "999888777",
+    "location": "Bellavista",
+    "portfolio": "https://youtu.be/gh4-G-iMzTM"
+  }
+    {
+    "name": "Willy López",
+    "category": "pintor",
+    "description": "Experta en pintura decorativa y acabados interiores.",
+    "phone": "999888777",
+    "location": "Bellavista",
+    "portfolio": "https://youtu.be/gh4-G-iMzTM"
+  }
+    {
+    "name": "Edgar López",
+    "category": "pintor",
+    "description": "Experta en pintura decorativa y acabados interiores.",
+    "phone": "999888777",
+    "location": "Bellavista",
+    "portfolio": "https://youtu.be/gh4-G-iMzTM"
+  }
+    {
+    "name": "Sara Caldas",
+    "category": "pintor",
+    "description": "Experta en pintura decorativa y acabados interiores.",
+    "phone": "999888777",
+    "location": "Bellavista",
+    "portfolio": "https://youtu.be/gh4-G-iMzTM"
+  }
+]

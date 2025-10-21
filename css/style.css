@@ -1403,7 +1403,7 @@ ol {
 .listing__item {
 	-webkit-box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
 	box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
-	margin-bottom: 30px;
+	margin-bottom: 10px;
 }
 
 .listing__item__pic {
