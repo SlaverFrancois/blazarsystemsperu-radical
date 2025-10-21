@@ -1587,11 +1587,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li><i class="fa icon_pin_alt"></i> ${p.location}</li>
                     <li><i class="fa fa-user"></i> ${p.name}</li>
                     <li>
-                      <a href="https://www.youtube.com/embed/${p.portfolio}?autoplay=1" class="video-popup listing__item__pic__tag">
+                      <a href=${`"https://www.youtube.com/embed/${p.portfolio}?autoplay=1"`}
+                         class="video-popup listing__item__pic__tag"
+                         target="_blank" rel="noopener noreferrer">
                         Ver trabajos realizados
                       </a>
                     </li>
-                    <li>
                   </ul>
                 </div>
               </div>
