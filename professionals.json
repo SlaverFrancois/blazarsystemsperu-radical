@@ -4,7 +4,7 @@
     "category": "electricista",
     "description": "Especialista en instalaciones domésticas y mantenimiento.",
     "phone": "987654321",
-    "location": "Callao",
+    "location": "Mercado Reynoso",
     "portfolio": "wK9mV3ILnqk"
   },
   {
@@ -12,7 +12,7 @@
     "category": "pintor",
     "description": "Experta en pintura decorativa y acabados interiores.",
     "phone": "999888777",
-    "location": "Bellavista",
+    "location": "Av 1ero de Mayo cdra. 4",
     "portfolio": "gh4-G-iMzTM"
   },
   {
@@ -20,7 +20,7 @@
     "category": "pintor",
     "description": "Experto en pintura decorativa y acabados interiores.",
     "phone": "999888777",
-    "location": "Bellavista",
+    "location": "Cerca a Colegio Porras",
     "portfolio": "bWKfyRPf8gM"
   },
   {
@@ -28,7 +28,7 @@
     "category": "pintor",
     "description": "Especialista en acabados finos y pintura de interiores.",
     "phone": "999888777",
-    "location": "Bellavista",
+    "location": "Cerca a Hospital San Jose",
     "portfolio": "j9EyhYt2TeI"
   },
   {
@@ -36,7 +36,7 @@
     "category": "pintor",
     "description": "Pintor con experiencia en exteriores e impermeabilización.",
     "phone": "999888777",
-    "location": "Bellavista",
+    "location": "Cerca la Municipalidad",
     "portfolio": "gh4-G-iMzTM"
   },
   {
@@ -44,7 +44,7 @@
     "category": "pintor",
     "description": "Pintora profesional en arte decorativo y muralismo.",
     "phone": "999888777",
-    "location": "Bellavista",
+    "location": "Mercado Villa",
     "portfolio": "gh4-G-iMzTM"
   }
 ]
