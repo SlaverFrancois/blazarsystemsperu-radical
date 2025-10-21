@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "name": "Juan Pérez",
     "category": "electricista",
@@ -18,7 +18,7 @@
   {
     "name": "Walter López",
     "category": "pintor",
-    "description": "Experta en pintura decorativa y acabados interiores.",
+    "description": "Experto en pintura decorativa y acabados interiores.",
     "phone": "999888777",
     "location": "Bellavista",
     "portfolio": "https://youtu.be/gh4-G-iMzTM"
@@ -26,7 +26,7 @@
   {
     "name": "Willy López",
     "category": "pintor",
-    "description": "Experta en pintura decorativa y acabados interiores.",
+    "description": "Especialista en acabados finos y pintura de interiores.",
     "phone": "999888777",
     "location": "Bellavista",
     "portfolio": "https://youtu.be/gh4-G-iMzTM"
@@ -34,7 +34,7 @@
   {
     "name": "Edgar López",
     "category": "pintor",
-    "description": "Experta en pintura decorativa y acabados interiores.",
+    "description": "Pintor con experiencia en exteriores e impermeabilización.",
     "phone": "999888777",
     "location": "Bellavista",
     "portfolio": "https://youtu.be/gh4-G-iMzTM"
@@ -42,7 +42,7 @@
   {
     "name": "Sara Caldas",
     "category": "pintor",
-    "description": "Experta en pintura decorativa y acabados interiores.",
+    "description": "Pintora profesional en arte decorativo y muralismo.",
     "phone": "999888777",
     "location": "Bellavista",
     "portfolio": "https://youtu.be/gh4-G-iMzTM"
