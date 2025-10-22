@@ -1561,81 +1561,92 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-  // 🔹 Mostrar profesionales de la categoría seleccionada
-  function showProfessionals(category) {
-    fetch('professionals.json')
-      .then(res => res.json())
-      .then(data => {
-        const filtered = data.filter(p => p.category.toLowerCase() === category);
-        professionalsContainer.innerHTML = ''; // limpiar
+ function showProfessionals(category) {
+  fetch('professionals.json')
+    .then(res => res.json())
+    .then(data => {
+      const filtered = data.filter(p => p.category.toLowerCase() === category);
 
-        if (filtered.length === 0) {
-          professionalsContainer.innerHTML = `<p>No hay profesionales en esta categoría.</p>`;
-        } else {
-          filtered.forEach(p => {
-            const div = document.createElement('div');
-            div.className = 'col-lg-4 col-md-6';
-            div.innerHTML = `
-              <div class="blog__item">
-                <div class="blog__item__text">
-                  <ul class="blog__item__tags">
-                    <li><i class="fa fa-tags"></i> ${p.category}</li>
-                  </ul>
-                  <h5>${p.description}</h5>
-                  <ul class="blog__item__widget">
-                    <li><i class="fa icon_phone"></i> ${p.phone}</li>
-                    <li><i class="fa icon_pin_alt"></i> ${p.location}</li>
-                    <li><i class="fa fa-user"></i> ${p.name}</li>
-                    <li>
-                      <a href=${`"https://www.youtube.com/embed/${p.portfolio}?autoplay=1"`}
-                         class="video-popup listing__item__pic__tag"
-                         target="_blank" rel="noopener noreferrer">
-                        Ver trabajos realizados
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+      // ✅ Envolver correctamente en backticks
+      professionalsContainer.innerHTML = `
+        <div class="col-lg-4 col-md-6">
+          <div class="blog__item advertise-card">
+            <div class="blog__item__text text-center">
+              <h5>¿Eres ${category}? 📢</h5>
+              <p>Anúnciate aquí y llega a cientos de clientes locales.</p>
+              <a href="https://forms.gle/TU_FORMULARIO_DE_GOOGLE" 
+                 target="_blank" 
+                 class="btn-advertise">Publica tu servicio</a>
+            </div>
+          </div>
+        </div>
+      `;
+
+      if (filtered.length === 0) {
+        professionalsContainer.innerHTML += `<p>No hay profesionales en esta categoría.</p>`;
+      } else {
+        filtered.forEach(p => {
+          const div = document.createElement('div');
+          div.className = 'col-lg-4 col-md-6';
+          div.innerHTML = `
+            <div class="blog__item">
+              <div class="blog__item__text">
+                <ul class="blog__item__tags">
+                  <li><i class="fa fa-tags"></i> ${p.category}</li>
+                </ul>
+                <h5>${p.description}</h5>
+                <ul class="blog__item__widget">
+                  <li><i class="fa icon_phone"></i> ${p.phone}</li>
+                  <li><i class="fa icon_pin_alt"></i> ${p.location}</li>
+                  <li><i class="fa fa-user"></i> ${p.name}</li>
+                  <li>
+                    <a href="https://www.youtube.com/embed/${p.portfolio}?autoplay=1"
+                       class="video-popup listing__item__pic__tag"
+                       target="_blank" rel="noopener noreferrer">
+                      Ver trabajos realizados
+                    </a>
+                  </li>
+                </ul>
               </div>
-            `;
-            professionalsContainer.appendChild(div);
-          });
+            </div>
+          `;
+          professionalsContainer.appendChild(div);
+        });
 
-          // Activar Magnific Popup
-          if (window.jQuery && $.fn.magnificPopup) {
-            $('.video-popup').magnificPopup({
-              type: 'iframe',
-              iframe: {
-                patterns: {
-                  youtube: {
-                    index: 'youtube.com/',
-                    id: 'embed/',
-                    src: '%id%'
-                  }
+        // Activar Magnific Popup si existe
+        if (window.jQuery && $.fn.magnificPopup) {
+          $('.video-popup').magnificPopup({
+            type: 'iframe',
+            iframe: {
+              patterns: {
+                youtube: {
+                  index: 'youtube.com/',
+                  id: 'embed/',
+                  src: '%id%'
                 }
               }
-            });
-          }
+            }
+          });
         }
+      }
+// Mostrar resultados
+if (categoriesSection && resultsSection) {
+  categoriesSection.style.display = 'none';
+  resultsSection.style.display = 'block';
+  backBtn.style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+}); // ← Cierra fetch professionals.json
+} // ← Cierra función showProfessionals
 
-        // Mostrar resultados
-        if (categoriesSection && resultsSection) {
-          categoriesSection.style.display = 'none';
-          resultsSection.style.display = 'block';
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-      });
-  }
-
-  // 🔹 Botón volver
-  backBtn.addEventListener('click', () => {
-    if (resultsSection && categoriesSection) {
-      resultsSection.style.display = 'none';
-      categoriesSection.style.display = 'block';
-    }
-  });
+// 🔹 Mostrar/ocultar el botón volver
+backBtn.style.display = 'none';
+backBtn.addEventListener('click', () => {
+  resultsSection.style.display = 'none';
+  categoriesSection.style.display = 'block';
+  backBtn.style.display = 'none';
 });
+}); // ← Cierra el DOMContentLoaded
 </script>
-
 </body>
-
 </html>

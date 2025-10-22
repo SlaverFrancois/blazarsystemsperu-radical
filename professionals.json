@@ -12,7 +12,7 @@
     "category": "pintor",
     "description": "Experta en pintura decorativa y acabados interiores.",
     "phone": "999888777",
-    "location": "Av 1ero de Mayo cdra. 4",
+    "location": "Visita a domicilio",
     "portfolio": "gh4-G-iMzTM"
   },
   {
@@ -20,7 +20,7 @@
     "category": "pintor",
     "description": "Experto en pintura decorativa y acabados interiores.",
     "phone": "999888777",
-    "location": "Cerca a Colegio Porras",
+    "location": "Taller: Cerca a Colegio Porras",
     "portfolio": "bWKfyRPf8gM"
   },
   {
@@ -28,7 +28,7 @@
     "category": "pintor",
     "description": "Especialista en acabados finos y pintura de interiores.",
     "phone": "999888777",
-    "location": "Cerca a Hospital San Jose",
+    "location": "Taller: Cerca Hospital San Jose",
     "portfolio": "j9EyhYt2TeI"
   },
   {
@@ -36,7 +36,7 @@
     "category": "pintor",
     "description": "Pintor con experiencia en exteriores e impermeabilización.",
     "phone": "999888777",
-    "location": "Cerca la Municipalidad",
+    "location": "Taller: Cerca la Municipalidad",
     "portfolio": "gh4-G-iMzTM"
   },
   {
@@ -44,7 +44,7 @@
     "category": "pintor",
     "description": "Pintora profesional en arte decorativo y muralismo.",
     "phone": "999888777",
-    "location": "Mercado Villa",
+    "location": "Visita a domicilio",
     "portfolio": "gh4-G-iMzTM"
   }
 ]
