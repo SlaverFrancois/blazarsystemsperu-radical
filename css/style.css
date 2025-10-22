@@ -2204,6 +2204,7 @@ ol {
 	-webkit-box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
 	box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
 	border-radius: 5px;
+	color: #ffffff;
 }
 
 .blog__item__pic {
