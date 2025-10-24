@@ -52,6 +52,17 @@
     </section>
     <!-- Categories Section End -->
 
+    <!-- 🔹 Listado general de profesionales -->
+    <section class="news-post spad" id="all-professionals-section">
+      <div class="container">
+        <div class="section-title d-flex justify-content-between align-items-center">
+          <h2>Top Profesionales del Mes</h2>
+        </div>
+        <div class="row" id="all-professionals-container"></div>
+      </div>
+    </section>
+
+
         <!-- Blog Section Begin -->
     <section class="news-post spad" id="results-section" style="display:none;">
     <div class="container">
@@ -210,7 +221,7 @@ function showProfessionals(category) {
     .then(res => res.json())
     .then(data => {
       const filtered = data.filter(p => p.category.toLowerCase() === category);
-      const perPage = 20;
+      const perPage = 5;
       let currentPage = 1;
 
       const renderPage = () => {
@@ -273,9 +284,9 @@ function showProfessionals(category) {
           <a href="#" class="page-link ${i + 1 === currentPage ? 'active' : ''}" data-page="${i + 1}">${i + 1}</a>
         `).join('');
         pagination.innerHTML = `
-          <a href="#" class="prev ${currentPage === 1 ? 'disabled' : ''}"><i class="fa fa-long-arrow-left"></i> Pre</a>
+          <a href="#" class="prev ${currentPage === 1 ? 'disabled' : ''}"><i class="fa fa-long-arrow-left"></i> Anterior</a>
           ${totalPagesHTML}
-          <a href="#" class="next ${currentPage === totalPages ? 'disabled' : ''}">Next <i class="fa fa-long-arrow-right"></i></a>
+          <a href="#" class="next ${currentPage === totalPages ? 'disabled' : ''}">Siguiente <i class="fa fa-long-arrow-right"></i></a>
         `;
         professionalsContainer.appendChild(pagination);
 
@@ -314,7 +325,97 @@ backBtn.addEventListener('click', () => {
   categoriesSection.style.display = 'block';
   backBtn.style.display = 'none';
 });
+
+loadAllProfessionals(); // 🔹 Carga el top general al iniciar
+
 }); // ← Cierra el DOMContentLoaded
 </script>
+
+<script>
+function loadAllProfessionals() {
+  const allContainer = document.querySelector('#all-professionals-container');
+  fetch('professionals.json')
+    .then(res => res.json())
+    .then(data => {
+      // Ordenar destacados primero
+      const ordered = data.sort((a, b) => (b.featured === true) - (a.featured === true));
+
+      const perPage = 6;
+      let currentPage = 1;
+
+      const renderPage = () => {
+        allContainer.innerHTML = '';
+        const totalPages = Math.ceil(ordered.length / perPage);
+        const start = (currentPage - 1) * perPage;
+        const end = start + perPage;
+        const visible = ordered.slice(start, end);
+
+        visible.forEach(p => {
+          const div = document.createElement('div');
+          div.className = 'col-lg-4 col-md-6';
+          div.innerHTML = `
+            <div class="blog__item">
+              <div class="blog__item__text">
+                <ul class="blog__item__tags">
+                  <li><i class="fa fa-tags"></i> ${p.category}</li>
+                </ul>
+                <h5>${p.description}</h5>
+                <ul class="blog__item__widget">
+                  <li><i class="fa icon_phone"></i> ${p.phone}</li>
+                  <li><i class="fa icon_pin_alt"></i> ${p.location}</li>
+                  <li><i class="fa fa-user"></i> ${p.name}</li>
+                  <li>
+                    <a href="https://www.youtube.com/embed/${p.portfolio}?autoplay=1"
+                       class="video-popup listing__item__pic__tag"
+                       target="_blank" rel="noopener noreferrer">
+                      Ver trabajos realizados
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          `;
+          allContainer.appendChild(div);
+        });
+
+        // Paginación
+        const pagination = document.createElement('div');
+        pagination.className = 'blog__pagination text-center mt-4';
+        const totalPagesHTML = Array.from({ length: totalPages }, (_, i) => `
+          <a href="#" class="page-link ${i + 1 === currentPage ? 'active' : ''}" data-page="${i + 1}">
+            ${i + 1}
+          </a>`).join('');
+        pagination.innerHTML = `
+          <a href="#" class="prev ${currentPage === 1 ? 'disabled' : ''}">
+            <i class="fa fa-long-arrow-left"></i> Anterior
+          </a>
+          ${totalPagesHTML}
+          <a href="#" class="next ${currentPage === totalPages ? 'disabled' : ''}">
+            Siguiente <i class="fa fa-long-arrow-right"></i>
+          </a>
+        `;
+        allContainer.appendChild(pagination);
+
+        // Eventos
+        pagination.querySelectorAll('.page-link, .prev, .next').forEach(btn => {
+          btn.addEventListener('click', e => {
+            e.preventDefault();
+            if (btn.classList.contains('disabled')) return;
+
+            if (btn.classList.contains('prev') && currentPage > 1) currentPage--;
+            else if (btn.classList.contains('next') && currentPage < totalPages) currentPage++;
+            else if (btn.dataset.page) currentPage = parseInt(btn.dataset.page);
+
+            renderPage();
+          });
+        });
+      };
+
+      renderPage();
+    });
+}
+</script>
+
+
 </body>
 </html>

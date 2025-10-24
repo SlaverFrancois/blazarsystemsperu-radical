@@ -5,7 +5,8 @@
     "description": "Especialista en instalaciones domésticas y mantenimiento.",
     "phone": "987654321",
     "location": "Mercado Reynoso",
-    "portfolio": "wK9mV3ILnqk"
+    "portfolio": "wK9mV3ILnqk",
+    "featured": true
   },
   {
     "name": "María López",
@@ -13,7 +14,8 @@
     "description": "Experta en pintura decorativa y acabados interiores.",
     "phone": "999888777",
     "location": "Visita a domicilio",
-    "portfolio": "gh4-G-iMzTM"
+    "portfolio": "gh4-G-iMzTM",
+    "featured": true
   },
   {
     "name": "Walter López",
@@ -21,7 +23,8 @@
     "description": "Experto en pintura decorativa y acabados interiores.",
     "phone": "999888777",
     "location": "Taller: Cerca a Colegio Porras",
-    "portfolio": "bWKfyRPf8gM"
+    "portfolio": "bWKfyRPf8gM",
+    "featured": true
   },
   {
     "name": "Willy López",
@@ -29,7 +32,8 @@
     "description": "Especialista en acabados finos y pintura de interiores.",
     "phone": "999888777",
     "location": "Taller: Cerca Hospital San Jose",
-    "portfolio": "j9EyhYt2TeI"
+    "portfolio": "j9EyhYt2TeI",
+    "featured": true
   },
   {
     "name": "Edgar López",
@@ -45,6 +49,232 @@
     "description": "Pintora profesional en arte decorativo y muralismo.",
     "phone": "999888777",
     "location": "Visita a domicilio",
-    "portfolio": "gh4-G-iMzTM"
+    "portfolio": "gh4-G-iMzTM",
+    "featured": true
+  },
+  {
+    "name": "Raul Ochoa",
+    "category": "pintor",
+    "description": "Especialista en acabados finos y pintura de interiores.",
+    "phone": "999888777",
+    "location": "Taller: Cerca Hospital San Pepe",
+    "portfolio": "j9EyhYt2TeI",
+    "featured": true
+  },
+  {
+    "name": "Dina Boluarte",
+    "category": "pintor",
+    "description": "Pintora con experiencia en exteriores e impermeabilización.",
+    "phone": "999888777",
+    "location": "Taller: Cerca la Municipalidad",
+    "portfolio": "gh4-G-iMzTM",
+    "featured": true
+  },
+  {
+    "name": "Jose Jeri",
+    "category": "pintor",
+    "description": "Pintora profesional en arte decorativo y muralismo.",
+    "phone": "999888777",
+    "location": "Visita a domicilio",
+    "portfolio": "gh4-G-iMzTM",
+    "featured": true
+  },
+  {
+    "name": "Susana Villarán",
+    "category": "pintor",
+    "description": "Especialista en acabados finos y pintura de interiores.",
+    "phone": "999888777",
+    "location": "Taller: Cerca Hospital San Pepe",
+    "portfolio": "j9EyhYt2TeI",
+    "featured": true
+  },
+  {
+    "name": "Domingo Perez",
+    "category": "pintor",
+    "description": "Pintora sin experiencia en exteriores e impermeabilización.",
+    "phone": "999888777",
+    "location": "Taller: Cerca la Municipalidad",
+    "portfolio": "gh4-G-iMzTM",
+    "featured": true
+  },
+  {
+    "name": "Milagros leiva",
+    "category": "pintor",
+    "description": "Pintora profesional en arte decorativo y muralismo.",
+    "phone": "999888777",
+    "location": "Visita a domicilio",
+    "portfolio": "gh4-G-iMzTM",
+    "featured": true
+  },
+  {
+    "name": "Oscar Arriola",
+    "category": "pintor",
+    "description": "Especialista en acabados finos y pintura de interiores.",
+    "phone": "999888777",
+    "location": "Taller: Cerca Hospital San Pepe",
+    "portfolio": "j9EyhYt2TeI",
+    "featured": true
+  },
+  {
+    "name": "Alfredo Azurín",
+    "category": "pintor",
+    "description": "Pintora sin experiencia en exteriores e impermeabilización.",
+    "phone": "999888777",
+    "location": "Taller: Cerca la Municipalidad",
+    "portfolio": "gh4-G-iMzTM",
+    "featured": true
+  },
+  {
+    "name": "Susel Paredes",
+    "category": "pintor",
+    "description": "Pintora profesional en arte decorativo y muralismo.",
+    "phone": "999888777",
+    "location": "Visita a domicilio",
+    "portfolio": "gh4-G-iMzTM",
+    "featured": true
+  },
+  {
+    "name": "Beto Ortiz",
+    "category": "pintor",
+    "description": "Especialista en acabados finos y pintura de interiores.",
+    "phone": "999888777",
+    "location": "Taller: Cerca Hospital San Pepe",
+    "portfolio": "j9EyhYt2TeI",
+    "featured": true
+  },
+  {
+    "name": "Vladimiro Montesinos",
+    "category": "pintor",
+    "description": "Pintora sin experiencia en exteriores e impermeabilización.",
+    "phone": "999888777",
+    "location": "Taller: Cerca la Municipalidad",
+    "portfolio": "gh4-G-iMzTM",
+    "featured": true
+  },
+  {
+    "name": "Guido Bellido",
+    "category": "pintor",
+    "description": "Pintora profesional en arte decorativo y muralismo.",
+    "phone": "999888777",
+    "location": "Visita a domicilio",
+    "portfolio": "gh4-G-iMzTM",
+    "featured": true
+  },
+  {
+    "name": "Vilma Coloma",
+    "category": "pintor",
+    "description": "Especialista en acabados finos y pintura de interiores.",
+    "phone": "999888777",
+    "location": "Taller: Cerca Hospital San Pepe",
+    "portfolio": "j9EyhYt2TeI",
+    "featured": true
+  },
+  {
+    "name": "Xi Jimping",
+    "category": "pintor",
+    "description": "Pintora sin experiencia en exteriores e impermeabilización.",
+    "phone": "999888777",
+    "location": "Taller: Cerca la Municipalidad",
+    "portfolio": "gh4-G-iMzTM",
+    "featured": true
+  },
+  {
+    "name": "Donald Trump",
+    "category": "pintor",
+    "description": "Pintora profesional en arte decorativo y muralismo.",
+    "phone": "999888777",
+    "location": "Visita a domicilio",
+    "portfolio": "gh4-G-iMzTM",
+    "featured": true
+  },
+  {
+    "name": "Aladino Galvez",
+    "category": "pintor",
+    "description": "Pintora profesional en arte decorativo y muralismo.",
+    "phone": "999888777",
+    "location": "Visita a domicilio",
+    "portfolio": "gh4-G-iMzTM",
+    "featured": true
+  },
+  {
+    "name": "Javier Milei",
+    "category": "pintor",
+    "description": "Especialista en acabados finos y pintura de interiores.",
+    "phone": "999888777",
+    "location": "Taller: Cerca Hospital San Pepe",
+    "portfolio": "j9EyhYt2TeI",
+    "featured": true
+  },
+  {
+    "name": "Jose Tudela",
+    "category": "pintor",
+    "description": "Pintora sin experiencia en exteriores e impermeabilización.",
+    "phone": "999888777",
+    "location": "Taller: Cerca la Municipalidad",
+    "portfolio": "gh4-G-iMzTM",
+    "featured": true
+  },
+  {
+    "name": "Javier Bukele",
+    "category": "pintor",
+    "description": "Pintora profesional en arte decorativo y muralismo.",
+    "phone": "999888777",
+    "location": "Visita a domicilio",
+    "portfolio": "gh4-G-iMzTM",
+    "featured": true
+  },
+  {
+    "name": "Javier Milei",
+    "category": "pintor",
+    "description": "Especialista en acabados finos y pintura de interiores.",
+    "phone": "999888777",
+    "location": "Taller: Cerca Hospital San Pepe",
+    "portfolio": "j9EyhYt2TeI",
+    "featured": true
+  },
+  {
+    "name": "Renzo Schuller",
+    "category": "pintor",
+    "description": "Pintora sin experiencia en exteriores e impermeabilización.",
+    "phone": "999888777",
+    "location": "Taller: Cerca la Municipalidad",
+    "portfolio": "gh4-G-iMzTM",
+    "featured": true
+  },
+  {
+    "name": "Piero Diaz",
+    "category": "pintor",
+    "description": "Pintora profesional en arte decorativo y muralismo.",
+    "phone": "999888777",
+    "location": "Visita a domicilio",
+    "portfolio": "gh4-G-iMzTM",
+    "featured": true
+  },
+  {
+    "name": "Elon Musk",
+    "category": "pintor",
+    "description": "Especialista en acabados finos y pintura de interiores.",
+    "phone": "999888777",
+    "location": "Taller: Cerca Hospital San Pepe",
+    "portfolio": "j9EyhYt2TeI",
+    "featured": true
+  },
+  {
+    "name": "Israel Dreyfus",
+    "category": "pintor",
+    "description": "Pintora sin experiencia en exteriores e impermeabilización.",
+    "phone": "999888777",
+    "location": "Taller: Cerca la Municipalidad",
+    "portfolio": "gh4-G-iMzTM",
+    "featured": true
+  },
+  {
+    "name": "Zumba Rodriguez",
+    "category": "pintor",
+    "description": "Pintora profesional en arte decorativo y muralismo.",
+    "phone": "999888777",
+    "location": "Visita a domicilio",
+    "portfolio": "gh4-G-iMzTM",
+    "featured": true
   }
 ]
