@@ -328,12 +328,12 @@ document.addEventListener('DOMContentLoaded', () => {
         renderPage();
 
         // Mostrar resultados y ocultar Top
-        if (categoriesSection && resultsSection) {
-          categoriesSection.style.display = 'none';
-          resultsSection.style.display = 'block';
-          if (allProfessionalsSection) allProfessionalsSection.style.display = 'none';
-          backBtn.style.display = 'block';
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (categoriesSection && resultsSection && allProfessionalsSection) {
+        categoriesSection.style.display = 'none';
+        resultsSection.style.display = 'block';
+        allProfessionalsSection.style.display = 'none'; // 🔹 Oculta Top Profesionales
+        backBtn.style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         }
       })
       .catch(err => console.error('Error cargando profesionales:', err));
@@ -356,8 +356,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof loadAllProfessionals === 'function') loadAllProfessionals();
 });
 // <-- fin DOMContentLoaded
+ 
 
-
+ 
 // ---------------------------
 // loadAllProfessionals (definida fuera del DOMContentLoaded)
 // ---------------------------
@@ -376,7 +377,7 @@ function loadAllProfessionals() {
 
       const renderPage = () => {
         allContainer.innerHTML = '';
-        const totalPages = Math.ceil(ordered.length / perPage);
+       const totalPagesAll = Math.ceil(ordered.length / perPage);
         const start = (currentPage - 1) * perPage;
         const end = start + perPage;
         const visible = ordered.slice(start, end);
