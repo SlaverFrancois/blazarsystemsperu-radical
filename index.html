@@ -287,11 +287,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
           // 🔹 Paginación dinámica (5 botones máx)
           const pagination = document.createElement('div');
-          pagination.className = 'blog__pagination text-center mt-4';
+          pagination.className = 'blog__pagination text-center mt-4 d-flex justify-content-center flex-wrap';
           
-          let startPage = Math.max(1, currentPage - 2);
-          let endPage = Math.min(totalPages, startPage + 4);
-          if (endPage - startPage < 4 && startPage > 1) startPage = Math.max(1, endPage - 4);
+          let startPage = Math.max(1, currentPage - 1);
+          let endPage = Math.min(totalPages, startPage + 2);
+          if (endPage - startPage < 2 && startPage > 1) startPage = Math.max(1, endPage - 2);
 
           let pageLinks = '';
           for (let i = startPage; i <= endPage; i++) {
@@ -300,11 +300,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
           let html = '';
           if (currentPage > 1) {
-            html += `<a href="#" class="prev">Anterior</a>`;
+            html += `<a href="#" class="prev"><i class="fa fa-long-arrow-left"></i> Anterior</a>`;
           }
           html += pageLinks;
           if (currentPage < totalPages) {
-            html += `<a href="#" class="next">Siguiente</a>`;
+            html += `<a href="#" class="next">Siguiente <i class="fa fa-long-arrow-right"></i></a>`;
           }
           pagination.innerHTML = html;
 
