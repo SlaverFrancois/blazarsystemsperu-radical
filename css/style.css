@@ -2368,21 +2368,27 @@ ol {
 }
 
 .blog__pagination a {
-	font-size: 15px;
-	color: #707070;
-	display: inline-block;
-	padding: 12px 20px 10px;
-	border: 1px solid #e4e4e4;
-	margin-right: -5px;
-	-webkit-transition: all, 0.3s;
-	-o-transition: all, 0.3s;
-	transition: all, 0.3s;
+	border: none !important;
+	background: none !important;
+	color: #333;
+	margin: 0 5px;
+	font-weight: 600;
+	text-decoration: none;
+	transition: color 0.2s ease-in-out;
 }
 
 .blog__pagination a:hover {
-	background: #f03250;
-	color: #ffffff;
-	border-color: #f03250;
+	color: #007bff;
+}
+
+.blog__pagination a.active {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.blog__pagination a.disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 /*---------------------

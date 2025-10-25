@@ -149,8 +149,9 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
 
-<script>
+ <script>
 document.addEventListener('DOMContentLoaded', () => {
+  // -- primer fetch (si lo necesitas) para .categories__item__list (si existe)
   fetch('categories.json')
     .then(res => {
       if (!res.ok) throw new Error('No se pudo cargar el JSON');
@@ -158,36 +159,35 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .then(categories => {
       const container = document.querySelector('.categories__item__list');
-      // Asegurarnos de limpiar antes (por si acaso)
-      container.innerHTML = '';
-      categories.forEach(cat => {
-        const div = document.createElement('div');
-        // estructura IDENTICA a la original
-        div.className = 'categories__item';
-        div.innerHTML = `
-          <img src="${cat.img}" alt="${cat.title}">
-          <h5>${cat.title}</h5>
-          <span>${cat.count}</span>
-        `;
-        container.appendChild(div);
-      });
+      if (container) {
+        container.innerHTML = '';
+        categories.forEach(cat => {
+          const div = document.createElement('div');
+          div.className = 'categories__item';
+          div.innerHTML = `
+            <img src="${cat.img}" alt="${cat.title}">
+            <h5>${cat.title}</h5>
+            <span>${cat.count}</span>
+          `;
+          container.appendChild(div);
+        });
+      }
     })
     .catch(err => console.error('Error cargando categorías:', err));
-});
-</script>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
+
+  // -- Variables DOM usadas en el resto del script
   const categoriesContainer = document.querySelector('#categories-container');
   const resultsSection = document.querySelector('#results-section');
   const categoriesSection = document.querySelector('#categories-section');
   const professionalsContainer = document.querySelector('#professionals-container');
   const backBtn = document.querySelector('#backBtn');
 
-  // 🔹 Cargar categorías
+  // 🔹 Cargar categorías (lista principal con columnas)
   fetch('categories.json')
     .then(res => res.json())
     .then(categories => {
+      if (!categoriesContainer) return;
       categories.forEach(cat => {
         const col = document.createElement('div');
         col.className = 'col-lg-4 col-md-6';
@@ -209,136 +209,167 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // 🔹 Escuchar clic en cada card
       document.querySelectorAll('.category-card').forEach(card => {
-        card.addEventListener('click', e => {
+        card.addEventListener('click', () => {
           const selectedCategory = card.dataset.category;
           showProfessionals(selectedCategory);
         });
       });
-    });
+    })
+    .catch(err => console.error('Error cargando categorías (container):', err));
 
-function showProfessionals(category) {
-  fetch('professionals.json')
-    .then(res => res.json())
-    .then(data => {
-      const filtered = data.filter(p => p.category.toLowerCase() === category);
-      const perPage = 5;
-      let currentPage = 1;
 
-      const renderPage = () => {
-        professionalsContainer.innerHTML = `
-          <div class="col-lg-4 col-md-6">
-            <div class="blog__item advertise-card">
-              <div class="blog__item__text text-center">
-                <h5>¿Eres ${category}? 📢</h5>
-                <p>Anúnciate aquí y llega a cientos de clientes locales.</p>
-                <a href="https://forms.gle/TU_FORMULARIO_DE_GOOGLE" 
-                   target="_blank" 
-                   class="btn-advertise">Publica tu servicio</a>
-              </div>
-            </div>
-          </div>
-        `;
+  // ---------------------------
+  // showProfessionals: carga filtrada por categoría con paginación
+  // ---------------------------
+  function showProfessionals(category) {
+    const allProfessionalsSection = document.querySelector('#all-professionals-section'); // para ocultar el Top
 
-        if (filtered.length === 0) {
-          professionalsContainer.innerHTML += `<p>No hay profesionales en esta categoría.</p>`;
-          return;
-        }
+    fetch('professionals.json')
+      .then(res => res.json())
+      .then(data => {
+        const filtered = data.filter(p => p.category.toLowerCase() === category);
+        const perPage = 5;
+        let currentPage = 1;
 
-        const totalPages = Math.ceil(filtered.length / perPage);
-        const start = (currentPage - 1) * perPage;
-        const end = start + perPage;
-        const visibleItems = filtered.slice(start, end);
-
-        visibleItems.forEach(p => {
-          const div = document.createElement('div');
-          div.className = 'col-lg-4 col-md-6';
-          div.innerHTML = `
-            <div class="blog__item">
-              <div class="blog__item__text">
-                <ul class="blog__item__tags">
-                  <li><i class="fa fa-tags"></i> ${p.category}</li>
-                </ul>
-                <h5>${p.description}</h5>
-                <ul class="blog__item__widget">
-                  <li><i class="fa icon_phone"></i> ${p.phone}</li>
-                  <li><i class="fa icon_pin_alt"></i> ${p.location}</li>
-                  <li><i class="fa fa-user"></i> ${p.name}</li>
-                  <li>
-                    <a href="www.youtube.com/${p.portfolio}?"
-                       class="video-popup listing__item__pic__tag"
-                       target="_blank" rel="noopener noreferrer">
-                      Ver trabajos realizados
-                    </a>
-                  </li>
-                </ul>
+        const renderPage = () => {
+          professionalsContainer.innerHTML = `
+            <div class="col-lg-4 col-md-6">
+              <div class="blog__item advertise-card">
+                <div class="blog__item__text text-center">
+                  <h5>¿Eres ${category}? 📢</h5>
+                  <p>Anúnciate aquí y llega a cientos de clientes locales.</p>
+                  <a href="https://forms.gle/TU_FORMULARIO_DE_GOOGLE" 
+                     target="_blank" 
+                     class="btn-advertise">Publica tu servicio</a>
+                </div>
               </div>
             </div>
           `;
-          professionalsContainer.appendChild(div);
-        });
 
-        // 🔹 Agregar paginación
-        const pagination = document.createElement('div');
-        pagination.className = 'blog__pagination text-center mt-4';
-        const totalPagesHTML = Array.from({ length: totalPages }, (_, i) => `
-          <a href="#" class="page-link ${i + 1 === currentPage ? 'active' : ''}" data-page="${i + 1}">${i + 1}</a>
-        `).join('');
-        pagination.innerHTML = `
-          <a href="#" class="prev ${currentPage === 1 ? 'disabled' : ''}"><i class="fa fa-long-arrow-left"></i> Anterior</a>
-          ${totalPagesHTML}
-          <a href="#" class="next ${currentPage === totalPages ? 'disabled' : ''}">Siguiente <i class="fa fa-long-arrow-right"></i></a>
-        `;
-        professionalsContainer.appendChild(pagination);
+          if (filtered.length === 0) {
+            professionalsContainer.innerHTML += `<p>No hay profesionales en esta categoría.</p>`;
+            return;
+          }
 
-        // 🔹 Eventos de paginación
-        pagination.querySelectorAll('.page-link, .prev, .next').forEach(btn => {
-          btn.addEventListener('click', e => {
-            e.preventDefault();
-            if (btn.classList.contains('disabled')) return;
+          const totalPages = Math.ceil(filtered.length / perPage);
+          const start = (currentPage - 1) * perPage;
+          const end = start + perPage;
+          const visibleItems = filtered.slice(start, end);
 
-            if (btn.classList.contains('prev') && currentPage > 1) currentPage--;
-            else if (btn.classList.contains('next') && currentPage < totalPages) currentPage++;
-            else if (btn.dataset.page) currentPage = parseInt(btn.dataset.page);
-
-            renderPage();
+          // Mostrar profesionales
+          visibleItems.forEach(p => {
+            const div = document.createElement('div');
+            div.className = 'col-lg-4 col-md-6';
+            div.innerHTML = `
+              <div class="blog__item">
+                <div class="blog__item__text">
+                  <ul class="blog__item__tags">
+                    <li><i class="fa fa-tags"></i> ${p.category}</li>
+                  </ul>
+                  <h5>${p.description}</h5>
+                  <ul class="blog__item__widget">
+                    <li><i class="fa icon_phone"></i> ${p.phone}</li>
+                    <li><i class="fa icon_pin_alt"></i> ${p.location}</li>
+                    <li><i class="fa fa-user"></i> ${p.name}</li>
+                    <li>
+                      <a href="https://www.youtube.com/embed/${p.portfolio}?autoplay=1"
+                         class="video-popup listing__item__pic__tag"
+                         target="_blank" rel="noopener noreferrer">
+                        Ver trabajos realizados
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            `;
+            professionalsContainer.appendChild(div);
           });
-        });
-      };
 
-      renderPage();
+          // 🔹 Paginación dinámica (5 botones máx)
+          const pagination = document.createElement('div');
+          pagination.className = 'blog__pagination text-center mt-4';
+          
+          let startPage = Math.max(1, currentPage - 2);
+          let endPage = Math.min(totalPages, startPage + 4);
+          if (endPage - startPage < 4 && startPage > 1) startPage = Math.max(1, endPage - 4);
 
-      // Mostrar resultados
-      if (categoriesSection && resultsSection) {
-        categoriesSection.style.display = 'none';
-        resultsSection.style.display = 'block';
-        backBtn.style.display = 'block';
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    }); // ← Cierra fetch professionals.json
-} // ← Cierra función showProfessionals
+          let pageLinks = '';
+          for (let i = startPage; i <= endPage; i++) {
+            pageLinks += `<a href="#" class="page-link ${i === currentPage ? 'active' : ''}" data-page="${i}">${i}</a>`;
+          }
+
+          let html = '';
+          if (currentPage > 1) {
+            html += `<a href="#" class="prev">Anterior</a>`;
+          }
+          html += pageLinks;
+          if (currentPage < totalPages) {
+            html += `<a href="#" class="next">Siguiente</a>`;
+          }
+          pagination.innerHTML = html;
+
+          professionalsContainer.appendChild(pagination);
+
+          // 🔹 Eventos de paginación
+          pagination.querySelectorAll('.page-link, .prev, .next').forEach(btn => {
+            btn.addEventListener('click', e => {
+              e.preventDefault();
+              if (btn.classList.contains('disabled')) return;
+
+              if (btn.classList.contains('prev') && currentPage > 1) currentPage--;
+              else if (btn.classList.contains('next') && currentPage < totalPages) currentPage++;
+              else if (btn.dataset.page) currentPage = parseInt(btn.dataset.page);
+
+              renderPage();
+            });
+          });
+        };
+
+        renderPage();
+
+        // Mostrar resultados y ocultar Top
+        if (categoriesSection && resultsSection) {
+          categoriesSection.style.display = 'none';
+          resultsSection.style.display = 'block';
+          if (allProfessionalsSection) allProfessionalsSection.style.display = 'none';
+          backBtn.style.display = 'block';
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      })
+      .catch(err => console.error('Error cargando profesionales:', err));
+  } // <-- fin showProfessionals
 
 
-// 🔹 Mostrar/ocultar el botón volver
-backBtn.style.display = 'none';
-backBtn.addEventListener('click', () => {
-  resultsSection.style.display = 'none';
-  categoriesSection.style.display = 'block';
-  backBtn.style.display = 'none';
+  // 🔹 Mostrar/ocultar el botón volver
+  if (backBtn) {
+    backBtn.style.display = 'none';
+    backBtn.addEventListener('click', () => {
+      resultsSection.style.display = 'none';
+      categoriesSection.style.display = 'block';
+      const top = document.querySelector('#all-professionals-section');
+      if (top) top.style.display = 'block';
+      backBtn.style.display = 'none';
+    });
+  }
+
+  // Cargar listado general (Top) al iniciar
+  if (typeof loadAllProfessionals === 'function') loadAllProfessionals();
 });
+// <-- fin DOMContentLoaded
 
-loadAllProfessionals(); // 🔹 Carga el top general al iniciar
 
-}); // ← Cierra el DOMContentLoaded
-</script>
-
-<script>
+// ---------------------------
+// loadAllProfessionals (definida fuera del DOMContentLoaded)
+// ---------------------------
 function loadAllProfessionals() {
   const allContainer = document.querySelector('#all-professionals-container');
+  if (!allContainer) return;
+
   fetch('professionals.json')
     .then(res => res.json())
     .then(data => {
       // Ordenar destacados primero
-      const ordered = data.sort((a, b) => (b.featured === true) - (a.featured === true));
+      const ordered = data.slice().sort((a, b) => (b.featured === true) - (a.featured === true));
 
       const perPage = 6;
       let currentPage = 1;
@@ -381,38 +412,51 @@ function loadAllProfessionals() {
         // Paginación
         const pagination = document.createElement('div');
         pagination.className = 'blog__pagination text-center mt-4';
-        const totalPagesHTML = Array.from({ length: totalPages }, (_, i) => `
-          <a href="#" class="page-link ${i + 1 === currentPage ? 'active' : ''}" data-page="${i + 1}">
-            ${i + 1}
-          </a>`).join('');
-        pagination.innerHTML = `
-          <a href="#" class="prev ${currentPage === 1 ? 'disabled' : ''}">
-            <i class="fa fa-long-arrow-left"></i> Anterior
-          </a>
-          ${totalPagesHTML}
-          <a href="#" class="next ${currentPage === totalPages ? 'disabled' : ''}">
-            Siguiente <i class="fa fa-long-arrow-right"></i>
-          </a>
-        `;
+        const totalPages = Math.ceil(ordered.length / perPage);
+
+        // construye sólo las páginas visibles
+        let startPage = Math.max(1, currentPage - 2);
+        let endPage = Math.min(totalPages, startPage + 4);
+        if (endPage - startPage < 4 && startPage > 1) startPage = Math.max(1, endPage - 4);
+
+        const totalPagesHTML = Array.from({ length: (endPage - startPage + 1) }, (_, idx) => {
+          const i = startPage + idx;
+          return `<a href="#" class="page-link ${i === currentPage ? 'active' : ''}" data-page="${i}">${i}</a>`;
+        }).join('');
+
+        let html = '';
+        if (currentPage > 1) {
+          html += `
+            <a href="#" class="prev">
+              <i class="fa fa-long-arrow-left"></i> Anterior
+            </a>`;
+        }
+        html += totalPagesHTML;
+        if (currentPage < totalPages) {
+          html += `
+            <a href="#" class="next">
+              Siguiente <i class="fa fa-long-arrow-right"></i>
+            </a>`;
+        }
+        pagination.innerHTML = html;
+
         allContainer.appendChild(pagination);
 
         // Eventos
         pagination.querySelectorAll('.page-link, .prev, .next').forEach(btn => {
           btn.addEventListener('click', e => {
             e.preventDefault();
-            if (btn.classList.contains('disabled')) return;
-
             if (btn.classList.contains('prev') && currentPage > 1) currentPage--;
             else if (btn.classList.contains('next') && currentPage < totalPages) currentPage++;
             else if (btn.dataset.page) currentPage = parseInt(btn.dataset.page);
-
             renderPage();
           });
         });
       };
 
       renderPage();
-    });
+    })
+    .catch(err => console.error('Error cargando profesionales (all):', err));
 }
 </script>
 
