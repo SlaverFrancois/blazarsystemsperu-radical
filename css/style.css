@@ -2368,22 +2368,30 @@ ol {
 }
 
 .blog__pagination a {
-	border: none !important;
-	background: none !important;
-	color: #333;
+/*	border: none !important;  
+	transition: color 0.2s ease-in-out;*/
+
+	display: inline-block;
 	margin: 0 5px;
-	font-weight: 600;
+	padding: 8px 14px;
+	border-radius: 6px;
+	background: #f3f3f3;
+	color: #333;
 	text-decoration: none;
-	transition: color 0.2s ease-in-out;
+	font-weight: 600;
+	transition: background 0.2s;
 }
 
 .blog__pagination a:hover {
-	color: #007bff;
+	/*color: #007bff;*/
+	background: #ddd;
 }
 
 .blog__pagination a.active {
-  color: #007bff;
-  text-decoration: underline;
+  /*color: #007bff;
+  text-decoration: underline;*/
+  background: #dc3545;
+  color: white;
 }
 
 .blog__pagination a.disabled {

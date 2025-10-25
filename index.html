@@ -416,15 +416,18 @@ function loadAllProfessionals() {
         const totalPages = Math.ceil(ordered.length / perPage);
 
         // construye sólo las páginas visibles
-        let startPage = Math.max(1, currentPage - 2);
-        let endPage = Math.min(totalPages, startPage + 4);
-        if (endPage - startPage < 4 && startPage > 1) startPage = Math.max(1, endPage - 4);
+        let startPage = Math.max(1, currentPage - 1);
+        let endPage = Math.min(totalPages, startPage + 2);
+        if (endPage - startPage < 2 && startPage > 1) startPage = Math.max(1, endPage - 2);
 
-        const totalPagesHTML = Array.from({ length: (endPage - startPage + 1) }, (_, idx) => {
-          const i = startPage + idx;
-          return `<a href="#" class="page-link ${i === currentPage ? 'active' : ''}" data-page="${i}">${i}</a>`;
-        }).join('');
-
+        let totalPagesHTML = '';
+        for (let i = startPage; i <= endPage; i++) {
+          totalPagesHTML += `
+            <a href="#" class="page-link ${i === currentPage ? 'active' : ''}" data-page="${i}">
+              ${i}
+            </a>`;
+        }
+        
         let html = '';
         if (currentPage > 1) {
           html += `
@@ -441,7 +444,11 @@ function loadAllProfessionals() {
         }
         pagination.innerHTML = html;
 
-        allContainer.appendChild(pagination);
+        const paginationWrapper = document.createElement('div');
+        paginationWrapper.className = 'col-12 d-flex justify-content-center';
+        paginationWrapper.appendChild(pagination);
+        allContainer.appendChild(paginationWrapper);
+
 
         // Eventos
         pagination.querySelectorAll('.page-link, .prev, .next').forEach(btn => {
