@@ -360,7 +360,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
  
 // ---------------------------
-// loadAllProfessionals (definida fuera del DOMContentLoaded)
+// loadAllProfessionals (versión mejorada con paginación centrada y estilo uniforme)
 // ---------------------------
 function loadAllProfessionals() {
   const allContainer = document.querySelector('#all-professionals-container');
@@ -377,11 +377,13 @@ function loadAllProfessionals() {
 
       const renderPage = () => {
         allContainer.innerHTML = '';
-       const totalPagesAll = Math.ceil(ordered.length / perPage);
+
+        const totalPages = Math.ceil(ordered.length / perPage);
         const start = (currentPage - 1) * perPage;
         const end = start + perPage;
         const visible = ordered.slice(start, end);
 
+        // Mostrar profesionales
         visible.forEach(p => {
           const div = document.createElement('div');
           div.className = 'col-lg-4 col-md-6';
@@ -410,46 +412,40 @@ function loadAllProfessionals() {
           allContainer.appendChild(div);
         });
 
-        // Paginación
+        // 🔹 Paginación (3 números visibles, centrada)
         const pagination = document.createElement('div');
-        pagination.className = 'blog__pagination text-center mt-4';
-        const totalPages = Math.ceil(ordered.length / perPage);
+        pagination.className = 'blog__pagination text-center mt-4 d-flex justify-content-center flex-wrap';
 
-        // construye sólo las páginas visibles
         let startPage = Math.max(1, currentPage - 1);
         let endPage = Math.min(totalPages, startPage + 2);
         if (endPage - startPage < 2 && startPage > 1) startPage = Math.max(1, endPage - 2);
 
-        let totalPagesHTML = '';
+        let pageLinks = '';
         for (let i = startPage; i <= endPage; i++) {
-          totalPagesHTML += `
+          pageLinks += `
             <a href="#" class="page-link ${i === currentPage ? 'active' : ''}" data-page="${i}">
               ${i}
             </a>`;
         }
+
         let html = '';
         if (currentPage > 1) {
-          html += `
-            <a href="#" class="prev">
-              <i class="fa fa-long-arrow-left"></i> Anterior
-            </a>`;
+          html += `<a href="#" class="prev"><i class="fa fa-long-arrow-left"></i> Anterior</a>`;
         }
-        html += totalPagesHTML;
+        html += pageLinks;
         if (currentPage < totalPages) {
-          html += `
-            <a href="#" class="next">
-              Siguiente <i class="fa fa-long-arrow-right"></i>
-            </a>`;
+          html += `<a href="#" class="next">Siguiente <i class="fa fa-long-arrow-right"></i></a>`;
         }
         pagination.innerHTML = html;
 
+        // 🔹 Contenedor centrado y con espacio
         const paginationWrapper = document.createElement('div');
-        paginationWrapper.className = 'col-12 d-flex justify-content-center';
+        paginationWrapper.className = 'col-12 d-flex justify-content-center align-items-center mt-3';
         paginationWrapper.appendChild(pagination);
+
         allContainer.appendChild(paginationWrapper);
 
-
-        // Eventos
+        // 🔹 Eventos de paginación
         pagination.querySelectorAll('.page-link, .prev, .next').forEach(btn => {
           btn.addEventListener('click', e => {
             e.preventDefault();
@@ -465,6 +461,7 @@ function loadAllProfessionals() {
     })
     .catch(err => console.error('Error cargando profesionales (all):', err));
 }
+
 </script>
 
 
