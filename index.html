@@ -308,18 +308,20 @@ document.addEventListener('DOMContentLoaded', () => {
           }
           pagination.innerHTML = html;
 
-          professionalsContainer.appendChild(pagination);
+          // 🔹 Contenedor centrado y con espacio
+          const paginationWrapper = document.createElement('div');
+          paginationWrapper.className = 'col-12 d-flex justify-content-center align-items-center mt-3';
+          paginationWrapper.appendChild(pagination);          
+
+          professionalsContainer.appendChild(paginationWrapper);
 
           // 🔹 Eventos de paginación
           pagination.querySelectorAll('.page-link, .prev, .next').forEach(btn => {
             btn.addEventListener('click', e => {
-              e.preventDefault();
-              if (btn.classList.contains('disabled')) return;
-
+              e.preventDefault(); 
               if (btn.classList.contains('prev') && currentPage > 1) currentPage--;
               else if (btn.classList.contains('next') && currentPage < totalPages) currentPage++;
               else if (btn.dataset.page) currentPage = parseInt(btn.dataset.page);
-
               renderPage();
             });
           });
