@@ -151,42 +151,27 @@
 
  <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const container = document.querySelector('#alphabetical-categories');
-
+  // -- primer fetch (si lo necesitas) para .categories__item__list (si existe)
   fetch('categories.json')
-    .then(res => res.json())
+    .then(res => {
+      if (!res.ok) throw new Error('No se pudo cargar el JSON');
+      return res.json();
+    })
     .then(categories => {
-      // Agrupar por la primera letra
-      const grouped = {};
-      categories.forEach(cat => {
-        const letter = cat.title.charAt(0).toUpperCase();
-        if (!grouped[letter]) grouped[letter] = [];
-        grouped[letter].push(cat);
-      });
-
-      // Crear filas por letra
-      Object.keys(grouped).sort().forEach(letter => {
-        const row = document.createElement('div');
-        row.className = 'alphabet-row';
-
-        // Etiqueta de letra
-        const letterLabel = document.createElement('div');
-        letterLabel.innerHTML = `<strong style="min-width: 30px; display:inline-block;">${letter}</strong>`;
-        row.appendChild(letterLabel);
-
-        // Botones de categorías
-        grouped[letter].forEach(cat => {
-          const btn = document.createElement('button');
-          btn.className = 'category-btn';
-          btn.textContent = cat.title;
-          btn.addEventListener('click', () => {
-            showProfessionals(cat.title.toLowerCase());
-          });
-          row.appendChild(btn);
+      const container = document.querySelector('.categories__item__list');
+      if (container) {
+        container.innerHTML = '';
+        categories.forEach(cat => {
+          const div = document.createElement('div');
+          div.className = 'categories__item';
+          div.innerHTML = `
+            <img src="${cat.img}" alt="${cat.title}">
+            <h5>${cat.title}</h5>
+            <span>${cat.count}</span>
+          `;
+          container.appendChild(div);
         });
-
-        container.appendChild(row);
-      });
+      }
     })
     .catch(err => console.error('Error cargando categorías:', err));
 
