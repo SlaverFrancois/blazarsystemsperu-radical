@@ -33,30 +33,30 @@
     </div>
    <!-- Categories Section Begin -->
     <section class="categories spad" id="categories-section">
-    <div class="container">
-        <div class="row" id="categories-container">
-        <div class="col-lg-12">
-            <div class="section-title">
-            <h2>Gran Red Local de Anunciantes</h2>
-            <p>Compra, vende y ofrece servicios — todo en un solo lugar</p>
-            </div>
+    <section class="categories spad" id="categories-section">
+  <div class="container">
+    <div class="row" id="categories-container">
+      <div class="col-lg-12">
+        <div class="section-title">
+          <h2>Gran Red Local de Anunciantes</h2>
+          <p>Encuentra el servicio que necesitas — de un vecino confiable cerca de ti</p>
+        </div>
 
-            <div class="tab-content">
-            <div class="tab-pane active" id="tabs-1" role="tabpanel">
-                <div class="row"><!-- Aquí se insertan los cards dinámicamente --></div>
-            </div>
-            </div>
+        <div class="categories-list-wrapper">
+          <div id="alphabetical-categories"></div>
         </div>
-        </div>
+      </div>
     </div>
-    </section>
+  </div>
+</section>
+
     <!-- Categories Section End -->
 
     <!-- 🔹 Listado general de profesionales -->
     <section class="news-post spad" id="all-professionals-section">
       <div class="container">
         <div class="section-title d-flex justify-content-between align-items-center">
-          <h2>Top Profesionales del Mes</h2>
+          <h2>Anunciantes destacados</h2>
         </div>
         <div class="row" id="all-professionals-container"></div>
       </div>
@@ -151,27 +151,42 @@
 
  <script>
 document.addEventListener('DOMContentLoaded', () => {
-  // -- primer fetch (si lo necesitas) para .categories__item__list (si existe)
+  const container = document.querySelector('#alphabetical-categories');
+
   fetch('categories.json')
-    .then(res => {
-      if (!res.ok) throw new Error('No se pudo cargar el JSON');
-      return res.json();
-    })
+    .then(res => res.json())
     .then(categories => {
-      const container = document.querySelector('.categories__item__list');
-      if (container) {
-        container.innerHTML = '';
-        categories.forEach(cat => {
-          const div = document.createElement('div');
-          div.className = 'categories__item';
-          div.innerHTML = `
-            <img src="${cat.img}" alt="${cat.title}">
-            <h5>${cat.title}</h5>
-            <span>${cat.count}</span>
-          `;
-          container.appendChild(div);
+      // Agrupar por la primera letra
+      const grouped = {};
+      categories.forEach(cat => {
+        const letter = cat.title.charAt(0).toUpperCase();
+        if (!grouped[letter]) grouped[letter] = [];
+        grouped[letter].push(cat);
+      });
+
+      // Crear filas por letra
+      Object.keys(grouped).sort().forEach(letter => {
+        const row = document.createElement('div');
+        row.className = 'alphabet-row';
+
+        // Etiqueta de letra
+        const letterLabel = document.createElement('div');
+        letterLabel.innerHTML = `<strong style="min-width: 30px; display:inline-block;">${letter}</strong>`;
+        row.appendChild(letterLabel);
+
+        // Botones de categorías
+        grouped[letter].forEach(cat => {
+          const btn = document.createElement('button');
+          btn.className = 'category-btn';
+          btn.textContent = cat.title;
+          btn.addEventListener('click', () => {
+            showProfessionals(cat.title.toLowerCase());
+          });
+          row.appendChild(btn);
         });
-      }
+
+        container.appendChild(row);
+      });
     })
     .catch(err => console.error('Error cargando categorías:', err));
 
