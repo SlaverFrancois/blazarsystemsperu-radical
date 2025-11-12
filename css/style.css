@@ -3453,7 +3453,7 @@ html {
 }
 
 .alphabet-row {
-  /*display: flex;
+  /*
   overflow-x: auto;
   gap: 10px;
   padding: 8px 0;
@@ -3489,6 +3489,30 @@ html {
 .category-btn:hover {
   background-color: #007bff;
   color: #fff;
+}
+
+/* Botones tipo chip */
+.category-chip {
+  background-color: #e9f0ff;
+  color: #2b3a6b;
+  border: none;
+  border-radius: 18px;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.25s, transform 0.1s;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.category-chip:hover {
+  background-color: #d8e3ff;
+  transform: translateY(-2px);
+}
+
+.category-chip:active {
+  transform: scale(0.97);
 }
 
      .alpha-column {
@@ -3546,7 +3570,13 @@ html {
       }
 
       /* remove vertical scroll on categories container specifically */
-      #alphabetical-categories { width:100%; }
+      #alphabetical-categories {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.6rem;
+		justify-content: flex-start;
+		padding: 1rem 0;
+		}
 
       /* Professionals container small visual tweaks */
       #professionals-container .blog__item { margin-bottom: 1rem; }

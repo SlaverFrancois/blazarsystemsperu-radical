@@ -33,20 +33,20 @@
     </div>
    <!-- Categories Section Begin -->
     <section class="categories spad" id="categories-section">
-  <div class="container">
-    <div class="row" id="categories-container">
-      <div class="col-lg-12">
-        <div class="section-title">
-          <h2>Gran Red Local de Anunciantes</h2>
-          <p>Encuentra el servicio que necesitas — de un vecino confiable cerca de ti</p>
-        </div>
-        <div class="categories-list-wrapper">
-          <div id="alphabetical-categories" class="alphabetical-row" role="navigation" aria-label="Categorías"></div>
+      <div class="container">
+        <div class="row" id="categories-container">
+          <div class="col-lg-12">
+            <div class="section-title">
+              <h2>Gran Red Local de Anunciantes</h2>
+              <p>Encuentra el servicio que necesitas — de un vecino confiable cerca de ti</p>
+            </div>
+            <div class="categories-list-wrapper">
+              <div id="alphabetical-categories" class="alphabetical-row" role="navigation" aria-label="Categorías"></div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
     <!-- Categories Section End -->
 
     <!-- 🔹 Listado general de profesionales -->
@@ -150,64 +150,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
  // Cargar categorías y montar en columnas por letra (6 por columna)
-  fetch('categories.json')
-    .then(res => res.json())
-    .then(categories => {
-      // normalizar y ordenar por título
-      categories = categories.map(c => ({ ...c, title: String(c.title).trim() }))
-                             .sort((a,b) => a.title.localeCompare(b.title, 'es'));
+  // Cargar categorías y montar como muro fluido de chips
+fetch('categories.json')
+  .then(res => res.json())
+  .then(categories => {
+    const alphabetContainer = document.querySelector('#alphabetical-categories');
 
-      // agrupar por letra inicial
-      const groups = categories.reduce((acc, c) => {
-        const letter = c.title[0].toUpperCase();
-        acc[letter] = acc[letter] || [];
-        acc[letter].push(c);
-        return acc;
-      }, {});
+    // Limpiar el contenedor
+    alphabetContainer.innerHTML = '';
 
-      // construir columnas: para cada letra, cortar en chunks de 6. Solo la 1ª columna muestra la letra.
-      Object.keys(groups).sort().forEach(letter => {
-        const items = groups[letter];
-        const chunks = chunk(items, 6);
-        chunks.forEach((slice, idx) => {
-          const col = document.createElement('div');
-          col.className = 'alpha-column';
-          // añadir header sólo en la primera columna del grupo
-          if (idx === 0) col.innerHTML = `<h4 class="letter-header">${letter}</h4>`;
-          const ul = document.createElement('ul');
-          slice.forEach(cat => {
-            const li = document.createElement('li');
-            // friendly link (text-button)
-            const a = document.createElement('a');
-            a.href = '#';
-            a.className = 'text-button';
-            a.dataset.category = String(cat.title).toLowerCase();
-            a.textContent = cat.title;
-            // click: filtrar y scrollear
-            a.addEventListener('click', (e) => {
-              e.preventDefault();
-              // lanzar showProfessionals y luego scrollear cuando termine render
-              showProfessionals(a.dataset.category, a).catch(err => console.error(err));
-            });
-            li.appendChild(a);
-            ul.appendChild(li);
-          });
-          col.appendChild(ul);
-          alphabetContainer.appendChild(col);
-        });
+    // Normalizar y ordenar
+    categories = categories
+      .map(c => ({ ...c, title: String(c.title).trim() }))
+      .sort((a, b) => a.title.localeCompare(b.title, 'es'));
+
+    // Crear botones tipo chips
+    categories.forEach(cat => {
+      const btn = document.createElement('button');
+      btn.className = 'category-chip';
+      btn.textContent = cat.title;
+      btn.dataset.category = cat.title.toLowerCase();
+
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        showProfessionals(btn.dataset.category, btn).catch(err => console.error(err));
       });
 
-      // make keyboard accessible: allow Enter key to trigger click
-      alphabetContainer.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' && e.target && e.target.matches('a.text-button')) {
-          e.preventDefault();
-          e.target.click();
-        }
-      });
-    })
-    .catch(err => {
-      console.error('Error loading categories.json', err);
+      alphabetContainer.appendChild(btn);
     });
+  })
+  .catch(err => {
+    console.error('Error loading categories.json', err);
+  });
+
 
 /**
    * showProfessionals(category?: string, sourceButton?: HTMLElement)
