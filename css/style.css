@@ -3487,9 +3487,10 @@ html {
 }
 
 .category-btn:hover {
-  background-color: #007bff;
+  background-color: #7f1d1d;
   color: #fff;
 }
+
 
 /* Botones tipo chip */
 .category-chip {
@@ -3499,11 +3500,12 @@ html {
   border-radius: 18px;
   padding: 0.5rem 1rem;
   font-size: 0.95rem;
-  font-weight: 500;
+  font-weight: bold;
   cursor: pointer;
   transition: background-color 0.25s, transform 0.1s;
   white-space: nowrap;
   box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+
 }
 
 .category-chip:hover {
@@ -3559,7 +3561,8 @@ html {
       }
 
       /* Make buttons more "flex" on small screens */
-      @media (max-width: 768px) {
+ 
+      @media only screen and (min-width: 768px) and (max-width: 1199px) {
         .alpha-column {
           min-width: 140px;
         }
