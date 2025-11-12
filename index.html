@@ -151,10 +151,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
  // Cargar categorías y montar en columnas por letra (6 por columna)
   // Cargar categorías y montar como muro fluido de chips
+// Cargar categorías y montar como muro fluido de chips
 fetch('categories.json')
   .then(res => res.json())
   .then(categories => {
     const alphabetContainer = document.querySelector('#alphabetical-categories');
+    const allProfessionalsSection = document.querySelector('#all-professionals-section');
 
     // Limpiar el contenedor
     alphabetContainer.innerHTML = '';
@@ -171,9 +173,22 @@ fetch('categories.json')
       btn.textContent = cat.title;
       btn.dataset.category = cat.title.toLowerCase();
 
-      btn.addEventListener('click', (e) => {
+      btn.addEventListener('click', async (e) => {
         e.preventDefault();
-        showProfessionals(btn.dataset.category, btn).catch(err => console.error(err));
+        try {
+          // Mostrar profesionales filtrados
+          await showProfessionals(btn.dataset.category, btn);
+
+          // Esperar un pequeño retardo y hacer scroll suave
+          setTimeout(() => {
+            allProfessionalsSection.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }, 200);
+        } catch (err) {
+          console.error(err);
+        }
       });
 
       alphabetContainer.appendChild(btn);
@@ -182,6 +197,7 @@ fetch('categories.json')
   .catch(err => {
     console.error('Error loading categories.json', err);
   });
+
 
 
 /**
