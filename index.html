@@ -255,7 +255,7 @@ fetch('categories.json')
                   
                   <!-- FOTO: 1/4 del ancho -->
                   <div class="professional-photo">
-                    <img src="./fotos/${p.foto}" alt="${p.name}" />
+                    <img src="./fotos/${p.foto}"/>
                   </div>
 
                   <!-- TEXTO: 3/4 del ancho -->
@@ -265,13 +265,12 @@ fetch('categories.json')
                       <li><i class="fa fa-tags"></i> ${p.category}</li>
                     </ul>
 
-                    <h5>${p.description || ''}</h5>
+                    <h5><i class="fa fa-user"></i>${p.name || ''}</h5>
 
                     <ul class="blog__item__widget">
                       <li><i class="fa icon_phone"></i> ${p.phone || ''}</li>
                       <li><i class="fa icon_pin_alt"></i> ${p.location || ''}</li>
-                      <li><i class="fa fa-user"></i> ${p.name || ''}</li>
-
+                      <li><small>${p.especiality || ''}</small></li>
                       ${p.portfolio ? `
                         <li>
                           <a href="https://www.youtube.com/embed/${p.portfolio}?autoplay=1"
