@@ -265,21 +265,13 @@ fetch('categories.json')
                       <li><i class="fa fa-tags"></i> ${p.category}</li>
                     </ul>
 
-                    <h5><i class="fa fa-user"></i>${p.name || ''}</h5>
+                    <li><i class="fa fa-user"></i><h5>${p.name || ''}</h5></li>
 
                     <ul class="blog__item__widget">
-                      <li><i class="fa icon_phone"></i> ${p.phone || ''}</li>
+                      <li><i class="fa icon_phone"></i> ${p.contact || ''}</li>
                       <li><i class="fa icon_pin_alt"></i> ${p.location || ''}</li>
-                      <li><small>${p.especiality || ''}</small></li>
-                      ${p.portfolio ? `
-                        <li>
-                          <a href="https://www.youtube.com/embed/${p.portfolio}?autoplay=1"
-                            class="video-popup listing__item__pic__tag"
-                            target="_blank" rel="noopener noreferrer">
-                            Ver trabajos realizados
-                          </a>
-                        </li>` : ''}
-                    </ul>
+                      <li><i class="fa fa-star"></i><small>${p.especiality || ''}</small></li>
+                      ${contactIcons.join("")}
                   </div>
                   </div>
 
@@ -399,6 +391,57 @@ fetch('categories.json')
 // ---------------------------
 // loadAllProfessionals (versión mejorada con paginación centrada y estilo uniforme)
 // ---------------------------
+
+</script>
+<script>
+  const contactIcons = [];
+
+if (p.contact) {
+
+  if (p.contact.whatsapp) {
+    contactIcons.push(`
+      <li>
+        <a href="https://wa.me/${p.contact.whatsapp}" target="_blank">
+          <i class="fa fa-whatsapp"></i> WhatsApp
+        </a>
+      </li>
+    `);
+  }
+
+  if (p.contact.facebook) {
+    contactIcons.push(`
+      <li>
+        <a href="${p.contact.facebook}" target="_blank">
+          <i class="fa fa-facebook"></i>
+        </a>
+      </li>
+    `);
+  }
+
+  if (p.contact.instagram) {
+    contactIcons.push(`
+      <li>
+        <a href="${p.contact.instagram}" target="_blank">
+          <i class="fa fa-instagram"></i>
+        </a>
+      </li>
+    `);
+  }
+
+  if (p.contact.youtube) {
+    // convertir link completo a embed
+    const videoID = p.contact.youtube.split("v=")[1];
+    contactIcons.push(`
+      <li>
+        <a href="https://www.youtube.com/embed/${videoID}?autoplay=1"
+           target="_blank">
+           <i class="fa fa-youtube-play"></i> Ver trabajos previos
+        </a>
+      </li>
+    `);
+  }
+
+}
 
 </script>
 
