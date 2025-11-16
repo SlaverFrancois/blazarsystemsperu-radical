@@ -9,7 +9,7 @@
     "foto": "juan.jpg"
   },
 {
-  "name": "María López",
+  "name": "Marta López",
   "category": "pintor",
   "especiality": "Experta en pintura decorativa y acabados interiores.",
   "contact": {
@@ -21,7 +21,7 @@
   },
   "location": "Visita a domicilio",
   "featured": true,
-  "foto": "maria.jpg"
+  "foto": "marta.jpg"
 },
   {
     "name": "Walter López",
