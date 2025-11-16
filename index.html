@@ -251,21 +251,40 @@ fetch('categories.json')
               const divCol = document.createElement('div');
               divCol.className = 'col-lg-4 col-md-6';
               divCol.innerHTML = `
-                <div class="blog__item">
-                  <div class="blog__item__text">
+              <div class="blog__item professional-card d-flex">
+                  
+                  <!-- FOTO: 1/4 del ancho -->
+                  <div class="professional-photo">
+                    <img src="./fotos/${p.foto}" alt="${p.name}" />
+                  </div>
+
+                  <!-- TEXTO: 3/4 del ancho -->
+                  <div class="professional-info">
                     <ul class="blog__item__tags">
                       <li><i class="fa fa-tags"></i> ${p.category}</li>
                     </ul>
+
                     <h5>${p.description || ''}</h5>
+
                     <ul class="blog__item__widget">
                       <li><i class="fa icon_phone"></i> ${p.phone || ''}</li>
                       <li><i class="fa icon_pin_alt"></i> ${p.location || ''}</li>
                       <li><i class="fa fa-user"></i> ${p.name || ''}</li>
-                      ${p.portfolio ? `<li><a href="https://www.youtube.com/embed/${p.portfolio}?autoplay=1" class="video-popup listing__item__pic__tag" target="_blank" rel="noopener noreferrer">Ver trabajos realizados</a></li>` : ''}
+
+                      ${p.portfolio ? `
+                        <li>
+                          <a href="https://www.youtube.com/embed/${p.portfolio}?autoplay=1"
+                            class="video-popup listing__item__pic__tag"
+                            target="_blank" rel="noopener noreferrer">
+                            Ver trabajos realizados
+                          </a>
+                        </li>` : ''}
                     </ul>
                   </div>
-                </div>
-              `;
+
+              </div>
+            `;
+
               professionalsContainer.appendChild(divCol);
             });
 

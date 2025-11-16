@@ -3187,6 +3187,43 @@ html {
   gap: 0.5rem;
 }
 
+/* --- CARD DE PROFESIONAL CON FOTO A LA IZQUIERDA --- */
+
+.professional-card {
+    display: flex;
+    flex-direction: row;
+    padding: 0 !important;
+}
+
+.professional-photo {
+    width: 25%;              /* 1/4 del ancho */
+    min-width: 120px;        /* asegura tamaño visual */
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.professional-photo img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;     /* NO deformar */
+    border-radius: 5px;
+}
+
+.professional-info {
+    width: 75%;              /* 3/4 restantes */
+    padding: 20px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Para que el texto nunca se pegue mucho */
+.professional-info h5 {
+    margin-top: 5px;
+}
+
 
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
 
@@ -3511,5 +3548,6 @@ html {
 	.blog__details__tags a {
 		margin-bottom: 5px;
 	}
+
 
 }

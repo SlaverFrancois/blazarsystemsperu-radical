@@ -6,7 +6,8 @@
     "phone": "987654321",
     "location": "Mercado Reynoso",
     "portfolio": "wK9mV3ILnqk",
-    "featured": true
+    "featured": true,
+    "foto": "juan.jpg"
   },
   {
     "name": "María López",
