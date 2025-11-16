@@ -41,7 +41,8 @@
               <p>Encuentra el servicio que necesitas — de un vecino confiable cerca de ti</p>
             </div>
             <div class="categories-list-wrapper">
-              <div id="alphabetical-categories" class="alphabetical-row" role="navigation" aria-label="Categorías"> Seleccione el rubro:</div>
+              <p>Por favor seleccione un servicio:</p>
+              <div id="alphabetical-categories" class="alphabetical-row" role="navigation" aria-label="Categorías"></div>
             </div>
           </div>
         </div>
@@ -276,7 +277,7 @@ fetch('categories.json')
                 <div class="blog__item__text text-center">
                   <h5>${category ? `¿Eres ${category}? 📢` : '¿Quieres anunciarte? 📢'}</h5>
                   <p>Anúnciate aquí y llega a cientos de clientes locales.</p>
-                  <a href="https://forms.gle/TU_FORMULARIO_DE_GOOGLE" target="_blank" class="btn-advertise">Publica tu servicio</a>
+                  <a href="./listing-details.html" target="_blank" class="btn-advertise">Publica tu servicio</a>
                 </div>
               </div>
             `;

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AnuncieVecino.pe | Publica tu negocio sin pegar papeles</title>
+  <style>
+    :root {
+      --primary: #dc2626;
+      --secondary: #111827;
+      --light-bg: #fff5f5;
+      --accent: #f87171;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      background: #fff;
+      color: #111;
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary);
+      color: #fff;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .cta-btn {
+      background: #fff;
+      color: var(--primary);
+      border: none;
+      padding: 0.9rem 2rem;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .cta-btn:hover {
+      background: #ffe4e4;
+    }
+
+    section {
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+
+    .benefits {
+      background: var(--light-bg);
+    }
+
+    .benefits h2,
+    .plans h2 {
+      color: var(--primary);
+      margin-bottom: 2rem;
+    }
+
+    .benefits-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .benefit {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .benefit h3 {
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .plans-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .plan {
+      border: 2px solid var(--primary);
+      border-radius: 14px;
+      padding: 2rem 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .plan:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    .plan h3 {
+      color: var(--primary);
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .plan p {
+      font-weight: 500;
+      margin: 0.5rem 0;
+    }
+
+    .plan .price {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 1rem 0;
+    }
+
+    .plan button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .plan button:hover {
+      background: #b91c1c;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 640px;
+      height: 900px;
+      border: none;
+      margin-top: 2rem;
+    }
+
+    footer {
+      background: var(--secondary);
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+    }
+	
+	/*preguntas frecuentes*/
+	.faq-section {
+  background: #f9fafb;
+  padding: 80px 20px;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-section h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.faq-subtitle {
+  text-align: center;
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 40px;
+}
+
+.faq-item {
+  background: #fff;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: left;
+  padding: 18px 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #222;
+  transition: background 0.3s;
+}
+
+.faq-question:hover {
+  background: #f3f4f6;
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  color: #777;
+  transition: transform 0.3s;
+}
+
+.faq-item.active .faq-icon {
+  color: #e63946;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  color: #444;
+  line-height: 1.6;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+  padding: 15px 20px 25px;
+}
+
+.faq-answer ul {
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+.faq-answer li {
+  margin-bottom: 6px;
+}
+
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      .plan .price {
+        font-size: 1.5rem;
+      }
+    }
+	
+	/*contact-btn*/
+	
+	/* --- Sección de contacto o formulario --- */
+.contact-section {
+  background: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.contact-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.contact-subtitle {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.contact-btn {
+  display: inline-block;
+  background: #e63946;
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 36px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background: #d62828;
+  transform: translateY(-2px);
+}
+
+.form-embed {
+  margin-top: 50px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Has hecho de todo para que vean tus servicios, <br></h1>
+    <p>Por eso, ese esfuerzo no merece pasar desapercibido — Somos AnuncieVecino.pe, donde tu trabajo se hace visible.</p>
+    <button class="cta-btn" onclick="document.getElementById('planes').scrollIntoView({behavior:'smooth'})">Comienza hoy</button>
+  </header>
+
+  <section class="benefits">
+    <h2>¿Por qué anunciar en AnuncieVecino.pe?</h2>
+    <div class="benefits-grid">
+      <div class="benefit">
+        <h3>Visibilidad inmediata</h3>
+        <p>Tu anuncio se muestra a muchos clientes cerca de ti y podrías empezar a recibir solicitudes en cuestión de horas.</p>
+      </div>
+      <div class="benefit">
+        <h3>Los volantes tienen su lugar</h3>
+        <p>Ayudan, sí, pero muchos se pierden. Aquí tu anuncio permanece visible y llega a más personas.</p>
+      </div>
+      <div class="benefit">
+        <h3>Marketing más accesible</h3>
+        <p>Más alcance, menos gasto. Publica tu servicio y deja que la web trabaje por ti.</p>
+      </div>
+	  <!-->
+      <div class="benefit">
+        <h3>Presencia en la mente de los usuarios</h3>
+        <p>Si no te ven, no te recuerdan. Aquí tu servicio se mantiene visible y cercano a quienes te necesitan.</p>
+      </div>
+      <div class="benefit">
+        <h3>Crece con confianza</h3>
+        <p>Cuando te encuentran, confían. AnuncieVecino abre puertas y te ayuda a avanzar con más oportunidades.</p>
+      </div>
+	  <div class="benefit">
+        <h3>Soporte constante</h3>
+        <p>Absolvemos todas tus consultas acerca del uso de la herramienta tecnológica.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="plans" id="planes">
+    <h2>Planes simples para hacer crecer tu negocio</h2>
+    <div class="plans-grid">
+      <div class="plan">
+        <h3>Plan Vecino</h3>
+        <p>Duración: 1 mes</p>
+        <p class="price">S/ 6</p>
+        <p>✔ Publicación destacada</p>
+        <p>✔ Enlace a redes o WhatsApp</p>
+        <p>✔ Revisión gratuita del anuncio</p>
+        <button onclick="window.open('https://forms.gle/tuFormulario1mes','_blank')">Publicar ahora</button>
+      </div>
+      <div class="plan">
+        <h3>Plan Emprendedor</h3>
+        <p>Duración: 3 meses</p>
+        <p class="price">S/ 15</p>
+        <p>✔ Mayor exposición</p>
+        <p>✔ Asesoría básica en marketing</p>
+        <p>✔ Actualización gratuita</p>
+        <button onclick="window.open('https://forms.gle/tuFormulario3meses','_blank')">Comenzar</button>
+      </div>
+      <div class="plan">
+        <h3>Plan Profesional</h3>
+        <p>Duración: 6 meses</p>
+        <p class="price">S/ 30</p>
+        <p>✔ Publicación premium</p>
+        <p>✔ Promoción en redes locales</p>
+        <p>✔ Edición y revisión del anuncio</p>
+        <button onclick="window.open('https://forms.gle/tuFormulario6meses','_blank')">Elegir plan</button>
+      </div>
+      <div class="plan">
+        <h3>Plan Anual</h3>
+        <p>Duración: 12 meses</p>
+        <p class="price">S/ 50</p>
+        <p>✔ Visibilidad continua todo el año</p>
+        <p>✔ Soporte preferencial</p>
+        <p>✔ Acceso a campañas de temporada</p>
+        <button onclick="window.open('https://forms.gle/tuFormularioAnual','_blank')">Suscribirme</button>
+      </div>
+    </div>
+  </section>
+<section class="faq-section" id="faq">
+  <div class="faq-container">
+    <h2>Preguntas Frecuentes</h2>
+    <p class="faq-subtitle">Todo lo que necesitas saber antes de anunciar en <strong>AnuncieVecino.pe</strong></p>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        ¿Qué es AnuncieVecino.pe?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>AnuncieVecino.pe es una red local de anuncios digitales que conecta vecinos, negocios y emprendedores del Callao y Lima. 
+        Publica tus servicios o productos sin complicaciones y olvida los carteles en los postes: aquí todo es digital y rápido.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        ¿Cómo puedo anunciar mi negocio?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Solo completa nuestro formulario en línea con los datos de tu negocio y elige un plan (desde S/6 por mes). 
+        Una vez aprobado, tu anuncio estará visible en nuestra web para todos los usuarios del Callao.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        ¿Cuánto tarda la publicación?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Una vez envíes tus datos mediante el formulario, tu anuncio puede estar activo en menos de 24 horas, 
+        siempre que la información esté completa y clara.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        ¿Puedo modificar o actualizar mi anuncio?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Sí. Podrás solicitar actualizaciones o cambios en tu anuncio en cualquier momento mediante nuestro 
+        formulario de contacto. Queremos que tu negocio siempre esté actualizado.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        ¿Qué beneficios obtengo al anunciar aquí?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <ul>
+          <li>Tu anuncio visible 24/7 para miles de vecinos locales.</li>
+          <li>Enlace directo a tu WhatsApp o red social.</li>
+          <li>Mayor alcance sin depender de papel o impresiones.</li>
+          <li>Difusión digital, moderna y ecológica.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NUEVA SECCIÓN: "¿Tienes más preguntas?" -->
+<section class="contact-section" id="contact">
+  <div class="contact-container">
+    <h2>¿Tienes más preguntas?</h2>
+    <p class="contact-subtitle">
+      Envíanos tu consulta al siguiente formulario y nuestro equipo te responderá lo antes posible.
+    </p>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfQElwL3qqrL8eEKMWK_h-b9Gnw3shpZhJdSM3M-K046LUahw/viewform?usp=dialog" target="_blank" class="contact-btn" >
+      Ir al formulario
+    </a>
+
+    <!-- OPCIONAL: Puedes usar un iframe si prefieres mostrar el formulario embebido -->
+    <!--
+    <div class="form-embed">
+      <iframe src="https://forms.gle/tu-formulario-google" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">
+        Cargando formulario...
+      </iframe>
+    </div>
+    -->
+  </div>
+</section> 
+
+  <footer>
+    © 2025 AnuncieVecino.pe — Una iniciativa de Blazar Systems Perú.
+  </footer>
+<script>
+  // Acordeón FAQ con animación suave
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      item.classList.toggle('active');
+      const icon = btn.querySelector('.faq-icon');
+      icon.textContent = item.classList.contains('active') ? '−' : '+';
+    });
+  });
+</script>
+</body>
+</html>
