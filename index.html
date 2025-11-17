@@ -260,7 +260,7 @@ if (p.contact) {
   if (p.contact.whatsapp) {
     contactIcons.push(`
       <li>
-        <a href="https://wa.me/${p.contact.whatsapp}" target="_blank">
+        <a href="https://wa.me/${p.contact.whatsapp}" target="_blank" class="social-icon icon-whatsapp">
           <i class="fa fa-whatsapp"></i> WhatsApp
         </a>
       </li>
@@ -270,7 +270,7 @@ if (p.contact) {
   if (p.contact.facebook) {
     contactIcons.push(`
       <li>
-        <a href="${p.contact.facebook}" target="_blank">
+        <a href="${p.contact.facebook}" target="_blank" class="social-icon icon-facebook">
           <i class="fa fa-facebook"></i>
         </a>
       </li>
@@ -280,7 +280,7 @@ if (p.contact) {
   if (p.contact.instagram) {
     contactIcons.push(`
       <li>
-        <a href="${p.contact.instagram}" target="_blank">
+        <a href="${p.contact.instagram}" target="_blank" class="social-icon icon-instagram">
           <i class="fa fa-instagram"></i>
         </a>
       </li>
@@ -293,7 +293,7 @@ if (p.contact) {
     contactIcons.push(`
       <li>
         <a href="https://www.youtube.com/embed/${videoID}?autoplay=1"
-           target="_blank">
+           target="_blank" class="social-icon icon-youtube">
            <i class="fa fa-youtube-play"></i> Ver trabajos previos
         </a>
       </li>
@@ -314,7 +314,6 @@ if (p.contact) {
                   <!-- TEXTO: 3/4 del ancho -->
                   <div class="professional-info">
                    <div class="blog__item__text">
-                    <div class =" footer__social">
                     <ul class="blog__item__tags">
                       <li><i class="fa fa-tags"></i> ${p.category}</li>
                     </ul>
@@ -325,7 +324,6 @@ if (p.contact) {
                       <li><i class="fa fa-star"></i><small>${p.especiality || ''}</small></li>
                       <li><i class="fa icon_pin_alt"></i> ${p.location || ''}</li>
                       ${contactIcons.join("")}
-                  </div>
                   </div>
                   </div>
 

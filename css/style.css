@@ -3224,6 +3224,52 @@ html {
     margin-top: 5px;
 }
 
+.social-icon {
+    color: #25D366;   /* o el color que quieras */
+    transition: color 0.2s ease;
+}
+
+.social-icon:visited,
+.social-icon:active,
+.social-icon:focus,
+.social-icon:hover {
+    color: #25D366 !important;
+}
+
+
+.icon-whatsapp { color: #25D366; }
+.icon-facebook { color: #1877F2; }
+.icon-instagram { color: #C13584; }
+
+.icon-whatsapp:visited,
+.icon-whatsapp:active,
+.icon-whatsapp:focus,
+.icon-whatsapp:hover {
+    color: #25D366 !important;
+}
+
+.icon-facebook:visited,
+.icon-facebook:active,
+.icon-facebook:focus,
+.icon-facebook:hover {
+    color: #1877F2 !important;
+}
+
+.icon-instagram:visited,
+.icon-instagram:active,
+.icon-instagram:focus,
+.icon-instagram:hover {
+    color: #C13584 !important;
+}
+
+/* YouTube */
+.icon-youtube { color: #FF0000; }
+.icon-youtube:visited,
+.icon-youtube:active,
+.icon-youtube:focus,
+.icon-youtube:hover {
+    color: #FF0000 !important;
+}
 
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
 
