@@ -314,16 +314,18 @@ if (p.contact) {
                   <!-- TEXTO: 3/4 del ancho -->
                   <div class="professional-info">
                    <div class="blog__item__text">
+                    <div class =" footer__social">
                     <ul class="blog__item__tags">
                       <li><i class="fa fa-tags"></i> ${p.category}</li>
                     </ul>
 
                     <li><i class="fa fa-user"></i><h5>${p.name || ''}</h5></li>
 
-                    <ul class="blog__item__widget footer__social">
+                    <ul class="blog__item__widget">
                       <li><i class="fa fa-star"></i><small>${p.especiality || ''}</small></li>
                       <li><i class="fa icon_pin_alt"></i> ${p.location || ''}</li>
                       ${contactIcons.join("")}
+                  </div>
                   </div>
                   </div>
 
