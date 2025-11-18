@@ -300,6 +300,16 @@ if (p.contact) {
     `);
   }
 
+    if (p.contact.web) {
+    contactIcons.push(`
+      <li>
+        <a href="${p.contact.web}" target="_blank" class="social-icon icon-web" rel="noopener noreferrer">
+          <i class="fa fa-globe"></i>${p.web}
+        </a>
+      </li>
+    `);
+  }
+
 }
 
 //generacion de div profesional

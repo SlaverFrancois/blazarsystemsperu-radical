@@ -3271,6 +3271,15 @@ html {
     color: #FF0000 !important;
 }
 
+/* Web / Portfolio / Tienda */
+.icon-web { color: #0A66C2; }
+.icon-web:visited,
+.icon-web:active,
+.icon-web:focus,
+.icon-web:hover {
+    color: #0A66C2 !important;
+}
+
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
 
 @media only screen and (min-width: 1400px) and (max-width: 1920px) {
