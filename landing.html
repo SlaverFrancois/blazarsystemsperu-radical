@@ -303,6 +303,8 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
+/*diagrama*/
+
 /* ======== SECCIÓN COMPLETA ======== */
 .flow-section {
   background: #f4f8ff;
@@ -324,7 +326,7 @@
 
 /* ======== CONTENEDOR ======== */
 .flow-container {
-  position: relative; /* Necesario para flechas */
+  position: relative; /* necesario para flechas */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -366,38 +368,39 @@
   opacity: 0.7;
 }
 
-/* ======== FLECHAS ANIMADAS ======== */
+/* ======== FLECHAS ======== */
 .arrow {
   position: absolute;
   width: 160px;
   stroke: #003b73;
-  stroke-width: 2.5;
+  stroke-width: 3;
   fill: none;
-  animation: moveArrow 2.5s infinite ease-in-out;
+  animation: moveArrow 2s infinite ease-in-out;
+  opacity: 0.9;
 }
 
 /* Flecha izquierda → centro */
 .arrow-left {
-  left: 18%;
+  left: 22%;
   top: 50%;
   transform: translateY(-50%);
 }
 
 /* Flecha centro → derecha */
 .arrow-right {
-  right: 18%;
+  right: 22%;
   top: 50%;
   transform: translateY(-50%);
 }
 
-/* Animación de flechas */
+/* Animación del movimiento */
 @keyframes moveArrow {
-  0%   { opacity: 0; transform: translateX(-10px); }
-  50%  { opacity: 1; transform: translateX(0); }
-  100% { opacity: 0; transform: translateX(10px); }
+  0%   { transform: translate(-10px, -50%); opacity: 0.2; }
+  50%  { transform: translate(0, -50%); opacity: 1; }
+  100% { transform: translate(10px, -50%); opacity: 0.2; }
 }
 
-/* ======== ANIMACIONES DE ICONOS ======== */
+/* ======== ANIMACIONES ICONOS ======== */
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
@@ -430,7 +433,7 @@
     font-size: 14px;
   }
 
-  /* Ocultar flechas en pantallas pequeñas */
+  /* OCULTAR FLECHAS EN MÓVIL */
   .arrow {
     display: none;
   }
@@ -441,6 +444,8 @@
     flex-direction: column;
   }
 }
+
+
   </style>
 </head>
 <body>
