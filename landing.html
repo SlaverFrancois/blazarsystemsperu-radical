@@ -303,11 +303,9 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/*diagrama*/
-
 /* ======== SECCIÓN COMPLETA ======== */
 .flow-section {
-  background: #f4f8ff; /* Fondo suave */
+  background: #f4f8ff;
   padding: 60px 20px;
   text-align: center;
 }
@@ -326,12 +324,13 @@
 
 /* ======== CONTENEDOR ======== */
 .flow-container {
+  position: relative; /* Necesario para flechas */
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 70px;
   padding: 20px;
-  flex-wrap: wrap; /* para responsive */
+  flex-wrap: wrap;
 }
 
 /* ======== COLUMNAS ======== */
@@ -361,14 +360,44 @@
   font-weight: bold;
 }
 
-/* ======== LABELS ======== */
 .label {
   margin-top: 10px;
   font-size: 14px;
   opacity: 0.7;
 }
 
-/* ======== ANIMACIONES ======== */
+/* ======== FLECHAS ANIMADAS ======== */
+.arrow {
+  position: absolute;
+  width: 160px;
+  stroke: #003b73;
+  stroke-width: 2.5;
+  fill: none;
+  animation: moveArrow 2.5s infinite ease-in-out;
+}
+
+/* Flecha izquierda → centro */
+.arrow-left {
+  left: 18%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Flecha centro → derecha */
+.arrow-right {
+  right: 18%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Animación de flechas */
+@keyframes moveArrow {
+  0%   { opacity: 0; transform: translateX(-10px); }
+  50%  { opacity: 1; transform: translateX(0); }
+  100% { opacity: 0; transform: translateX(10px); }
+}
+
+/* ======== ANIMACIONES DE ICONOS ======== */
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
@@ -384,7 +413,7 @@
   .flow-container {
     gap: 40px;
   }
-  
+
   .platform-icon {
     font-size: 55px;
   }
@@ -400,6 +429,11 @@
   .flow-subtitle {
     font-size: 14px;
   }
+
+  /* Ocultar flechas en pantallas pequeñas */
+  .arrow {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {
@@ -407,8 +441,6 @@
     flex-direction: column;
   }
 }
-
-
   </style>
 </head>
 <body>
@@ -419,35 +451,43 @@
     <button class="cta-btn" onclick="document.getElementById('planes').scrollIntoView({behavior:'smooth'})">Comienza hoy</button>
   </header>
 
-<section class="flow-section">
-  <h2 class="flow-title">¿Cómo funciona AnuncieVecino.pe?</h2>
-  <p class="flow-subtitle">Conectamos anunciantes independientes con clientes que necesitan un servicio urgente.</p>
+<section class="benefits">
+    <h2>¿Cómo funciona AnuncieVecino.pe?</h2>
+    <div class="diagram-container">
 
-  <div class="flow-container">
-    
-    <!-- COLUMNA IZQUIERDA -->
-    <div class="column providers">
-      <div class="icon person">👷‍♂️</div>
-      <div class="icon person">🧹</div>
-      <div class="icon person">🔧</div>
-      <div class="label">Anunciantes</div>
+        <div class="side side-left">
+            <h3>Clientes</h3>
+            <div class="icon-group">
+                <div class="person-icon"></div>
+                <div class="person-icon"></div>
+                <div class="person-icon"></div>
+            </div>
+        </div>
+
+        <div class="center">
+            <div class="platform-icon">AnuncieVecino.pe</div>
+        </div>
+
+        <div class="side side-right">
+            <h3>Anunciantes / Emprendedores</h3>
+            <div class="icon-group">
+                <div class="person-icon provider"></div>
+                <div class="person-icon provider"></div>
+                <div class="person-icon provider"></div>
+            </div>
+        </div>
+
+        <!-- Flechas animadas -->
+        <svg class="arrow arrow-left" viewBox="0 0 100 20">
+            <path d="M0 10 L90 10 L80 4 M90 10 L80 16" />
+        </svg>
+
+        <svg class="arrow arrow-right" viewBox="0 0 100 20">
+            <path d="M100 10 L10 10 L20 4 M10 10 L20 16" />
+        </svg>
     </div>
-
-    <!-- CENTRO -->
-    <div class="column center">
-      <div class="platform-icon">🏠</div>
-      <div class="platform-name">AnuncieVecino.pe</div>
-    </div>
-
-    <!-- COLUMNA DERECHA -->
-    <div class="column clients">
-      <div class="icon client">🙋‍♂️</div>
-      <div class="icon client">🙋‍♀️</div>
-      <div class="label">Clientes</div>
-    </div>
-
-  </div>
 </section>
+
 
 
   <section class="benefits">
