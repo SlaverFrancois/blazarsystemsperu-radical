@@ -303,6 +303,112 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
+/*diagrama*/
+
+/* ======== SECCIÓN COMPLETA ======== */
+.flow-section {
+  background: #f4f8ff; /* Fondo suave */
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.flow-title {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #003366;
+}
+
+.flow-subtitle {
+  font-size: 16px;
+  margin-bottom: 40px;
+  opacity: 0.8;
+}
+
+/* ======== CONTENEDOR ======== */
+.flow-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  padding: 20px;
+  flex-wrap: wrap; /* para responsive */
+}
+
+/* ======== COLUMNAS ======== */
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+}
+
+/* ======== ICONOS ======== */
+.icon {
+  font-size: 45px;
+  margin: 12px;
+  opacity: 0.9;
+  animation: bounce 2.5s infinite ease-in-out;
+}
+
+.platform-icon {
+  font-size: 70px;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.platform-name {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* ======== LABELS ======== */
+.label {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* ======== ANIMACIONES ======== */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 768px) {
+  .flow-container {
+    gap: 40px;
+  }
+  
+  .platform-icon {
+    font-size: 55px;
+  }
+
+  .icon {
+    font-size: 35px;
+  }
+
+  .flow-title {
+    font-size: 22px;
+  }
+
+  .flow-subtitle {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flow-container {
+    flex-direction: column;
+  }
+}
+
+
   </style>
 </head>
 <body>
@@ -313,33 +419,63 @@
     <button class="cta-btn" onclick="document.getElementById('planes').scrollIntoView({behavior:'smooth'})">Comienza hoy</button>
   </header>
 
+<section class="flow-section">
+  <h2 class="flow-title">¿Cómo funciona AnuncieVecino.pe?</h2>
+  <p class="flow-subtitle">Conectamos anunciantes independientes con clientes que necesitan un servicio urgente.</p>
+
+  <div class="flow-container">
+    
+    <!-- COLUMNA IZQUIERDA -->
+    <div class="column providers">
+      <div class="icon person">👷‍♂️</div>
+      <div class="icon person">🧹</div>
+      <div class="icon person">🔧</div>
+      <div class="label">Anunciantes</div>
+    </div>
+
+    <!-- CENTRO -->
+    <div class="column center">
+      <div class="platform-icon">🏠</div>
+      <div class="platform-name">AnuncieVecino.pe</div>
+    </div>
+
+    <!-- COLUMNA DERECHA -->
+    <div class="column clients">
+      <div class="icon client">🙋‍♂️</div>
+      <div class="icon client">🙋‍♀️</div>
+      <div class="label">Clientes</div>
+    </div>
+
+  </div>
+</section>
+
+
   <section class="benefits">
     <h2>¿Por qué anunciar en AnuncieVecino.pe?</h2>
     <div class="benefits-grid">
       <div class="benefit">
         <h3>Visibilidad inmediata</h3>
-        <p>Tu anuncio se muestra a muchos clientes cerca de ti y podrías empezar a recibir solicitudes en cuestión de horas.</p>
+        <p>Tu anuncio aparece frente a clientes reales cerca de ti, permitiéndote recibir solicitudes en cuestión de horas.</p>
       </div>
       <div class="benefit">
-        <h3>Los volantes tienen su lugar</h3>
-        <p>Ayudan, sí, pero muchos se pierden. Aquí tu anuncio permanece visible y llega a más personas.</p>
+        <h3>Tu servicio siempre activo y accesible</h3>
+        <p>A diferencia de volantes o recomendaciones que se pierden, aquí tu perfil permanece visible y disponible para quienes necesitan contratar ya.</p>
       </div>
       <div class="benefit">
-        <h3>Marketing más accesible</h3>
-        <p>Más alcance, menos gasto. Publica tu servicio y deja que la web trabaje por ti.</p>
-      </div>
-	  <!-->
+        <h3>Marketing accesible y eficaz</h3>
+        <p>Obtén más alcance sin gastar más. Publica tu servicio y deja que la plataforma te conecte con clientes reales.</p>
+      </div>	  
       <div class="benefit">
-        <h3>Presencia en la mente de los usuarios</h3>
-        <p>Si no te ven, no te recuerdan. Aquí tu servicio se mantiene visible y cercano a quienes te necesitan.</p>
+        <h3>Reputación y crecimiento profesional</h3>
+        <p>Cada visita, contacto y trabajo realizado impulsa tu imagen profesional y te posiciona como la primera opción en tu rubro.</p>
       </div>
       <div class="benefit">
-        <h3>Crece con confianza</h3>
-        <p>Cuando te encuentran, confían. AnuncieVecino abre puertas y te ayuda a avanzar con más oportunidades.</p>
+        <h3>Más experiencia y oportunidades continuas</h3>
+        <p>Muestra tu trabajo, fortalece tu presencia como profesional independiente y recibe más oportunidades que te ayudarán a crecer y desarrollarte.</p>
       </div>
 	  <div class="benefit">
-        <h3>Soporte constante</h3>
-        <p>Absolvemos todas tus consultas acerca del uso de la herramienta tecnológica.</p>
+        <h3>Acompañamiento para usar la plataforma al máximo</h3>
+        <p>Te guiamos en la creación de un buen perfil, resolvemos tus dudas y te ayudamos a aprovechar todas las funciones de AnuncieVecino.pe — exclusivamente dentro de la web.</p>
       </div>
     </div>
   </section>
@@ -396,8 +532,7 @@
         <span class="faq-icon">+</span>
       </button>
       <div class="faq-answer">
-        <p>AnuncieVecino.pe es una red local de anuncios digitales que conecta vecinos, negocios y emprendedores del Callao y Lima. 
-        Publica tus servicios o productos sin complicaciones y olvida los carteles en los postes: aquí todo es digital y rápido.</p>
+        <p>AnuncieVecino.pe es una plataforma tecnológica que conecta, de forma inmediata, a negocios y emprendedores con clientes que buscan un servicio urgente. Es un espacio digital diseñado para brindar visibilidad real, marketing accesible y una vitrina moderna para emprendedores profesionales independientes que necesitan ser encontrados rápido. Aquí, todo es simple, directo y 100% digital: publica, conecta y consigue clientes en minutos.</p>
       </div>
     </div>
 
@@ -448,6 +583,18 @@
         </ul>
       </div>
     </div>
+
+     <div class="faq-item">
+      <button class="faq-question">
+        ¿AnuncieVecino.pe ofrece garantía sobre los servicios contratados?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>No. AnuncieVecino.pe es una plataforma que facilita el encuentro entre clientes y profesionales independientes, pero no participa en la ejecución del servicio.
+Si ocurre algún inconveniente, podemos ayudarte a restablecer el contacto con el anunciante, pero la solución y los acuerdos finales dependen directamente entre cliente y profesional. Cada anunciante cuenta con información visible —como su experiencia, descripción y enlaces externos— para que puedas tomar decisiones con mayor seguridad antes de contratar.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -487,6 +634,11 @@
       icon.textContent = item.classList.contains('active') ? '−' : '+';
     });
   });
+
+  document.querySelectorAll('.icon').forEach((el, index) => {
+  el.style.setProperty('--i', index);
+});
+
 </script>
 </body>
 </html>
