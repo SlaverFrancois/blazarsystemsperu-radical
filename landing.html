@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <title>AnuncieVecino.pe | Publica tu negocio sin pegar papeles</title>
   <style>
     :root {
@@ -304,10 +306,9 @@
 }
 
 /*diagrama*/
-
 /* ======== SECCIÓN COMPLETA ======== */
 .flow-section {
-  background: #f4f8ff;
+  background: #fff6f6;
   padding: 60px 20px;
   text-align: center;
 }
@@ -315,7 +316,8 @@
 .flow-title {
   font-size: 28px;
   margin-bottom: 10px;
-  color: #003366;
+  color: #dc2626;
+  font-weight: 700;
 }
 
 .flow-subtitle {
@@ -326,12 +328,10 @@
 
 /* ======== CONTENEDOR ======== */
 .flow-container {
-  position: relative; /* necesario para flechas */
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 70px;
-  padding: 20px;
+  gap: 40px;
   flex-wrap: wrap;
 }
 
@@ -340,13 +340,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 120px;
+  min-width: 140px;
 }
 
 /* ======== ICONOS ======== */
 .icon {
   font-size: 45px;
-  margin: 12px;
   opacity: 0.9;
   animation: bounce 2.5s infinite ease-in-out;
 }
@@ -358,10 +357,11 @@
 
 .platform-name {
   margin-top: 10px;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
 }
 
+/* ======== LABELS ======== */
 .label {
   margin-top: 10px;
   font-size: 14px;
@@ -370,37 +370,12 @@
 
 /* ======== FLECHAS ======== */
 .arrow {
-  position: absolute;
-  width: 160px;
-  stroke: #003b73;
-  stroke-width: 3;
-  fill: none;
-  animation: moveArrow 2s infinite ease-in-out;
-  opacity: 0.9;
+  font-size: 40px;
+  color: #6b7280;
+  animation: slideArrow 2s infinite ease-in-out;
 }
 
-/* Flecha izquierda → centro */
-.arrow-left {
-  left: 22%;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-/* Flecha centro → derecha */
-.arrow-right {
-  right: 22%;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-/* Animación del movimiento */
-@keyframes moveArrow {
-  0%   { transform: translate(-10px, -50%); opacity: 0.2; }
-  50%  { transform: translate(0, -50%); opacity: 1; }
-  100% { transform: translate(10px, -50%); opacity: 0.2; }
-}
-
-/* ======== ANIMACIONES ICONOS ======== */
+/* ======== ANIMACIONES ======== */
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
@@ -411,10 +386,16 @@
   50% { transform: scale(1.15); }
 }
 
+@keyframes slideArrow {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
+}
+
 /* ======== RESPONSIVE ======== */
-@media (max-width: 768px) {
-  .flow-container {
-    gap: 40px;
+@media (max-width: 700px) {
+  .arrow {
+    font-size: 30px;
   }
 
   .platform-icon {
@@ -424,26 +405,19 @@
   .icon {
     font-size: 35px;
   }
-
-  .flow-title {
-    font-size: 22px;
-  }
-
-  .flow-subtitle {
-    font-size: 14px;
-  }
-
-  /* OCULTAR FLECHAS EN MÓVIL */
-  .arrow {
-    display: none;
-  }
 }
 
 @media (max-width: 480px) {
   .flow-container {
     flex-direction: column;
   }
+
+  .arrow {
+    transform: rotate(90deg);
+    animation: none;
+  }
 }
+
 
 
   </style>
@@ -456,42 +430,40 @@
     <button class="cta-btn" onclick="document.getElementById('planes').scrollIntoView({behavior:'smooth'})">Comienza hoy</button>
   </header>
 
-<section class="benefits">
-    <h2>¿Cómo funciona AnuncieVecino.pe?</h2>
-    <div class="diagram-container">
+<!-- DIAGRAMA DE FLUJO -->
+<section class="flow-section">
+  <h2 class="flow-title">¿Cómo funciona AnuncieVecino.pe?</h2>
+  <p class="flow-subtitle">Un flujo simple: los clientes llegan, tú recibes trabajos.</p>
 
-        <div class="side side-left">
-            <h3>Clientes</h3>
-            <div class="icon-group">
-                <div class="person-icon"></div>
-                <div class="person-icon"></div>
-                <div class="person-icon"></div>
-            </div>
-        </div>
+  <div class="flow-container">
 
-        <div class="center">
-            <div class="platform-icon">AnuncieVecino.pe</div>
-        </div>
-
-        <div class="side side-right">
-            <h3>Anunciantes / Emprendedores</h3>
-            <div class="icon-group">
-                <div class="person-icon provider"></div>
-                <div class="person-icon provider"></div>
-                <div class="person-icon provider"></div>
-            </div>
-        </div>
-
-        <!-- Flechas animadas -->
-        <svg class="arrow arrow-left" viewBox="0 0 100 20">
-            <path d="M0 10 L90 10 L80 4 M90 10 L80 16" />
-        </svg>
-
-        <svg class="arrow arrow-right" viewBox="0 0 100 20">
-            <path d="M100 10 L10 10 L20 4 M10 10 L20 16" />
-        </svg>
+    <!-- CLIENTES -->
+    <div class="column">
+      <i class="fa-solid fa-users icon"></i>
+      <span class="label">Clientes</span>
     </div>
+
+    <!-- Flecha -->
+    <i class="fa-solid fa-arrow-right arrow"></i>
+
+    <!-- PLATAFORMA -->
+    <div class="column center">
+      <i class="fa-solid fa-globe platform-icon"></i>
+      <div class="platform-name">AnuncieVecino.pe</div>
+    </div>
+
+    <!-- Flecha -->
+    <i class="fa-solid fa-arrow-right arrow"></i>
+
+    <!-- ANUNCIANTES -->
+    <div class="column">
+      <i class="fa-solid fa-briefcase icon"></i>
+      <span class="label">Anunciantes / Emprendedores</span>
+    </div>
+
+  </div>
 </section>
+
 
 
 
