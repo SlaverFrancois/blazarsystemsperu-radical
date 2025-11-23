@@ -420,112 +420,118 @@
   /* ================================
    SECCIÓN REQUISITOS
 ================================ */
-/* ----- RESET ----- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ================================
+   SECCIÓN REQUISITOS (Optimizado)
+================================ */
+
+.requirements-section {
+  padding: 60px 20px;
+  background: var(--light-bg); /* ya definida */
 }
 
-/* ----- SECTION CONTENEDOR ----- */
-.requisitos-section {
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-}
-
-/* ----- TITULO Y DESCRIPCIÓN ----- */
-.requisitos-title {
+/* Títulos */
+.req-title {
+  color: var(--primary);
   font-size: 2rem;
-  font-weight: 800;
   text-align: center;
   margin-bottom: 10px;
-}
-
-.requisitos-desc {
-  text-align: center;
-  color: #444;
-  max-width: 700px;
-  margin: 0 auto 25px auto;
-  font-size: 1rem;
-}
-
-/* ----- LISTA DE REQUISITOS ----- */
-.requisitos-list {
-  background: #fafafa;
-  padding: 20px;
-  border-radius: 12px;
-  border: 1px solid #ddd;
-  margin-bottom: 30px;
-}
-
-.requisitos-list ul {
-  list-style: none;
-}
-
-.requisitos-list li {
-  padding: 10px 0;
-  font-size: 0.95rem;
-  border-bottom: 1px solid #eee;
-}
-
-/* ----- GRID DE CARDS ----- */
-.cards-grid {
-  display: grid;
-  gap: 20px;
-}
-
-/* Móvil → 1 columna */
-.cards-grid {
-  grid-template-columns: 1fr;
-}
-
-/* Tablets → 2 columnas */
-@media (min-width: 600px) {
-  .cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Laptops y PCs → 3 columnas */
-@media (min-width: 900px) {
-  .cards-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* ----- CARD ----- */
-.card {
-  background: white;
-  border-radius: 14px;
-  padding: 20px;
-  border: 1px solid #ddd;
-  transition: 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-3px);
-  border-color: #000;
-}
-
-.card h3 {
-  margin-bottom: 12px;
-  font-size: 1.2rem;
   font-weight: 700;
 }
 
-.card .tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+.req-subtitle {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color: #444;
+  line-height: 1.7;
+  font-size: 1.05rem;
 }
 
-.tag {
-  background: #f1f1f1;
-  padding: 6px 10px;
-  border-radius: 8px;
-  font-size: 0.8rem;
+/* Caja de requisitos */
+.req-box {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.req-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.req-box h3 {
+  margin-bottom: 15px;
+  color: var(--secondary);
+}
+
+.req-box ul {
+  color: #444;
+  line-height: 1.8;
+  padding-left: 20px;
+}
+
+/* Cards título */
+.cards-title {
+  color: var(--primary);
+  font-size: 1.8rem;
+  text-align: center;
+  margin: 50px 0 25px;
+  font-weight: 700;
+}
+
+/* Cards */
+.cards-grid {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.10);
+}
+
+.card h3 {
+  color: var(--secondary);
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.card p {
+  color: #555;
+  font-size: 0.97rem;
+  line-height: 1.65;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .req-title {
+    font-size: 1.7rem;
+  }
+  .cards-title {
+    font-size: 1.55rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .req-box,
+  .card {
+    padding: 20px;
+  }
 }
 
 
@@ -600,61 +606,58 @@
   </section>
 
   <section class="requirements-section">
+
   <h2 class="req-title">Requisitos para Anunciar y Llegar a Más Clientes</h2>
+
   <p class="req-subtitle">
-    Registrarte es sencillo: solo necesitamos información básica, verificación mínima y evidencia de tu trabajo.
-    Nuestro objetivo es que tu anuncio sea confiable, profesional y atractivo para miles de clientes reales.
+    Registrarte es sencillo: solo necesitamos información básica, una verificación mínima y evidencia real de tu trabajo. 
+    Queremos que tu anuncio sea confiable, profesional y atractivo para miles de clientes de tu zona.
   </p>
 
-  <!-- Requisitos -->
+  <!-- Bloque de Requisitos -->
   <div class="req-box">
     <h3>Lo que necesitas para empezar</h3>
+
     <ul>
       <li><strong>Datos básicos:</strong> nombre, apellidos, celular, DNI peruano, ciudad y descripción del servicio.</li>
-      <li><strong>Fotos de evidencia profesional</strong> que garanticen calidad, experiencia y seguridad.</li>
-      <li><strong>Herramientas de trabajo</strong> acordes a tu servicio.</li>
-      <li><strong>Foto de DNI vigente</strong> para verificación interna.</li>
-      <li><strong>Dirección</strong> de referencia (no se publica).</li>
-      <li><strong>Cuenta bancaria a tu nombre</strong> (validación de identidad).</li>
-      <li><strong>Redes sociales y portafolio</strong> (imágenes, videos o referencias verificables).</li>
+      <li><strong>Evidencia profesional:</strong> fotos o videos de tus trabajos que demuestren experiencia.</li>
+      <li><strong>Herramientas de trabajo</strong> según el tipo de servicio ofrecido.</li>
+      <li><strong>Foto de DNI vigente</strong> para verificación interna (no se publica).</li>
+      <li><strong>Dirección</strong> de referencia (no visible para clientes).</li>
+      <li><strong>Cuenta bancaria a tu nombre</strong> para validación de identidad.</li>
+      <li><strong>Redes sociales o portafolio:</strong> Facebook, Instagram, videos, referencias o trabajos previos.</li>
     </ul>
   </div>
 
-  <!-- ¿Qué anunciar? -->
+  <!-- Qué se puede anunciar -->
   <h2 class="cards-title">¿Qué puedes anunciar en AnuncieVecino.pe?</h2>
 
   <div class="cards-grid">
 
     <div class="card">
       <h3>Proveedores / Emprendedores</h3>
-      <p>
-        Gas · Juguetes · Comida · Frutos secos · Plantas · Abarrotes · Artesanías · Ropa · Accesorios y más.
-      </p>
+      <p>Gas · Juguetes · Comida · Abarrotes · Ropa · Accesorios · Frutos secos · Plantas · Artesanías y más.</p>
     </div>
 
     <div class="card">
       <h3>Servicios para el Hogar</h3>
-      <p>
-        Electricistas · Gasfiteros · Albañiles · Jardineros · Técnicos · Pintores · Limpieza · Mantenimiento general.
-      </p>
+      <p>Electricistas · Gasfiteros · Albañiles · Jardineros · Técnicos · Pintores · Limpieza · Mantenimiento general.</p>
     </div>
 
     <div class="card">
       <h3>Profesionales Independientes</h3>
-      <p>
-        Terapistas · Inyectólogos · Diseñadores · Psicólogos · Cosmetólogos · Abogados · Notarios · Pasteleros y más.
-      </p>
+      <p>Diseñadores · Psicólogos · Terapistas · Cosmetólogos · Abogados · Notarios · Pasteleros y más.</p>
     </div>
 
     <div class="card">
-      <h3>Otros Servicios o Especialidades</h3>
-      <p>
-        Cualquier actividad independiente, oficio o venta local que desees promover en tu zona.
-      </p>
+      <h3>Otros Servicios y Especialidades</h3>
+      <p>Cualquier actividad independiente, oficio o venta local que quieras promover en tu zona.</p>
     </div>
 
   </div>
+
 </section>
+
 
 
   <section class="plans" id="planes">
