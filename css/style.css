@@ -3152,9 +3152,10 @@ html {
   color: #2b3a6b;
   border: none;
   border-radius: 18px;
-  padding: 0.5rem 1rem;
-  font-size: 0.95rem;
+  padding: 0.35rem 0.68rem;
+  font-size: 0.75rem;
   font-weight: bold;
+  line-height: 1.35;
   cursor: pointer;
   transition: background-color 0.25s, transform 0.1s;
   white-space: nowrap;
@@ -3280,6 +3281,11 @@ html {
     color: #0A66C2 !important;
 }
 
+hr {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 0;
+}
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
 
 @media only screen and (min-width: 1400px) and (max-width: 1920px) {

@@ -31,18 +31,54 @@
     <div id="preloder">
         <div class="loader"></div>
     </div>
+
+       <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__logo">
+                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9">
+                    <div class="header__nav">
+                        <nav class="header__menu mobile-menu">
+                            <ul>
+                                <li class="active"><a href="./index.html">Home</a></li>
+                                <li><a href="./listing.html">Listing</a></li>
+                                <li><a href="#">Categories</a></li>
+                                <li><a href="#">Pages</a>
+                                    <ul class="dropdown">
+                                        <li><a href="./about.html">About</a></li>
+                                        <li><a href="./listing-details.html">Listing Details</a></li>
+                                        <li><a href="./blog-details.html">Blog Details</a></li>
+                                        <li><a href="./contact.html">Contact</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="./blog.html">Blog</a></li>
+                                <li><a href="#">Shop</a></li>
+                            </ul>
+                        </nav> 
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+
    <!-- Categories Section Begin -->
     <section class="categories spad" id="categories-section">
       <div class="container">
         <div class="row" id="categories-container">
           <div class="col-lg-12">
             <div class="section-title">
-              <h2>Gran Red Local de Anunciantes</h2>
+              <h3>No recorras las calles buscando servicios, todos están aquí</h3>
               <p>Encuentra el servicio que necesitas — de un vecino confiable cerca de ti</p>
             </div>
             <div class="categories-list-wrapper">
-              <p>Por favor seleccione un servicio:</p>
-              <div id="alphabetical-categories" class="alphabetical-row" role="navigation" aria-label="Categorías"></div>
+              <p class="section-title">Por favor elija un servicio:</p>
+              <div id="alphabetical-categories"   role="navigation" aria-label="Categorías"></div>
             </div>
           </div>
         </div>
@@ -261,7 +297,7 @@ if (p.contact) {
     contactIcons.push(`
       <li>
         <a href="https://wa.me/${p.contact.whatsapp}" target="_blank" class="social-icon icon-whatsapp">
-          <i class="fa fa-whatsapp"></i> WhatsApp
+          <i class="fa fa-whatsapp"></i>
         </a>
       </li>
     `);
@@ -294,7 +330,7 @@ if (p.contact) {
       <li>
         <a href="https://www.youtube.com/embed/${videoID}?autoplay=1"
            target="_blank" class="social-icon icon-youtube">
-           <i class="fa fa-youtube-play"></i> Ver trabajos previos
+           <i class="fa fa-youtube-play"></i> Presentación
         </a>
       </li>
     `);
@@ -304,7 +340,7 @@ if (p.contact) {
     contactIcons.push(`
       <li>
         <a href="${p.contact.web}" target="_blank" class="social-icon icon-web" rel="noopener noreferrer">
-          <i class="fa fa-globe"></i>${p.contact.web}
+          <i class="fa fa-globe"></i> Web
         </a>
       </li>
     `);
@@ -329,11 +365,15 @@ if (p.contact) {
                     </ul>
 
                     <h5>${p.name || ''}</h5>
-
+                    <p class="header__nav">${p.location || ''}</p>
+                    <hr>
                     <ul class="blog__item__widget">
-                      <li><i class="fa fa-star"></i><small>${p.especiality || ''}</small></li>
-                      <li><i class="fa icon_pin_alt"></i> ${p.location || ''}</li>
+                      <li><i class="fa fa-star"></i><small> ${p.especiality || ''}</small></li>
+                    </ul> 
+                    <hr>
+                    <div id="alphabetical-categories">
                       ${contactIcons.join("")}
+                    </div>
                   </div>
                   </div>
 
