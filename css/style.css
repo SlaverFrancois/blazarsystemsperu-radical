@@ -119,9 +119,9 @@ ol {
 	text-align: center;
 }
 
-.section-title h2 {
+.section-title h3 {
 	font-size: 40px;
-	font-weight: 700;
+	font-weight: 600;
 	color: #323232;
 	margin-bottom: 10px;
 }
