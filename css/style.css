@@ -3111,23 +3111,7 @@ html {
   padding: 0.5rem 0;
 }
 
-/* Fila de categorías alfabéticas */
-.alphabet-row {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-  padding: 0.5rem;
-}
-
-/* Scrollbar horizontal */
-.alphabet-row::-webkit-scrollbar {
-  height: 6px;
-}
-.alphabet-row::-webkit-scrollbar-thumb {
-  background: #007bff;
-  border-radius: 4px;
-}
-
+ 
 /* Botón de categoría (chips antiguos) */
 .category-btn {
   flex: 0 0 auto;
@@ -3232,17 +3216,16 @@ html {
 
 .icons-redes {
     display: flex;
-    flex-wrap: wrap;
-    gap: 12px;          /* separa los iconos visualmente */
+    gap: 13px;          /* separa los iconos visualmente */
     margin-top: 10px;
-    font-size: 1.5rem;  /* iconos visibles */
-    align-items: center;
-    justify-content: center;
+    font-size: 1.1rem;  /* iconos visibles */ 
     width: 44px;        /* touch-friendly */
     height: 44px;       /* touch-friendly */
     border-radius: 10px;
-    background: #fff;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+	align-items: flex-end;
+	justify-content: flex-start;
+	flex-direction: row;
+	flex-wrap: nowrap;
 }
 
 .social-icon {
@@ -3365,20 +3348,13 @@ hr {
 	.listing__details__rating__bar__item .barfiller {
 		width: 340px;
 	}
-	    .professional-card {
-        flex-direction: column;
+	.professional-card {
+		flex-direction: row;
         align-items: center;
         text-align: center;
     }
-
-    .professional-photo img {
-        max-width: 160px;
-        margin-bottom: 10px;
-    }
-
-    .icons-redes {
-        justify-content: center;
-    }
+ 
+ 
 }
 
 /* Tablet Device = 768px */
@@ -3454,19 +3430,10 @@ hr {
 		float: none;
 		text-align: center;
 	}
-	    .professional-card {
-        flex-direction: column;
+	.professional-card {
+		flex-direction: row;
         align-items: center;
         text-align: center;
-    }
-
-    .professional-photo img {
-        max-width: 160px;
-        margin-bottom: 10px;
-    }
-
-    .icons-redes {
-        justify-content: center;
     }
 }
 
@@ -3618,19 +3585,10 @@ hr {
 	.footer__copyright__links {
 		float: none;
 	}
-	    .professional-card {
-        flex-direction: column;
+	.professional-card {
+		flex-direction: row;
         align-items: center;
         text-align: center;
-    }
-
-    .professional-photo img {
-        max-width: 160px;
-        margin-bottom: 10px;
-    }
-
-    .icons-redes {
-        justify-content: center;
     }
 }
 
