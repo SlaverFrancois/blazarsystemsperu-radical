@@ -3216,7 +3216,8 @@ html {
 
 .icons-redes {
     display: flex;
-    gap: 13px;          /* separa los iconos visualmente */
+    gap: 12px;          /* separa los iconos visualmente */
+	justify-content: space-between; /* Distribución uniforme */
     margin-top: 10px;
     font-size: 1.1rem;  /* iconos visibles */ 
     width: 44px;        /* touch-friendly */
