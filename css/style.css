@@ -3199,7 +3199,7 @@ html {
 
 .professional-info {
     width: 75%;              /* 3/4 restantes */
-    padding: 20px 10px;
+    padding: 1px 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -3216,23 +3216,24 @@ html {
 
 .icons-redes {
     display: flex;
-    gap: 12px;          /* separa los iconos visualmente */
-	justify-content: space-between; /* Distribución uniforme */
+    gap: 12px;
+    justify-content: space-between; /* distribuye los iconos */
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;   /* permite que se acomoden si hay muchos */
+    width: 100%;        /* usa todo el ancho */
     margin-top: 10px;
-    font-size: 1.1rem;  /* iconos visibles */ 
-    width: 44px;        /* touch-friendly */
-    height: 44px;       /* touch-friendly */
-    border-radius: 10px;
-	align-items: flex-end;
-	justify-content: flex-start;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	
 }
+
 
 .social-icon {
     color: #25D366;   /* o el color que quieras */
     transition: color 0.2s ease;
+	font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
 }
 
 .social-icon:visited,
@@ -3291,7 +3292,7 @@ font-size: 0.75em; padding: 0px 5px; margin: 1px 1px;}
 .icon-web:active,
 .icon-web:focus,
 .icon-web:hover {
-    color: #0A66C2 #ffffff;
+    color: #ffffff;
 	background-color: #2196F3; 
 	font-size: 0.75em; 
 	padding: 0px 5px; 
@@ -3301,7 +3302,6 @@ font-size: 0.75em; padding: 0px 5px; margin: 1px 1px;}
 hr {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
-    border: 0;
 }
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
 
