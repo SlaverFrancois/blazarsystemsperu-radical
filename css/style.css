@@ -3243,6 +3243,7 @@ html {
 .icon-whatsapp { color: #25D366; }
 .icon-facebook { color: #1877F2; }
 .icon-instagram { color: #C13584; }
+.icon-tiktok { color: #000; }
 
 .icon-whatsapp:visited,
 .icon-whatsapp:active,
@@ -3265,6 +3266,13 @@ html {
     color: #C13584 !important;
 }
 
+.icon-tiktok:visited,
+.icon-tiktok:active,
+.icon-tiktok:focus,
+.icon-tiktok:hover {
+    color: #000 !important;
+}
+
 /* YouTube */
 .icon-youtube { color: #FF0000; }
 .icon-youtube:visited,
@@ -3275,12 +3283,17 @@ html {
 }
 
 /* Web / Portfolio / Tienda */
-.icon-web { color: #0A66C2; }
+.icon-web { color: #ffffff; background-color: #2196F3; 
+font-size: 0.75em; padding: 0px 5px; margin: 1px 1px;}
 .icon-web:visited,
 .icon-web:active,
 .icon-web:focus,
 .icon-web:hover {
-    color: #0A66C2 !important;
+    color: #0A66C2 #ffffff;
+	background-color: #2196F3; 
+	font-size: 0.75em; 
+	padding: 0px 5px; 
+	margin: 2px 2px;
 }
 
 hr {
