@@ -36,13 +36,12 @@
     <header class="header">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-3 col-md-3">
+                <div class="col-lg-3 col-md-6">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        <a href="./index.html"><img src="img/enlaza2.png" alt=""></a>
                     </div>
                 </div>
-            </div>
-            <div id="mobile-menu-wrap"></div>
+            </div> 
         </div>
     </header>
 
@@ -52,11 +51,10 @@
         <div class="row" id="categories-container">
           <div class="col-lg-12">
             <div class="section-title">
-              <h3>No recorras las calles buscando servicios, todos están aquí</h3>
-              <p>Encuentra el servicio que necesitas — de un vecino confiable cerca de ti</p>
+              <h4>No recorras las calles buscando servicios, todos están aquí</h4>
+              <p>Seleccione el servicio que necesitas — de un vecino confiable cerca de ti</p>
             </div>
-            <div class="categories-list-wrapper">
-              <p class="section-title">Por favor elija un servicio:</p>
+            <div class="categories-list-wrapper"> 
               <div id="alphabetical-categories"   role="navigation" aria-label="Categorías"></div>
             </div>
           </div>
@@ -274,31 +272,25 @@ if (p.contact) {
 
   if (p.contact.whatsapp) {
     contactIcons.push(`
-      <li>
         <a href="https://wa.me/${p.contact.whatsapp}" target="_blank" class="social-icon icon-whatsapp">
           <i class="fa fa-whatsapp"></i>
         </a>
-      </li>
     `);
   }
 
   if (p.contact.facebook) {
     contactIcons.push(`
-      <li>
         <a href="${p.contact.facebook}" target="_blank" class="social-icon icon-facebook">
           <i class="fa fa-facebook"></i>
         </a>
-      </li>
     `);
   }
 
   if (p.contact.instagram) {
     contactIcons.push(`
-      <li>
         <a href="${p.contact.instagram}" target="_blank" class="social-icon icon-instagram">
           <i class="fa fa-instagram"></i>
         </a>
-      </li>
     `);
   }
 
@@ -306,22 +298,18 @@ if (p.contact) {
     // convertir link completo a embed
     const videoID = p.contact.youtube.split("v=")[1];
     contactIcons.push(`
-      <li>
         <a href="https://www.youtube.com/embed/${videoID}?autoplay=1"
            target="_blank" class="social-icon icon-youtube">
-           <i class="fa fa-youtube-play"></i> Ver
+           <i class="fa fa-youtube-play"></i>
         </a>
-      </li>
     `);
   }
 
     if (p.contact.web) {
     contactIcons.push(`
-      <li>
         <a href="${p.contact.web}" target="_blank" class="social-icon icon-web" rel="noopener noreferrer">
           <i class="fa fa-globe"></i> Web
         </a>
-      </li>
     `);
   }
 
@@ -350,9 +338,9 @@ if (p.contact) {
                       <li><i class="fa fa-star"></i><small> ${p.especiality || ''}</small></li>
                     </ul> 
                     <hr>
-                    <ul id="alphabetical-categories" class:"ul-sinptos">
+                    <div class="footer__social">
                       ${contactIcons.join("")}
-                    </ul>
+                    </div>
                   </div>
                   </div>
 
