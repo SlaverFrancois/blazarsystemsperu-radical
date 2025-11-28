@@ -486,6 +486,24 @@ if (p.contact) {
  
 </script>
  
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    const banner = document.getElementById("legal-banner");
+    const btnAccept = document.getElementById("accept-terms");
+
+    // Si ya lo aceptó antes, no mostrarlo
+    if (localStorage.getItem("acceptedTerms") === "yes") {
+      banner.classList.add("hide");
+      return;
+    }
+
+    btnAccept.addEventListener("click", () => {
+      banner.classList.add("hide");
+      localStorage.setItem("acceptedTerms", "yes");
+    });
+  });
+</script>
 
 </body>
 </html>
