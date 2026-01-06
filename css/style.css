@@ -597,7 +597,7 @@ ol {
 -----------------------*/
 
 .work {
-	padding-bottom: 70px;
+	padding-bottom: 5px;
 	padding-top: 90px;
 	background: #f9f9f9;
 }
@@ -608,14 +608,12 @@ ol {
 
 .work__item {
 	text-align: center;
-	-webkit-box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
 	box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
 	position: relative;
 	overflow: hidden;
-	padding: 80px 30px 40px 30px;
-	border-radius: 5px;
-	margin-bottom: 30px;
-	background: #ffffff;
+	padding: 80px 30px 30px 30px;
+	border-radius: 5px; 
+	background: #ffffff; 
 }
 
 .work__item h5 {
@@ -630,17 +628,12 @@ ol {
 	font-size: 15px;
 	color: #707070;
 	margin-bottom: 0;
+	
 }
+ 
 
-.work__item__number {
-	font-size: 60px;
-	font-weight: 700;
-	color: #f03250;
-	opacity: 0.1;
-	position: absolute;
-	left: -16px;
-	top: -2px;
-}
+ 
+
 
 /*---------------------
   Feature Location
@@ -2831,6 +2824,9 @@ ol {
 	margin-bottom: 26px;
 }
 
+.about__title h3 { 
+	margin-top:18px; font-size:1.05rem; }
+
 .about__text h5 {
 	font-size: 20px;
 	color: #323232;
@@ -2843,6 +2839,37 @@ ol {
 	line-height: 34px;
 	margin-bottom: 0;
 }
+
+.about__text { 
+	color:#222; line-height:1.6; 
+background: #f9f9f9;
+box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+-webkit-box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+position: relative;
+overflow: hidden;
+	padding: 80px 30px 40px 30px;
+	border-radius: 5px;
+	margin-bottom: 30px;
+	background: #ffffff;
+	height: 100%;
+	padding-top: 90px;
+	padding-bottom: 70px;
+ }
+
+.about__text p, .about__text li { 
+	font-size:0.95rem; color:#333; }
+
+.about__text ul, .about__text ol { 
+	margin-left:18px; }
+
+.about__text .note { 
+	color:#555; font-size:0.92rem; }
+
+.about__text .small { 
+	font-size:0.9rem; color:#555; }
+
+.about__text .section { 
+	margin-bottom:18px; }
 
 .about__video {
 	height: 600px;
@@ -3394,7 +3421,7 @@ hr {
 		padding: 0 60px;
 	}
 	.spad{
-		padding: 100px 0;
+		padding: 50px 0;
 	}
 	.spad-hero{
 		padding: 300px 0;
@@ -3406,7 +3433,7 @@ hr {
 		max-width: 1170px;
 	}
 	.spad{
-		padding: 100px 0;
+		padding: 50px 0;
 	}
 	.spad-hero{
 		padding: 300px 0;
@@ -3421,7 +3448,7 @@ hr {
 		width: 35%;
 	}
 	.spad{
-		padding: 100px 0;
+		padding: 50px 0;
 	}
 	.spad-hero{
 		padding: 300px 0;
@@ -3432,7 +3459,7 @@ hr {
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
 	.spad{
-		padding: 100px 0;
+		padding: 50px 0;
 	}
 	.spad-hero{
 		padding: 300px 0;
@@ -3472,7 +3499,7 @@ hr {
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 	.spad{
-		padding: 100px 0;
+		padding: 50px 0;
 	}
 	.spad-hero{
 		padding: 300px 0;
@@ -3565,7 +3592,7 @@ hr {
 
 @media only screen and (max-width: 767px) {
 	.spad{
-		padding: 100px 0;
+		padding: 50px 0;
 	}
 	.spad-hero{
 		padding: 100px 0;
@@ -3732,7 +3759,7 @@ hr {
 
 @media only screen and (max-width: 479px) {
 	.spad{
-		padding: 100px 0;
+		padding: 50px 0;
 	}
 	.spad-hero{
 		padding: 100px 0;
