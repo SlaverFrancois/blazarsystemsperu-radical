@@ -961,8 +961,7 @@ ol {
 	line-height: 32px;
 }
 
-.footer__copyright {
-	background: #ffffff;
+.footer__copyright { 
 	border-top: 1px solid #e1e1e1;
 	padding: 25px 0 20px;
 	overflow: hidden;
@@ -3411,6 +3410,15 @@ hr {
     color: #D9D9D9;
     border: 1px solid #D9D9D9;
 }
+
+#type-word {
+  font-weight: 600;
+  color: #C9A227;            /* Oro elegante */
+  border-right: 2px solid #C9A227;
+  padding-right: 4px;
+  white-space: nowrap;
+}
+
 
 
  

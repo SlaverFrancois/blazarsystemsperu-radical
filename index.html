@@ -47,9 +47,9 @@
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
                             <ul>
-                                <li class="active"><a href="./index.html">Principal</a></li>
-                                <li><a href="./nosotros.html">Nosotros</a></li>
+                                <li class="active"><a href="./index.html">Principal</a></li>                                
                                 <li><a href="./terminos.html">Terminos y condiciones</a></li>
+                                <li><a href="./nosotros.html">Nosotros</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -59,22 +59,60 @@
         </div>
     </header>
 
-    <div id="legal-banner" class="legal-banner">
-    <div class="legal-banner-content">
-      <h3>Uso de la Plataforma</h3>
-      <p>
-        Para continuar navegando aceptas nuestros 
-        <a href="/terminos" target="_blank">Términos y Condiciones</a>, los cuales regulan
-        la relación entre usuarios, servicios y anunciantes. 
-        Tu acceso implica conformidad total con estas políticas.
-      </p>
+    <div class="legal-scroll" id="legal-content">
+  <p class="small">Cargando términos y condiciones…</p>
+</div>
 
-      <div class="legal-banner-buttons">
-        <button id="accept-terms" class="legal-btn primary">Aceptar términos y condiciones</button>
-        <a href="/terminos" target="_blank" class="legal-btn secondary">Leer términos</a>
+
+  <!--<div id="legal-banner" class="legal-banner hide">
+  <div class="legal-banner-content">
+ 
+    <h3>Uso de la Plataforma</h3>
+ 
+    <div class="legal-scroll">
+
+      <div class="section">
+        <h4>3. Naturaleza del servicio</h4>
+        <p class="small">
+          enlaza2.pe actúa únicamente como medio de difusión y contacto entre Usuarios y ANUNCIANTES. 
+          No presta servicios por cuenta propia, no fija precios ni interviene en los contratos celebrados entre las partes; 
+          por tanto, los usuarios y proveedores actúan de manera independiente, sin generar relación de dependencia con enlaza2.pe.
+        </p>
       </div>
+
+      <div class="section">
+        <h4>4. Registro y datos</h4>
+        <p>
+          Para registrarse, ANUNCIANTES deben proporcionar información veraz y actualizada. 
+          La información mínima puede incluir:
+        </p>
+        <ol>
+          <li>Documento de identidad (DNI u otro equivalente).</li>
+          <li>Teléfono y/o correo de contacto.</li>
+          <li>RUC o documento equivalente (si aplica).</li>
+          <li>Dirección y ubicación geográfica.</li>
+          <li>Área de especialidad o experiencia.</li>
+          <li>Datos del representante legal (si aplica).</li>
+        </ol>
+        <p class="small">
+          enlaza2.pe puede solicitar documentación adicional para validación.
+        </p>
+      </div>
+
     </div>
+ 
+    <p class="legal-confirm">
+      He leído y acepto los términos de uso de esta plataforma.
+    </p>
+ 
+    <div class="legal-banner-buttons">
+      <button id="accept-terms" class="legal-btn primary">Aceptar</button>
+      <button id="decline-terms" class="legal-btn secondary">Declinar</button>
+    </div>
+-->
   </div>
+</div>
+
 
 
    <!-- Categories Section Begin -->
@@ -83,8 +121,9 @@
         <div class="row" id="categories-container">
           <div class="col-lg-12">
             <div class="section-title">
-              <h4>No recorras las calles buscando servicios, todos están aquí</h4>
-              <p>Seleccione el servicio que necesitas — de un experto confiable cerca de ti</p>
+              <h4>
+                Deja de buscar en las calles, aquí encuentras:  </h4>
+               <h4><span id="type-word"></span></h4> <!--morph text-->              
             </div>
             <div class="categories-list-wrapper"> 
               <div id="alphabetical-categories"   role="navigation" aria-label="Categorías"></div>
@@ -114,27 +153,42 @@
                         <div class="footer__about__logo">
                             <a href="./index.html"><img src="img/footer-logo.png" alt=""></a>
                         </div>
-                        <p>En enlaza2.pe enlazamos tus necesidades a los expertos de forma innovadora.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 offset-lg-1 col-md-6">
                     <div class="footer__address">
                         <ul>
                             <li>
-                                <span>Call Us:</span>
-                                <p>(+12) 345-678-910</p>
+                                <span>Contactenos:</span>
+                                <p>345-678-910</p>
                             </li>
                             <li>
-                                <span>Email:</span>
-                                <p>info.colorlib@gmail .com</p>
+                                <span>Escríbenos:</span>
+                                <p>blazarsystemperu@gmail.com</p>
                             </li>
                             <li>
-                                <span>Connect Us:</span>
+                                <span>Visitenos:</span>
                                 <div class="footer__social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
                                 </div>
                             </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 offset-lg-1 col-md-6">
+                    <div class="footer__widget">
+                        <ul>
+                            <li><a href="./terminos.html">Términos</a></li>
+                            <li><a href="./listing.html">Listado</a></li>
+                            <li><a href="./blog-details.html">Blog Detalle</a></li>
+                            <li><a href="./blog.html">Blog</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="./about.html">Nosotros</a></li>
+                            <li><a href="./contact.html">Contactanos</a></li>
+                            <li><a href="./index.html">Principal</a></li>
                         </ul>
                     </div>
                 </div>
@@ -143,21 +197,12 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="footer__copyright">
-                        <div class="footer__copyright__text"><p>
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> 
-  Todos los derechos reservados </p>
+                        <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados por <a href="https://blazar.pe" target="_blank">Blázar System Perú</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                         </div>
                         <div class="footer__copyright__links">
-                            <a href="#">Terms</a>
-                            <a href="#">Privacy Policy</a>
-                            <a href="#">Cookie Policy</a>
-                            <a href="./listing.html">Listing</a>
-                            <a href="./about.html">About</a>
-                            <a href="./listing-details.html">Listing Details</a>
-                            <a href="./blog-details.html">Blog Details</a>
-                            <a href="./blog.html">Blog</a>
-                            <a href="./contact.html">Contact</a>
-                            <a href="./index.html">Home</a>
+                            <a href="./terminos.html">Términos</a>
                         </div>
                     </div>
                 </div>
@@ -395,9 +440,9 @@ if (p.contact) {
             adv.innerHTML = `
               <div class="blog__item advertise-card">
                 <div class="blog__item__text text-center">
-                  <h5>${category ? `¿Eres ${category}? 📢` : '¿Quieres anunciarte? 📢'}</h5>
-                  <p>Anúnciate aquí y llega a cientos de clientes locales.</p>
-                  <a href="./landing.html" target="_blank" class="btn-advertise">Publica tu servicio</a>
+                  <h5>${category ? `¿Eres ${category}? 📢` : '¿Quieres anunciar 📢'}</h5>
+                  <p>y llegar a más clientes locales?</p>
+                  <a href="./landing.html" target="_blank" class="btn-advertise">Anuncia Aquí</a>
                 </div>
               </div>
             `;
@@ -497,7 +542,8 @@ if (p.contact) {
 // <-- fin DOMContentLoaded
  
 </script>
- 
+ <!--TERMINOS Y CONDICIONES POP-UP-->
+ <!--
 <script>
   document.addEventListener("DOMContentLoaded", function () {
 
@@ -515,6 +561,65 @@ if (p.contact) {
       localStorage.setItem("acceptedTerms", "yes");
     });
   });
+</script> 
+-->
+
+<script>
+async function loadLegalContent() {
+  const container = document.getElementById("legal-content");
+
+  try {
+    const res = await fetch("./terminos.html"); 
+    const html = await res.text();
+    container.innerHTML = html;
+  } catch (err) {
+    container.innerHTML = "<p>Error al cargar los términos.</p>";
+  }
+}
+/* Cargar al mostrar popup */
+loadLegalContent();
+</script>
+
+
+<!--TYPEABLE TITLE EFFECT-->
+<script>
+const words = [
+  "servicios",
+  "profesionales",
+  "alquileres",
+  "reliquias"
+];
+
+const el = document.getElementById("type-word");
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeEffect() {
+  const currentWord = words[wordIndex];
+
+  if (!isDeleting) {
+    el.textContent = currentWord.slice(0, charIndex + 1);
+    charIndex++;
+
+    if (charIndex === currentWord.length) {
+      setTimeout(() => isDeleting = true, 1600);
+    }
+  } else {
+    el.textContent = currentWord.slice(0, charIndex - 1);
+    charIndex--;
+
+    if (charIndex === 0) {
+      isDeleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+    }
+  }
+
+  const speed = isDeleting ? 60 : 100;
+  setTimeout(typeEffect, speed);
+}
+
+typeEffect();
 </script>
 
 </body>
