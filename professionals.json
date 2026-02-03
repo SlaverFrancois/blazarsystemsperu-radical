@@ -1,21 +1,36 @@
-﻿[
+﻿[  
   {
-    "name": "Juan Pérez",
-    "category": "electricista",
-    "especiality": "colocacion de ladrillos-piedra cortada,bloques de cemento-construccion de muros-excavacion de piletas-excavacion de piletas-excavacion de piletas-excavacion de piletas-excavacion de piletas",
-    "contact": {
-      "whatsapp": "999888777",
-      "facebook": "https://facebook.com/marialopez",
-      "youtube": "https://www.youtube.com/watch?v=4INXEpUCjfg"
-    },
-    "location": "Mercado Reynoso",
-    "featured": true,
-    "foto": "juan.jpg"
+  "name": "Juan Pérez",
+  "category": "electricista",
+  "especiality": "Maestro de obra",
+  "skills": [
+    "Colocación de ladrillos",
+    "Piedra cortada",
+    "Bloques de cemento",
+    "Construcción de muros",
+    "Excavación de piletas",
+    "Excavación de tierra",
+    "Excavación de zanja",
+    "Excavación de arena"
+  ],
+  "contact": {
+    "whatsapp": "999888777",
+    "facebook": "https://facebook.com/marialopez",
+    "youtube": "https://www.youtube.com/watch?v=4INXEpUCjfg"
   },
+  "location": "Mercado Reynoso",
+  "featured": true,
+  "foto": "juan.jpg"
+},
+
 {
   "name": "Marta López",
   "category": "pintor",
   "especiality": "Experta en pintura decorativa y acabados interiores.",
+  "skills": [
+    "Pintura decorativa",
+    "Acabado de interiores"
+  ],
   "contact": {
     "whatsapp": "999888777",
     "facebook": "https://facebook.com/marialopez",
@@ -32,6 +47,10 @@
     "name": "Walter López",
     "category": "pintor",
     "especiality": "Experto en pintura decorativa y acabados interiores.",
+    "skills": [
+    "Pintura decorativa avanzado",
+    "Acabado de interiores"
+  ],
     "contact": {
       "whatsapp": "999888777",
       "youtube": "https://www.youtube.com/watch?v=4INXEpUCjfg",

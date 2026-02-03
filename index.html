@@ -112,34 +112,31 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4">
                     <div class="newslatter__text" id="formulario">
-                        <h3>Registro para Anunciar</h3>
-                        <p>Ingrese los datos solicitados y estaremos llamándole para su validación o confirmación</p>
+                        <h3>Sé parte de la innovación enlaza2.pe</h3>
+                        <p>Ingresa tu información sin compromiso y en menos de 24 horas te contactamos por WhatsApp para activar tu anuncio.
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8">
                     <form action="#" class="contact__form">
                         <div class="row">
                             <div class="col-lg-6 col-md-6">
-                                <input type="text" placeholder="Nombres">
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <input type="text" placeholder="Apellidos">
-                            </div>
-                            <div class="col-lg-6 col-md-6">
                                 <input type="text" placeholder="DNI o RUC">
                             </div>
                             <div class="col-lg-6 col-md-6">
-                                <input type="text" placeholder="Celular">
+                                <input type="text" placeholder="Celular (WhatsApp)">
                             </div>
-                            <div class="col-lg-6 col-md-6">
-                                <input type="text" placeholder="Urbanización (lugar de trabajo)">
+                            <div class="col-lg-12 col-md-12">
+                                <input type="text" placeholder="Nombres y Apellidos">
                             </div>
-                            <div class="col-lg-6 col-md-6">
-                                <input type="text" placeholder="Distrito">
-                            </div>                             
+
+                            <div class="col-lg-12 col-md-12">
+                                <input type="text" placeholder="Zona donde trabajas">
+                            </div>                       
                         </div>
-                        <textarea placeholder="Evidencia profesional: Redes sociales y/o pagina web para evidenciar sus trabajos anteriores con video y/o fotos  de tus trabajos o emprendimiento o simplemente como medio de comunicacion digital. Ejemplo: www.facebook.com/marialopez , www.tiktok.com/marialopez, www.manualidadesconmaria.com, etc"></textarea>
-                        <textarea placeholder="Área de especialidad, experiencia o resumen profesional de lo que realiza. Describa su negocio, que rubro es, etc"></textarea>
+                        <textarea placeholder="Links de tus redes sociales o página web (si tienes)"></textarea>
+                        <textarea placeholder="Cuéntanos qué servicio ofreces"></textarea>
+                        <p>Tu información es privada y no se comparte con terceros. Solo la usamos para validar tu anuncio y contactarte por WhatsApp.</p>
                         <button type="submit" class="site-btn">ENVIAR</button>
                     </form>
                 </div>
@@ -166,7 +163,7 @@
                         <h5>SIMPLE</h5>
                         <p>Sin trámites largos ni complicaciones. Publicar es rápido, fácil y directo. 
                           enlaza2.pe es una vitrina digital minimalista que te ahorra tiempo y se usa sin esfuerzo.</p>
-                    </div>
+                        </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="work__item">
@@ -199,10 +196,7 @@
                     <div class="footer__about">
                         <div class="footer__about__logo">
                             <a href="./index.html"><img src="img/footer-logo.png" alt=""></a>
-                            <p>si pero pero pero pero 
-                              pero pero pero pero 
-                              pero pero pero pero 
-                              pero pero pero pero pero pero pero pero </p>
+                            <p>Donde clientes y sus servicios quedan enlazados</p>
                         </div>
                     </div>
                 </div>
@@ -346,196 +340,172 @@ fetch('categories.json')
    * - Si category definido => filtra por categoria y ordena destacados primero.
    * - Devuelve una Promise que se resuelve cuando el render de la página actual termina (útil para scrollear).
    */
-  function showProfessionals(category, sourceButton) {
-    return fetch('professionals.json')
-      .then(res => res.json())
-      .then(data => {
-        // normalizar nombres de category para comparar
-        const normalized = (v) => String(v || '').toLowerCase();
+function showProfessionals(category, sourceButton) {
+  return fetch('professionals.json')
+    .then(res => res.json())
+    .then(data => {
 
-        // Si se pasó categoría, filtrar; si no, mostrar todos.
-        let filtered = typeof category === 'string' ? data.filter(p => normalized(p.category) === normalized(category)) : data.slice();
+      const normalized = (v) => String(v || '').toLowerCase();
 
-        // ordenar: destacados (featured === true) primero
-        filtered.sort((a,b) => {
-          const af = a.featured === true ? 1 : 0;
-          const bf = b.featured === true ? 1 : 0;
-          return bf - af; // b primero si featured
-        });
+      // filtrar por categoría si existe
+      let filtered = typeof category === 'string'
+        ? data.filter(p => normalized(p.category) === normalized(category))
+        : data.slice();
 
-        // paginación
-        const perPage = 5;
-        let currentPage = 1;
-        const totalPages = Math.max(1, Math.ceil(filtered.length / perPage));
+      // destacados primero
+      filtered.sort((a, b) => {
+        const af = a.featured === true ? 1 : 0;
+        const bf = b.featured === true ? 1 : 0;
+        return bf - af;
+      });
 
-        // renderPage encapsulado devuelve promesa para saber cuando terminó
-        const renderPage = () => {
-          return new Promise((resolve) => {
-            professionalsContainer.innerHTML = ''; // limpiar
+      const perLoad = 9;
+      let visibleCount = perLoad;
 
-            if (filtered.length === 0) {
-              const empty = document.createElement('div');
-              empty.className = 'col-12';
-              empty.innerHTML = `<p>No hay profesionales en esta categoría.</p>`;
-              professionalsContainer.appendChild(empty);
-              // still append advertise-card at end even if empty
+      const render = () => {
+        professionalsContainer.innerHTML = '';
+
+        if (filtered.length === 0) {
+          professionalsContainer.innerHTML = `
+            <div class="col-12">
+              <p>No hay profesionales en esta categoría.</p>
+            </div>`;
+          return;
+        }
+
+        const visibleItems = filtered.slice(0, visibleCount);
+
+        visibleItems.forEach(p => {
+          const divCol = document.createElement('div');
+          divCol.className = 'col-lg-4 col-md-6';
+
+          const contactIcons = [];
+
+          if (p.contact) {
+            if (p.contact.whatsapp) {
+              contactIcons.push(`
+                <a href="https://wa.me/${p.contact.whatsapp}" target="_blank" class="social-icon icon-whatsapp">
+                  <i class="fab fa-whatsapp"></i>
+                </a>`);
             }
+            if (p.contact.facebook) {
+              contactIcons.push(`
+                <a href="${p.contact.facebook}" target="_blank" class="social-icon icon-facebook">
+                  <i class="fab fa-facebook"></i>
+                </a>`);
+            }
+            if (p.contact.instagram) {
+              contactIcons.push(`
+                <a href="${p.contact.instagram}" target="_blank" class="social-icon icon-instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>`);
+            }
+            if (p.contact.tiktok) {
+              contactIcons.push(`
+                <a href="${p.contact.tiktok}" target="_blank" class="social-icon icon-tiktok">
+                  <i class="fab fa-tiktok"></i>
+                </a>`);
+            }
+            if (p.contact.youtube) {
+              const videoID = p.contact.youtube.split("v=")[1];
+              contactIcons.push(`
+                <a href="https://www.youtube.com/embed/${videoID}?autoplay=1"
+                   target="_blank" class="social-icon icon-youtube">
+                  <i class="fab fa-youtube-play"></i>
+                </a>`);
+            }
+            if (p.contact.web) {
+              contactIcons.push(`
+                <a href="${p.contact.web}" target="_blank" class="social-icon icon-web">
+                  www
+                </a>`);
+            }
+          }
 
-            // items visibles current page
-            const start = (currentPage - 1) * perPage;
-            const end = start + perPage;
-            const visibleItems = filtered.slice(start, end);
+          divCol.innerHTML = `
+            <div class="blog__item professional-card d-flex">
+              <div class="professional-photo">
+                <img src="./fotos/${p.foto}" />
+              </div>
 
-            visibleItems.forEach(p => {
-              const divCol = document.createElement('div');
-              divCol.className = 'col-lg-4 col-md-6';
+              <div class="professional-info">
+                <div class="blog__item__text">
+                  <ul class="blog__item__tags">
+                    <li><i class="fa fa-tags"></i> ${p.category}</li>
+                    <li><i class="fa fa-map-marker"></i>${p.location || ''}</li>
+                  </ul>
+                  <h4>${p.name || ''}</h4>
+                  <hr>
+                  <p>${p.especiality || ''}</p>
+                  <div class="skills-carousel" data-index="0">
+                    <div class="skills-track"></div>
 
-              //armado de condicionales de icons
-
-              const contactIcons = [];
-
-if (p.contact) {
-
-  if (p.contact.whatsapp) {
-    contactIcons.push(`
-        <a href="https://wa.me/${p.contact.whatsapp}" target="_blank" class="social-icon icon-whatsapp">
-          <i class="fab fa-whatsapp"></i>
-        </a>
-    `);
-  }
-
-  if (p.contact.facebook) {
-    contactIcons.push(`
-        <a href="${p.contact.facebook}" target="_blank" class="social-icon icon-facebook">
-          <i class="fab fa-facebook"></i>
-        </a>
-    `);
-  }
-
-  if (p.contact.instagram) {
-    contactIcons.push(`
-        <a href="${p.contact.instagram}" target="_blank" class="social-icon icon-instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-    `);
-  }
-  
-  if (p.contact.tiktok) {
-    contactIcons.push(`
-        <a href="${p.contact.tiktok}" target="_blank" class="social-icon icon-tiktok">
-          <i class="fab fa-tiktok"></i>
-        </a>
-    `);
-  }
-
-  if (p.contact.youtube) {
-    // convertir link completo a embed
-    const videoID = p.contact.youtube.split("v=")[1];
-    contactIcons.push(`
-        <a href="https://www.youtube.com/embed/${videoID}?autoplay=1"
-           target="_blank" class="social-icon icon-youtube">
-           <i class="fab fa-youtube-play"></i>
-        </a>
-    `);
-  }
-
-    if (p.contact.web) {
-    contactIcons.push(`
-        <a href="${p.contact.web}" target="_blank" class="social-icon icon-web" rel="noopener noreferrer">
-          www
-        </a>
-    `);
-  }
-
-}
-
-//generacion de div profesional
-              divCol.innerHTML = `
-              <div class="blog__item professional-card d-flex">
-                  
-                  <!-- FOTO: 1/4 del ancho -->
-                  <div class="professional-photo">
-                    <img src="./fotos/${p.foto}"/>
-                  </div>
-
-                  <!-- TEXTO: 3/4 del ancho -->
-                  <div class="professional-info">
-                   <div class="blog__item__text">
-                    <ul class="blog__item__tags">
-                      <li><i class="fa fa-tags"></i> ${p.category}</li>
-                    </ul>
-
-                    <h5>${p.name || ''}</h5>
-                    <p class="">${p.location || ''}</p>
-                    <hr>
-                    <ul class="blog__item__widget">
-                      <li><i class="fa fa-star"></i><small> ${p.especiality || ''}</small></li>
-                    </ul> 
-                    <hr>
-                    <div class="icons-redes">
-                      ${contactIcons.join("")}
+                    <div class="skills-counter">
+                      <span class="current">1</span> de <span class="total">0</span>
                     </div>
                   </div>
+                  <hr>
+                  <div class="icons-redes">
+                    ${contactIcons.join('')}
                   </div>
-
+                  <hr>
+                  
+                </div>
+                <p><i class="fa fa-clock-o"></i> Publicado el 19/03/2025</p>
               </div>
-            `;
+            </div>`;
+            
+            //Después de hacer divCol.innerHTML = ..., ejecuta:
+            const carousel = divCol.querySelector('.skills-carousel');
+              if (carousel && p.skills && p.skills.length) {
+                initSkillsCarousel(carousel, p.skills);
+              }
 
-              professionalsContainer.appendChild(divCol);
-            });
 
-            // ---- advertise-card al FINAL de la paginación (solicitud) ----
-            const adv = document.createElement('div');
-            adv.className = 'col-lg-4 col-md-6';
-            adv.innerHTML = `
-              <div class="blog__item advertise-card">
+          professionalsContainer.appendChild(divCol);
+        });
+          // tarjeta de anuncio (clickeable completa)
+          const adv = document.createElement('div');
+          adv.className = 'col-lg-4 col-md-6';
+
+          adv.innerHTML = `
+            <a href="#formulario" class="advertise-link">
+              <div class="blog__item advertise-card-pro">
                 <div class="blog__item__text text-center">
-                  <h5>${category ? `¿Eres ${category}? 📢` : '¿Quieres anunciar 📢'}</h5>
-                  <p>y llegar a más clientes locales?</p>
-                  <button onclick="document.getElementById('formulario').scrollIntoView({behavior:'smooth'})  target="_blank" class="site-btn">Anuncia Aquí</a>
+                  <h5>${category ? `¿Eres ${category}?` : '¿Quieres anunciarte?'}</h5>
+                  <p>Llega a más clientes locales y destaca tu servicio</p>
+                  <span class="cta-text">Publica tu anuncio →</span>
                 </div>
               </div>
-            `;
-            professionalsContainer.appendChild(adv);
-            // -------------------------------------------------------------
+            </a>
+          `;
 
-            // Paginación (si hay más de 1 página)
-            const paginationWrapper = document.createElement('div');
-            paginationWrapper.className = 'col-12 d-flex justify-content-center align-items-center mt-3';
-            const pagination = document.createElement('div');
-            pagination.className = 'blog__pagination text-center mt-4 d-flex justify-content-center flex-wrap';
-            let startPage = Math.max(1, currentPage - 1);
-            let endPage = Math.min(totalPages, startPage + 2);
-            if (endPage - startPage < 2 && startPage > 1) startPage = Math.max(1, endPage - 2);
+          professionalsContainer.appendChild(adv);
 
-            let html = '';
-            if (currentPage > 1) html += `<a href="#" class="prev"><i class="fa fa-long-arrow-left"></i> Anterior</a>`;
-            for (let i = startPage; i <= endPage; i++) {
-              html += `<a href="#" class="page-link ${i === currentPage ? 'active' : ''}" data-page="${i}">${i}</a>`;
-            }
-            if (currentPage < totalPages) html += `<a href="#" class="next">Siguiente <i class="fa fa-long-arrow-right"></i></a>`;
 
-            pagination.innerHTML = html;
-            paginationWrapper.appendChild(pagination);
-            professionalsContainer.appendChild(paginationWrapper);
+        // botón cargar más
+        if (visibleCount < filtered.length) {
+          const loadMoreWrapper = document.createElement('div');
+          loadMoreWrapper.className = 'col-12 text-center mt-4';
 
-            // eventos paginación
-            pagination.querySelectorAll('.page-link, .prev, .next').forEach(btn => {
-              btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                if (btn.classList.contains('prev') && currentPage > 1) currentPage--;
-                else if (btn.classList.contains('next') && currentPage < totalPages) currentPage++;
-                else if (btn.dataset.page) currentPage = parseInt(btn.dataset.page, 10);
-                // re-render y resolver luego
-                renderPage().then(resolve);
-              });
-            });
+          const btn = document.createElement('button');
+          btn.className = 'site-btn';
+          btn.textContent = 'Cargar más profesionales';
 
-            // resolver la promesa (terminó render)
-            // uso setTimeout 0 para asegurar que el DOM esté pintado
-            setTimeout(() => resolve(), 0);
-          }); // fin promise
-        }; // fin renderPage
+          btn.addEventListener('click', () => {
+            visibleCount += perLoad;
+            render();
+          });
+
+          loadMoreWrapper.appendChild(btn);
+          professionalsContainer.appendChild(loadMoreWrapper);
+        }
+      };
+
+      render();
+      
+ 
+
 
         // Al mostrar la lista por primera vez, ocultar/mostrar secciones si deseas.
         // por requerimiento: showProfessionals debe aparecer en primera pantalla por defecto.
@@ -674,6 +644,29 @@ function typeEffect() {
 }
 
 typeEffect();
+</script>
+<script>
+  function initSkillsCarousel(container, skills) {
+  const track = container.querySelector('.skills-track');
+  const currentEl = container.querySelector('.current');
+  const totalEl = container.querySelector('.total');
+
+  let index = 0;
+  const total = skills.length;
+  totalEl.textContent = total;
+
+  // Render skills
+  track.innerHTML = skills.map(skill =>
+    `<div class="skill-item"><span>${skill}</span></div>`
+  ).join('');
+
+  setInterval(() => {
+    index = (index + 1) % total;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    currentEl.textContent = index + 1;
+  }, 2500);
+}
+
 </script>
 
 </body>

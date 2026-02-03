@@ -3444,7 +3444,92 @@ hr {
   margin-bottom: 12px;
 }
 
+/*******************************
+card anunciante libre
+**/
 
+.advertise-link {
+  text-decoration: none;
+  display: block;
+  height: 100%;
+
+}
+
+.advertise-card-pro {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #efb810 ;
+  border-radius: 12px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  height: 100%;
+}
+
+.advertise-card-pro:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+.advertise-card-pro h5 {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #efb810;
+}
+
+.advertise-card-pro p {
+  opacity: 0.9;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.advertise-card-pro .cta-text {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  opacity: 0.95;
+}
+
+.skills-carousel { 
+  border-radius: 14px;
+  padding: 8px 0;
+  margin: 8px 0; 
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.skills-track {
+  display: flex;
+  transition: transform 1.47s ease;
+}
+
+.skill-item {
+  flex: 0 0 100%;              /* 👈 CLAVE: menos del 100% */
+  max-width: 100%;
+  background: #5669db;
+  border-radius: 20px; 
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-sizing: border-box;
+  text-align: center;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.15;
+  padding: 2px 4px;
+}
+ 
+.skills-counter {
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #555;
+}
+
+.skill-item span {
+  display: inline-block;
+  max-width: 90px;   /* aquí ocurre el quiebre */
+}
 
  
 
