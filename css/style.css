@@ -132,8 +132,8 @@ ol {
 
 .set-bg {
     background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center; 
+    background-size: cover;
+    background-position: top center; 
 }
 
 .spad {
@@ -1423,7 +1423,7 @@ ol {
 .listing__item {
 	-webkit-box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
 	box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
-	margin-bottom: 10px;
+	margin-bottom: 30px;
 }
 
 .listing__item__pic {
@@ -1485,9 +1485,9 @@ ol {
 }
 
 .listing__item__text {
-	padding-left: 30px;
+	padding-left: 30x;
 	padding-right: 30px;
-	/*padding-top: 40px;*/
+	padding-top: 40px;
 }
 
 .listing__item__text__inside h5 {
@@ -2254,7 +2254,7 @@ ol {
 }
 
 .blog__item__text {
-	padding: 20px 5px 25px;
+	padding: 20px 5px 15px;
 }
 
 .blog__item__text .blog__item__tags {
@@ -2307,6 +2307,10 @@ ol {
 	color: #323232;
 	font-weight: 700;
 	line-height: 30px;
+}
+
+.blog__item__text a:hover{
+	color: #3700ff;
 }
 
 .blog__item:hover {
@@ -3223,7 +3227,7 @@ html {
 }
 
 .professional-photo {
-    width: 25%;              /* 1/4 del ancho */
+    width: 40%;              /* 1/4 del ancho */
     min-width: 120px;        /* asegura tamaño visual */
     padding: 15px;
     display: flex;
@@ -3263,7 +3267,7 @@ html {
     flex-direction: row;
     flex-wrap: wrap;   /* permite que se acomoden si hay muchos */
     width: 100%;        /* usa todo el ancho */
-    margin-top: 10px;
+    margin: 20px 0;
 }
 
 
@@ -3485,7 +3489,7 @@ card anunciante libre
   letter-spacing: 0.3px;
   opacity: 0.95;
 }
-
+/*
 .skills-carousel { 
   border-radius: 14px;
   padding: 8px 0;
@@ -3495,15 +3499,10 @@ card anunciante libre
   max-width: 100%;
   overflow: hidden;
   box-sizing: border-box;
-}
-
-.skills-track {
-  display: flex;
-  transition: transform 1.47s ease;
-}
-
+}*/
+/* para movimeinto horizontal
 .skill-item {
-  flex: 0 0 100%;              /* 👈 CLAVE: menos del 100% */
+  flex: 0 0 100%;            
   max-width: 100%;
   background: #5669db;
   border-radius: 20px; 
@@ -3517,18 +3516,73 @@ card anunciante libre
   word-break: break-word;
   line-height: 1.15;
   padding: 2px 4px;
-}
+}*/
  
-.skills-counter {
+/*.skills-counter {
   margin-top: 6px;
   font-size: 12px;
   font-weight: bold;
   color: #555;
+}*/
+
+.skills-box {
+  border-radius: 14px;
+  overflow: hidden; /* clave para que todo se vea como una sola pieza */
+  margin: 26px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
+.skills-track {
+  display: flex;
+/*  transition: transform 1.47s ease;*/
+  transition: transform 9.1s ease-in-out;
+  flex-direction: column;
+}
+
+.skill-item {
+  height: 26px;                 /* igual al ticker */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0.95;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0a3c78;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
 .skill-item span {
   display: inline-block;
-  max-width: 90px;   /* aquí ocurre el quiebre */
+}
+
+/*para movimiento vertical*/
+.skills-ticker {
+  background: linear-gradient(
+    to bottom,
+    #eaf4ff,
+    #d9ecff
+  ); /* Yahoo vibes */
+  border-end-start-radius: 14px;
+  padding: 2px 0;
+  height: 76px;     
+  padding: 1px 0;            /* altura fija */
+  overflow: hidden;
+}
+
+.skills-title {
+  background: linear-gradient(
+    to bottom,
+    #c6def8,
+    #b3d2f4
+  );
+  color: #0a3c78;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 4px 0;
+  text-align: center;
+  border-bottom: 1px solid rgba(10,60,120,0.15);
 }
 
  
@@ -3545,6 +3599,7 @@ card anunciante libre
 	.spad-hero{
 		padding: 300px 0;
 	}
+	
 }
 
 @media only screen and (min-width: 1200px) {
@@ -3571,6 +3626,11 @@ card anunciante libre
 	}
 	.spad-hero{
 		padding: 300px 0;
+	}
+		.listing__item__text {
+		padding-left: 30px;
+		padding-right: 30px;
+		padding-top: 40px;
 	}
 }
 
@@ -3610,6 +3670,11 @@ card anunciante libre
         align-items: center;
         text-align: center;
     }
+	.listing__item__text {
+		padding-left: 30px;
+		padding-right: 30px;
+		padding-top: 40px;
+	}
  
  
 }
@@ -3658,8 +3723,9 @@ card anunciante libre
 		max-width: 100%;
 	}
 	.listing__item__text {
-		padding-left: 15px;
-		padding-right: 15px;
+		padding-left: 30px;
+		padding-right: 30px;
+		padding-top: 40px;
 	}
 	.listing__hero__btns {
 		text-align: left;
@@ -3872,6 +3938,11 @@ card anunciante libre
         width: 100%;
         text-align: center;
     }
+		.listing__item__text {
+		padding-left: 30px;
+		padding-right: 30px;
+		padding-top: 40px;
+	}
 }
 
 /* Small Device = 320px */
@@ -3943,6 +4014,11 @@ card anunciante libre
         width: 100%;
         text-align: center;
     }
+		.listing__item__text {
+		padding-left: 30px;
+		padding-right: 30px;
+		padding-top: 40px;
+	}
 
 
 }

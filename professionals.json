@@ -4,29 +4,31 @@
   "category": "electricista",
   "especiality": "Maestro de obra",
   "skills": [
-    "Colocación de ladrillos",
-    "Piedra cortada",
-    "Bloques de cemento",
-    "Construcción de muros",
-    "Excavación de piletas",
-    "Excavación de tierra",
-    "Excavación de zanja",
-    "Excavación de arena"
+    "1.  Colocación de ladrillos",
+    "2.  Piedra cortada",
+    "3.  Bloques de cemento",
+    "4.  Construcción de muros",
+    "5.  Excavación de piletas",
+    "6.  Excavación de tierra",
+    "7.  Excavación de zanja",
+    "8.  Excavación de arena"
   ],
   "contact": {
     "whatsapp": "999888777",
     "facebook": "https://facebook.com/marialopez",
     "youtube": "https://www.youtube.com/watch?v=4INXEpUCjfg"
   },
-  "location": "Mercado Reynoso",
+  "web": "https://slaverfrancois.github.io/blazarsystemsperu-users/marta-lopez-45672134.html",
+  "location": "en Mercado Reynoso",
   "featured": true,
+  "creado": "13/01/2026",
   "foto": "juan.jpg"
 },
 
 {
   "name": "Marta López",
   "category": "pintor",
-  "especiality": "Experta en pintura decorativa y acabados interiores.",
+  "especiality": "Pintora",
   "skills": [
     "Pintura decorativa",
     "Acabado de interiores"
@@ -35,29 +37,30 @@
     "whatsapp": "999888777",
     "facebook": "https://facebook.com/marialopez",
     "instagram": "https://instagram.com/marialopez",
-    "tiktok": "https://www.tiktok.com/@alexalex12.1985",
-    "web": "https://slaverfrancois.github.io/blazarsystemsperu-users/marta-lopez-45672134.html",
+    "tiktok": "https://www.tiktok.com/@alexalex12.1985",    
     "youtube": "https://www.youtube.com/watch?v=4INXEpUCjfg"
   },
-  "location": "Visita a domicilio",
+  "location": "visito a domicilio",
   "featured": true,
+  "creado": "14/01/2026",
   "foto": "marta.jpg"
 },
   {
     "name": "Walter López",
     "category": "pintor",
-    "especiality": "Experto en pintura decorativa y acabados interiores.",
+    "especiality": "Pintor experto",
     "skills": [
     "Pintura decorativa avanzado",
     "Acabado de interiores"
   ],
     "contact": {
       "whatsapp": "999888777",
-      "youtube": "https://www.youtube.com/watch?v=4INXEpUCjfg",
-      "web": "https://slaverfrancois.github.io/blazarsystemsperu-users/walter-lopez-75672134.html"
+      "youtube": "https://www.youtube.com/watch?v=4INXEpUCjfg"
     },    
-    "location": "Taller: Cerca a Colegio Porras",
+    "web": "https://slaverfrancois.github.io/blazarsystemsperu-users/walter-lopez-75672134.html",
+    "location": "cerca a Colegio Porras",
     "featured": true,
+    "creado": "15/01/2026",
     "foto": "walter.jpg"
   },
   {
@@ -69,8 +72,9 @@
       "facebook": "https://facebook.com/marialopez",
       "instagram": "https://instagram.com/marialopez"
     },
-  "location": "Taller: Cerca Hospital San Jose",
+  "location": "cerca al Hospital San Jose",
     "featured": true,
+    "creado": "16/01/2026",
     "foto": "willy.jpg"
   },
   {
@@ -82,8 +86,9 @@
       "facebook": "https://facebook.com/edgarlopez",
       "youtube": "https://www.youtube.com/watch?v=4INXEpUCjfg"
     },
-    "location": "Taller: Cerca la Municipalidad",
+    "location": "cerca la Municipalidad",
     "featured": true,
+    "creado": "17/01/2026",
     "foto": "edgar.jpg"
   },
   {
@@ -91,7 +96,8 @@
     "category": "pintor",
     "especiality": "Pintora profesional en arte decorativo y muralismo.",
     "contact": "999888777",
-    "location": "Visita a domicilio",
+    "location": "Visito a domicilio",
+    "creado": "18/01/2026",
     "featured": true
   },
   {
@@ -99,8 +105,9 @@
     "category": "pintor",
     "especiality": "Especialista en acabados finos y pintura de interiores.",
     "contact": "999888777",
-    "location": "Taller: Cerca Hospital San Pepe",
+    "location": "cerca Hospital San Pepe",
     "featured": true,
+    "creado": "19/01/2026",
     "foto": "raul.jpg"
   },
   {
@@ -108,7 +115,8 @@
     "category": "pintor",
     "especiality": "Pintora con experiencia en exteriores e impermeabilización.",
     "contact": "999888777",
-    "location": "Taller: Cerca la Municipalidad",
+    "location": "cerca la Municipalidad",
+    "creado": "22/01/2026",
     "featured": true
   },
   {
@@ -116,7 +124,8 @@
     "category": "pintor",
     "especiality": "Pintora profesional en arte decorativo y muralismo.",
     "contact": "999888777",
-    "location": "Visita a domicilio",
+    "location": "visito a domicilio",
+    "creado": "24/01/2026",
     "featured": true
   },
   {
@@ -125,174 +134,7 @@
     "especiality": "Especialista en acabados finos y pintura de interiores.",
     "contact": "999888777",
     "location": "Taller: Cerca Hospital San Pepe",
-    "featured": true
-  },
-  {
-    "name": "Domingo Perez",
-    "category": "pintor",
-    "especiality": "Pintora sin experiencia en exteriores e impermeabilización.",
-    "contact": "999888777",
-    "location": "Taller: Cerca la Municipalidad",
-    "featured": true
-  },
-  {
-    "name": "Milagros leiva",
-    "category": "pintor",
-    "especiality": "Pintora profesional en arte decorativo y muralismo.",
-    "contact": "999888777",
-    "location": "Visita a domicilio",
-    "featured": true
-  },
-  {
-    "name": "Oscar Arriola",
-    "category": "pintor",
-    "especiality": "Especialista en acabados finos y pintura de interiores.",
-    "contact": "999888777",
-    "location": "Taller: Cerca Hospital San Pepe",
-    "featured": true
-  },
-  {
-    "name": "Alfredo Azurín",
-    "category": "pintor",
-    "especiality": "Pintora sin experiencia en exteriores e impermeabilización.",
-    "contact": "999888777",
-    "location": "Taller: Cerca la Municipalidad",
-    "featured": true
-  },
-  {
-    "name": "Susel Paredes",
-    "category": "pintor",
-    "especiality": "Pintora profesional en arte decorativo y muralismo.",
-    "contact": "999888777",
-    "location": "Visita a domicilio",
-    "featured": true
-  },
-  {
-    "name": "Beto Ortiz",
-    "category": "pintor",
-    "especiality": "Especialista en acabados finos y pintura de interiores.",
-    "contact": "999888777",
-    "location": "Taller: Cerca Hospital San Pepe",
-    "featured": true
-  },
-  {
-    "name": "Vladimiro Montesinos",
-    "category": "pintor",
-    "especiality": "Pintora sin experiencia en exteriores e impermeabilización.",
-    "contact": "999888777",
-    "location": "Taller: Cerca la Municipalidad",
-    "featured": true
-  },
-  {
-    "name": "Guido Bellido",
-    "category": "pintor",
-    "especiality": "Pintora profesional en arte decorativo y muralismo.",
-    "contact": "999888777",
-    "location": "Visita a domicilio",
-    "featured": true
-  },
-  {
-    "name": "Vilma Coloma",
-    "category": "pintor",
-    "especiality": "Especialista en acabados finos y pintura de interiores.",
-    "contact": "999888777",
-    "location": "Taller: Cerca Hospital San Pepe",
-    "featured": true
-  },
-  {
-    "name": "Xi Jimping",
-    "category": "pintor",
-    "especiality": "Pintora sin experiencia en exteriores e impermeabilización.",
-    "contact": "999888777",
-    "location": "Taller: Cerca la Municipalidad",
-    "featured": true
-  },
-  {
-    "name": "Donald Trump",
-    "category": "pintor",
-    "especiality": "Pintora profesional en arte decorativo y muralismo.",
-    "contact": "999888777",
-    "location": "Visita a domicilio",
-    "featured": true
-  },
-  {
-    "name": "Aladino Galvez",
-    "category": "pintor",
-    "especiality": "Pintora profesional en arte decorativo y muralismo.",
-    "contact": "999888777",
-    "location": "Visita a domicilio",
-    "featured": true
-  },
-  {
-    "name": "Javier Milei",
-    "category": "pintor",
-    "especiality": "Especialista en acabados finos y pintura de interiores.",
-    "contact": "999888777",
-    "location": "Taller: Cerca Hospital San Pepe",
-    "featured": true
-  },
-  {
-    "name": "Jose Tudela",
-    "category": "pintor",
-    "especiality": "Pintora sin experiencia en exteriores e impermeabilización.",
-    "contact": "999888777",
-    "location": "Taller: Cerca la Municipalidad",
-    "featured": true
-  },
-  {
-    "name": "Javier Bukele",
-    "category": "pintor",
-    "especiality": "Pintora profesional en arte decorativo y muralismo.",
-    "contact": "999888777",
-    "location": "Visita a domicilio",
-    "featured": true
-  },
-  {
-    "name": "Javier Milei",
-    "category": "pintor",
-    "especiality": "Especialista en acabados finos y pintura de interiores.",
-    "contact": "999888777",
-    "location": "Taller: Cerca Hospital San Pepe",
-    "featured": true
-  },
-  {
-    "name": "Renzo Schuller",
-    "category": "pintor",
-    "especiality": "Pintora sin experiencia en exteriores e impermeabilización.",
-    "contact": "999888777",
-    "location": "Taller: Cerca la Municipalidad",
-    "featured": true
-  },
-  {
-    "name": "Piero Diaz",
-    "category": "pintor",
-    "especiality": "Pintora profesional en arte decorativo y muralismo.",
-    "contact": "999888777",
-    "location": "Visita a domicilio",
-    "featured": true
-  },
-  {
-    "name": "Elon Musk",
-    "category": "pintor",
-    "especiality": "Especialista en acabados finos y pintura de interiores.",
-    "contact": "999888777",
-    "location": "Taller: Cerca Hospital San Pepe",
-    "featured": true
-  },
-  {
-    "name": "Israel Dreyfus",
-    "category": "pintor",
-    "especiality": "Pintora sin experiencia en exteriores e impermeabilización.",
-    "contact": "999888777",
-    "location": "Taller: Cerca la Municipalidad",
-    "featured": true
-  },
-  {
-    "name": "Zumba Rodriguez",
-    "category": "pintor",
-    "especiality": "Pintora profesional en arte decorativo y muralismo.",
-    "contact": "999888777",
-    "location": "Visita a domicilio",
+    "creado": "01/01/2026",
     "featured": true
   }
 ]
