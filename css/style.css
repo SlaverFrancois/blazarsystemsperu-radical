@@ -1503,7 +1503,7 @@ ol {
 }
 
 .listing__item__text {
-	padding-left: 30x;
+	padding-left: 30px;
 	padding-right: 30px;
 	padding-top: 40px;
 }
@@ -2276,6 +2276,7 @@ ol {
 
 .blog__item__text {
 	padding: 20px 5px 15px;
+	text-align: center;
 }
 
 .blog__item__text p {
@@ -2325,8 +2326,7 @@ ol {
 .blog__item__text h4,
 .blog__item__text h3,
 .blog__item__text p{
-	margin-bottom: 10px;
-	text-align: center;
+	margin-bottom: 10px; 
 }
 
 .blog__item__text h5 a,
@@ -3269,14 +3269,11 @@ html {
 /* --- CARD DE PROFESIONAL CON FOTO A LA IZQUIERDA --- */
 
 .professional-card {
-	position: relative;
-	display: flex;
-	padding: 0 !important;
-	flex-direction: row;
-	border-radius: 20px;
-	align-items: center;
+	position: relative;  
+	border-radius: 25px; 
+	overflow: hidden;
 }
-
+ 
 .icons-floating {
 	position: absolute;
 	left: calc(30% - 15px);
@@ -3289,8 +3286,6 @@ html {
 	justify-content: space-evenly;
 	/* 🔥 equidistante */
 	gap: 10px;
-
-	z-index: 10;
 }
 
 .icons-floating .social-icon {
@@ -3309,26 +3304,19 @@ html {
 }
 
 .professional-photo {
-	flex: 0 0 90px;
-	/* 🔥 EXACTO 1/4 */
+	flex: 0 0 90px; 
 	max-width: 90px;
-	min-width: 90px;
-	padding: 5px;
+	min-width: 30%;
+	padding: 0px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-.professional-photo img {
-	max-width: 100%;
-	max-height: 100%;
-	width: auto;
-	height: auto;
-	object-fit: contain;
-	/* NO deformar */
-	display: block;
-	border-top-left-radius: 25px;
-	border-bottom-left-radius: 25px;
+.professional-photo img {  
+	/* NO deformar */ 
+	border-top-left-radius: 25px; 
+	 
 }
 
 .professional-info {
@@ -3339,6 +3327,9 @@ html {
 	flex-direction: column;
 	justify-content: center;
 	padding-left: 25px;
+	overflow: hidden;
+	border-bottom-right-radius: 25px;
+	
 }
 
 /* Para que el texto nunca se pegue mucho */
@@ -3349,6 +3340,42 @@ html {
 	color: #111;
 	display: block !important;
 }
+
+.card-body {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  padding: 0%;
+}
+
+
+.card-footer {
+  background: #dfe6ee;     /* más oscuro que el cuerpo */
+  color: #555;
+  font-size: 0.85rem;
+  padding: 3px 12px;
+  text-align: center;
+  border-top: 1px solid #cfd8e3;
+}
+
+
+.card-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  font-weight: bold;
+  color: #999;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.card-close:hover {
+  color: #e53935;
+}
+
 
 .icons-floating .social-icon:hover {
 	transform: scale(1.08);
@@ -3466,6 +3493,25 @@ html {
 hr {
 	margin-top: 0.5rem;
 	margin-bottom: 0.5rem;
+}
+
+.btn-web {
+  display: inline-block;
+  margin: 12px auto 10px;
+  padding: 6px 14px;
+  background: #fff;
+  border: 2px solid #2196F3;
+  color: #2196F3;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-web:hover {
+  background: #2196F3;
+  color: #fff;
 }
 
 /* Banner legal fijado en el bottom */
@@ -3677,6 +3723,104 @@ card anunciante libre
 	border-bottom: 1px solid rgba(10, 60, 120, 0.15);
 }
 
+.carousel {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out; /* movimiento lento */
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-controls {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.carousel-controls button {
+    background: rgba(150, 140, 140, 0.6);
+    color: white;
+    border: none;
+    margin: 2px;
+    padding: 5px 8px;
+    cursor: pointer;
+}
+
+.carousel-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: #f4f4f4;
+    font-size: 14px;
+	position: relative; /* asegura flujo normal */
+    z-index: 1;
+}
+
+.pause-btn {
+    background: #5e575782;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.carousel-indicator {
+    color: #555;
+    font-weight: 500;
+}
+
+.btn-cargar-mas {
+    background: #d60000;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s ease;
+}
+
+.btn-cargar-mas:hover {
+    background: #a80000;
+}
+
+
+.rubro-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border: 2px solid #ff6b00;
+    color: #ff6b00;
+    background: transparent;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.visitor-counter {
+    font-size: 14px;
+    color: #444;
+    font-weight: 500;
+}
+
+.visitor-counter span {
+    color: #d60000;
+    font-weight: bold;
+}
 
 
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
@@ -3775,9 +3919,9 @@ card anunciante libre
 	}
 
 	.professional-card {
-		flex-direction: row;
-		align-items: center;
-		text-align: center;
+		flex-direction: column;
+		align-items: normal;
+		text-align: left;
 	}
 
 	.listing__item__text {
@@ -3785,7 +3929,33 @@ card anunciante libre
 		padding-right: 30px;
 		padding-top: 40px;
 	}
+	.icons-floating {
+		position: absolute;
+		left: calc(30% - 15px);
+		top: 50%;
+		transform: translateY(-50%);
+		display: flex; 
+		justify-content: space-evenly;
+		flex-direction: column; 
+		gap: 14px;
+		margin: 10px 0;
+	}
+ 
 
+	.icons-floating .social-icon {
+		width: 26px;
+		height: 26px;
+
+		background: #ffffff;
+		border-radius: 50%;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		font-size: 1.1rem;
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+	}
 
 }
 
@@ -3889,15 +4059,16 @@ card anunciante libre
 	}
 
 	.professional-card { 
-		align-items: stretch;
+		flex-direction: column;
+		align-items: normal;
 		text-align: left;
 	}
 
 	.professional-photo {
 		width: 100%;
 		max-width: 100%;
-		min-width: unset;
-		padding: 0;
+		min-width: 30%;
+		padding: 0px;
 	}
 
 	.professional-photo img {
@@ -3906,20 +4077,19 @@ card anunciante libre
 		border-radius: 20px 20px 0 0;
 	}
 
-	.icons-floating {
-		position: static;
-		transform: none;
-
-		flex-direction: row;
-		justify-content: center;
+		.icons-floating {
+		position: absolute;
+		left: calc(30% - 15px);
+		top: 50%;
+		transform: translateY(-50%);
+		display: flex; 
+		justify-content: space-evenly;
+		flex-direction: column; 
 		gap: 14px;
-
 		margin: 10px 0;
 	}
-
-	.icons-floating {
-		opacity: 0.95;
-	}
+ 
+ 
 
 	.legal-banner {
 		height: 40vh;
@@ -3931,6 +4101,7 @@ card anunciante libre
 		width: 100%;
 		text-align: center;
 	}
+ 
 }
 
 /* Wide Mobile = 480px */
@@ -4123,8 +4294,8 @@ card anunciante libre
 	}
 
 	.professional-card {
-		flex-direction: row;
-		align-items: stretch;
+		flex-direction: column;
+		align-items: normal;
 		text-align: left;
 	}
 
@@ -4132,7 +4303,7 @@ card anunciante libre
 		max-width: 80px;
 		min-width: 30%;
 		flex: 0 0 80px;
-		padding: 0;
+		padding: 0px;
 	}
 
 	.professional-info {
@@ -4160,6 +4331,19 @@ card anunciante libre
 		padding-right: 30px;
 		padding-top: 40px;
 	}
+
+	.icons-floating {
+		position: absolute;
+		left: calc(30% - 15px); 
+		top: 50%;
+		transform: translateY(-50%);
+		display: flex; 
+		justify-content: space-evenly;
+		flex-direction: column; 
+		gap: 14px;
+		margin: 10px 0;
+	}
+ 
 }
 
 /* Small Device = 320px */
@@ -4253,6 +4437,18 @@ card anunciante libre
 		padding-right: 30px;
 		padding-top: 40px;
 	}
+	.icons-floating {
+		position: absolute;
+		left: calc(30% - 15px);
+		top: 50%;
+		transform: translateY(-50%);
+		display: flex; 
+		justify-content: space-evenly;
+		flex-direction: column; 
+		gap: 14px;
+		margin: 10px 0;
+	}
+ 
 
 
 /*

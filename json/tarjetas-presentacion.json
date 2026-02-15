@@ -1,0 +1,158 @@
+[
+  {
+    "nombre_negocio": "ESTUDIO JURIDICO Abogados",
+    "representante": "Dr. Akbar Carpio",
+    "rango_precio": "$40 - $70",
+    "imagenes": [
+      "img/listing/list-1.jpg",
+      "img/listing/list-1-2.jpg"
+    ],
+    "direcciones": [
+      "Sede Callao: Calle Grau 666 - Carmen de la Legua",
+      "Sede Lima: Calle Grau 666 - San Juan de Lurigancho"
+    ],
+    "telefonos": [
+      "(+51) 999-111-222",
+      "(+51) 988-333-444"
+    ],
+    "correo": "abogados@abogados.com",
+    "rubro": "Abogados",
+    "web": "https://google.com",
+    "fecha": "Publicado el 14/02/2026"
+  },
+
+  {
+    "nombre_negocio": "CRHISTELL Vidrios & Aluminio",
+    "representante": "Grego S. Antezana",
+    "rango_precio": "$40 - $70",
+    "imagenes": [
+      "img/listing/list-2.jpg"
+    ],
+    "direcciones": [
+      "calle grau 666 - Callao",
+      "calle grau 777 - Callao"
+    ],
+    "telefonos": [
+      "(01) 678-8767",
+      "(+51) 98077777",
+      "(+51) 987777733"
+    ],
+    "correo": "vidrios@vidrios.com",
+    "rubro": "vidrios y aluminio",
+    "web": "https://google.com",
+    "fecha": "Publicado el 15/02/2026"
+  },
+
+  {
+    "nombre_negocio": "OSTEOPERÚ centro de diagnosticos por imagenes",
+    "representante": "Fabiola Nuñez",
+    "rango_precio": "$40 - $70",
+    "imagenes": [
+      "img/listing/list-4.jpg",
+      "img/listing/list-4-2.jpg"
+    ],
+    "direcciones": [
+      "Sede Callao: Calle Grau 666 - Carmen de la Legua",
+      "Sede Lima: Calle Grau 666 - San Juan de Lurigancho"
+    ],
+    "telefonos": [
+      "(+51) 999-111-222",
+      "(+51) 988-333-444"
+    ],
+    "correo": "abogados@abogados.com",
+    "rubro": "Laboratorio Policlínico",
+    "web": "https://google.com",
+    "fecha": "Publicado el 16/02/2026"
+  },
+
+  {
+    "nombre_negocio": "OSTEOPERÚ centro de diagnosticos por imagenes",
+    "representante": "Fabiola Nuñez",
+    "rango_precio": "$40 - $70",
+    "imagenes": [
+      "img/listing/list-4.jpg",
+      "img/listing/list-4-2.jpg"
+    ],
+    "direcciones": [
+      "Sede Callao: Calle Grau 666 - Carmen de la Legua",
+      "Sede Lima: Calle Grau 666 - San Juan de Lurigancho"
+    ],
+    "telefonos": [
+      "(+51) 999-111-222",
+      "(+51) 988-333-444"
+    ],
+    "correo": "abogados@abogados.com",
+    "rubro": "Laboratorio Policlínico",
+    "web": "https://google.com",
+    "fecha": "Publicado el 16/02/2026"
+  },
+
+  {
+    "nombre_negocio": "OSTEOPERÚ centro de diagnosticos por imagenes",
+    "representante": "Fabiola Nuñez",
+    "rango_precio": "$40 - $70",
+    "imagenes": [
+      "img/listing/list-4.jpg",
+      "img/listing/list-4-2.jpg"
+    ],
+    "direcciones": [
+      "Sede Callao: Calle Grau 666 - Carmen de la Legua",
+      "Sede Lima: Calle Grau 666 - San Juan de Lurigancho"
+    ],
+    "telefonos": [
+      "(+51) 999-111-222",
+      "(+51) 988-333-444"
+    ],
+    "correo": "abogados@abogados.com",
+    "rubro": "Laboratorio Policlínico",
+    "web": "https://google.com",
+    "fecha": "Publicado el 16/02/2026"
+  },
+
+  {
+    "nombre_negocio": "OSTEOPERÚ centro de diagnosticos por imagenes",
+    "representante": "Fabiola Nuñez",
+    "rango_precio": "$40 - $70",
+    "imagenes": [
+      "img/listing/list-4.jpg",
+      "img/listing/list-4-2.jpg"
+    ],
+    "direcciones": [
+      "Sede Callao: Calle Grau 666 - Carmen de la Legua",
+      "Sede Lima: Calle Grau 666 - San Juan de Lurigancho"
+    ],
+    "telefonos": [
+      "(+51) 999-111-222",
+      "(+51) 988-333-444"
+    ],
+    "correo": "abogados@abogados.com",
+    "rubro": "Laboratorio Policlínico",
+    "web": "https://google.com",
+    "fecha": "Publicado el 16/02/2026"
+  },
+
+  
+  {
+    "nombre_negocio": "OSTEOPERÚ centro de diagnosticos por imagenes",
+    "representante": "Fabiola Nuñez",
+    "rango_precio": "$40 - $70",
+    "imagenes": [
+      "img/listing/list-4.jpg",
+      "img/listing/list-4-2.jpg"
+    ],
+    "direcciones": [
+      "Sede Callao: Calle Grau 666 - Carmen de la Legua",
+      "Sede Lima: Calle Grau 666 - San Juan de Lurigancho"
+    ],
+    "telefonos": [
+      "(+51) 999-111-222",
+      "(+51) 988-333-444"
+    ],
+    "correo": "abogados@abogados.com",
+    "rubro": "Laboratorio Policlínico",
+    "web": "https://google.com",
+    "fecha": "Publicado el 16/02/2026"
+  }
+
+
+]
