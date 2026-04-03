@@ -1,0 +1,140 @@
+﻿[  
+  {
+  "name": "Juan Pérez",
+  "category": "electricista",
+  "especiality": "Maestro de obra",
+  "skills": [
+    "1.  Colocación de ladrillos",
+    "2.  Piedra cortada",
+    "3.  Bloques de cemento",
+    "4.  Construcción de muros",
+    "5.  Excavación de piletas",
+    "6.  Excavación de tierra",
+    "7.  Excavación de zanja",
+    "8.  Excavación de arena"
+  ],
+  "contact": {
+    "whatsapp": "999888777",
+    "facebook": "https://facebook.com/marialopez",
+    "youtube": "https://www.youtube.com/watch?v=4INXEpUCjfg"
+  },
+  "web": "https://slaverfrancois.github.io/blazarsystemsperu-users/marta-lopez-45672134.html",
+  "location": "en Mercado Reynoso",
+  "featured": true,
+  "creado": "13/01/2026",
+  "foto": "juan.jpg"
+},
+
+{
+  "name": "Marta López",
+  "category": "pintor",
+  "especiality": "Pintora",
+  "skills": [
+    "Pintura decorativa",
+    "Acabado de interiores"
+  ],
+  "contact": {
+    "whatsapp": "999888777",
+    "facebook": "https://facebook.com/marialopez",
+    "instagram": "https://instagram.com/marialopez",
+    "tiktok": "https://www.tiktok.com/@alexalex12.1985",    
+    "youtube": "https://www.youtube.com/watch?v=4INXEpUCjfg"
+  },
+  "location": "visito a domicilio",
+  "featured": true,
+  "creado": "14/01/2026",
+  "foto": "marta.jpg"
+},
+  {
+    "name": "Walter López",
+    "category": "pintor",
+    "especiality": "Pintor experto",
+    "skills": [
+    "Pintura decorativa avanzado",
+    "Acabado de interiores"
+  ],
+    "contact": {
+      "whatsapp": "999888777",
+      "youtube": "https://www.youtube.com/watch?v=4INXEpUCjfg"
+    },    
+    "web": "https://slaverfrancois.github.io/blazarsystemsperu-users/walter-lopez-75672134.html",
+    "location": "cerca a Colegio Porras",
+    "featured": true,
+    "creado": "15/01/2026",
+    "foto": "walter.jpg"
+  },
+  {
+    "name": "Willy López",
+    "category": "pintor",
+    "especiality": "Especialista en acabados finos y pintura de interiores.",
+      "contact": {
+      "whatsapp": "999888777",
+      "facebook": "https://facebook.com/marialopez",
+      "instagram": "https://instagram.com/marialopez"
+    },
+  "location": "cerca al Hospital San Jose",
+    "featured": true,
+    "creado": "16/01/2026",
+    "foto": "willy.jpg"
+  },
+  {
+    "name": "Edgar López",
+    "category": "pintor",
+    "especiality": "Pintor con experiencia en exteriores e impermeabilización.",
+      "contact": {
+      "whatsapp": "999888777",
+      "facebook": "https://facebook.com/edgarlopez",
+      "youtube": "https://www.youtube.com/watch?v=4INXEpUCjfg"
+    },
+    "location": "cerca la Municipalidad",
+    "featured": true,
+    "creado": "17/01/2026",
+    "foto": "edgar.jpg"
+  },
+  {
+    "name": "Sara Caldas",
+    "category": "pintor",
+    "especiality": "Pintora profesional en arte decorativo y muralismo.",
+    "contact": "999888777",
+    "location": "Visito a domicilio",
+    "creado": "18/01/2026",
+    "featured": true
+  },
+  {
+    "name": "Raul Ochoa",
+    "category": "pintor",
+    "especiality": "Especialista en acabados finos y pintura de interiores.",
+    "contact": "999888777",
+    "location": "cerca Hospital San Pepe",
+    "featured": true,
+    "creado": "19/01/2026",
+    "foto": "raul.jpg"
+  },
+  {
+    "name": "Dina Boluarte",
+    "category": "pintor",
+    "especiality": "Pintora con experiencia en exteriores e impermeabilización.",
+    "contact": "999888777",
+    "location": "cerca la Municipalidad",
+    "creado": "22/01/2026",
+    "featured": true
+  },
+  {
+    "name": "Jose Jeri",
+    "category": "pintor",
+    "especiality": "Pintora profesional en arte decorativo y muralismo.",
+    "contact": "999888777",
+    "location": "visito a domicilio",
+    "creado": "24/01/2026",
+    "featured": true
+  },
+  {
+    "name": "Susana Villarán",
+    "category": "pintor",
+    "especiality": "Especialista en acabados finos y pintura de interiores.",
+    "contact": "999888777",
+    "location": "Taller: Cerca Hospital San Pepe",
+    "creado": "01/01/2026",
+    "featured": true
+  }
+]

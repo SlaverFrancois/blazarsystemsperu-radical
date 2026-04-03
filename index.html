@@ -36,43 +36,30 @@
 
        <!-- Header Section Begin -->
     <header class="header">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="header__logo">
-                        <a href="./index.html"><img src="img/enlaza2.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-9 col-md-9">
-                    <div class="header__nav">
-                        <nav class="header__menu mobile-menu">
-                            <ul>
-                                <li class="active"><a href="./index.html">Principal</a></li>  
-                                <li><a href="./nosotros.html">Nosotros</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            <div id="mobile-menu-wrap"></div>
+      <div class="container-fluid header-container">
+        <div class="header__logo">
+            <a href="./index.html">
+                <img src="img/enlaza2.png" alt="Enlaza2">
+            </a>
         </div>
+      </div>
     </header>
-     
+     <!--Fin Header Section Begin -->
+
+
+  <!-- CONTENIDO LEGAL SCROLLEABLE -->  
   <div id="legal-banner" class="legal-banner hide">
-    <div class="legal-banner-content"> 
-      <!-- CONTENIDO LEGAL SCROLLEABLE -->
+    <div class="legal-banner-content">       
       <div class="legal-scroll" id="legal-content">
         <p>Cargando términos…</p>
-      </div>
- 
+      </div> 
       <div class="legal-banner-buttons">
         <button id="accept-terms" class="legal-btn primary">Aceptar</button>
         <button id="decline-terms" class="legal-btn secondary">Declinar</button>
       </div>
-
     </div>
   </div>
-
+  <!--FIN CONTENIDO LEGAL SCROLLEABLE -->  
 
 
 
@@ -81,10 +68,13 @@
       <div class="container">
         <div class="row" id="categories-container">
           <div class="col-lg-12">
-            <div class="section-title">
-              <h4>
-                No recorras calles, aquí encuentras:  </h4>
-               <h4><span id="type-word"></span></h4> <!--morph text-->              
+            <!--<div class="section-title">
+              <h4>No recorras calles buscando ayuda, todos están aquí</h4>
+              <h4><span id="type-word"></span></h4>       
+            </div>-->
+
+            <div class="timoteo">
+               <input type="text" placeholder="🔍︎ Busca tu servicio aquí">
             </div>
             <div class="categories-list-wrapper"> 
               <div id="alphabetical-categories"   role="navigation" aria-label="Categorías"></div>
@@ -98,12 +88,12 @@
 
     <!-- Tarjeta de negocios emprendimiento -->
     <!-- Tarjetas de negocios -->
-    <section class="most-search spad">
+    <section class="most-search">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>Tarjetas de Presentación</h2>
+                    <div class="panel2002">
+                        <h1>Tarjetas de Presentación</h1>
                     </div>
                 </div>
             </div>
@@ -125,13 +115,146 @@
     <!-- 🔹 Tarjetas de profesionales -->
     <section class="news-post spad" id="all-professionals-section">
       <div class="container">
-        <div class="section-title d-flex justify-content-between align-items-center">
-          <h2>Tarjetas de presentación</h2>
-        </div>
+               <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel2002">
+                        <h1>Tarjetas de Profesionales</h1>
+                    </div>
+                </div>
+            </div>
         <div class="row" id="professionals-container"></div>
       </div>
     </section>
     <!-- 🔹 Listado general de profesionales End -->
+
+
+    <!--Alquileres de local-->
+    <section class="most-search spad">
+        <div class="container">
+              <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel2002">
+                        <h1>Avisos de alquiler</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" id="contenedor-avisos">
+                <!-- JS generará las tarjetas aquí -->
+            </div>
+
+                <!--a automatizar--> 
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog__item">
+                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-1.jpg">
+                            <a href="https://www.youtube.com/watch?v=8EJ3zbKTWQ8" class="play-btn video-popup"><i class="fa fa-play"></i></a>
+                        </div>
+                        <div class="blog__item__text">
+                            <ul class="blog__item__tags">
+                                <li><i class="fa fa-tags"></i> Travel</li>
+                                <li>Videos</li>
+                            </ul>
+                            <h5><a href="#">Internet Banner Advertising Most Reliable</a></h5>
+                            <ul class="blog__item__widget">
+                                <li><i class="fa fa-clock-o"></i> 19th March, 2019</li>
+                                <li><i class="fa fa-user"></i> John Smith</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog__item">
+                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-2.jpg"></div>
+                        <div class="blog__item__text">
+                            <ul class="blog__item__tags">
+                                <li><i class="fa fa-tags"></i> Travel</li>
+                                <li>Restaurant</li>
+                            </ul>
+                            <h5><a href="#">Internet Banner Advertising Most Reliable</a></h5>
+                            <ul class="blog__item__widget">
+                                <li><i class="fa fa-clock-o"></i> 19th March, 2019</li>
+                                <li><i class="fa fa-user"></i> John Smith</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!---->
+            
+            <div class="text-center mt-4">
+              <button id="btn-cargar-mas" class="btn-cargar-mas">
+                  Cargar más tarjetas
+              </button>
+          </div>
+        </div>
+    </section>
+    <!--fin Alquileres de local-->
+
+    
+    <!--Avisos Compra/Venta-->
+    <section class="most-search spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel2002">
+                        <h1>Avisos de compra y venta</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" id="contenedor-aviso-compra">
+                <!-- JS generará las tarjetas aquí -->
+            </div>
+
+
+            <!--a automatizar--> 
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog__item">
+                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-1.jpg">
+                            <a href="https://www.youtube.com/watch?v=8EJ3zbKTWQ8" class="play-btn video-popup"><i class="fa fa-play"></i></a>
+                        </div>
+                        <div class="blog__item__text">
+                            <ul class="blog__item__tags">
+                                <li><i class="fa fa-tags"></i> Travel</li>
+                                <li>Videos</li>
+                            </ul>
+                            <h5><a href="#">Internet Banner Advertising Most Reliable</a></h5>
+                            <ul class="blog__item__widget">
+                                <li><i class="fa fa-clock-o"></i> 19th March, 2019</li>
+                                <li><i class="fa fa-user"></i> John Smith</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog__item">
+                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-2.jpg"></div>
+                        <div class="blog__item__text">
+                            <ul class="blog__item__tags">
+                                <li><i class="fa fa-tags"></i> Travel</li>
+                                <li>Restaurant</li>
+                            </ul>
+                            <h5><a href="#">Internet Banner Advertising Most Reliable</a></h5>
+                            <ul class="blog__item__widget">
+                                <li><i class="fa fa-clock-o"></i> 19th March, 2019</li>
+                                <li><i class="fa fa-user"></i> John Smith</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!---->
+            
+            <div class="text-center mt-4">
+              <button id="btn-cargar-mas" class="btn-cargar-mas">
+                  Cargar más avisos
+              </button>
+          </div>
+        </div>
+    </section>
+    <!--fin Avisos Compra/Venta-->
 
 
     <!-- Formulario Section Begin -->
@@ -165,6 +288,7 @@
                         <textarea placeholder="Links de tus redes sociales o página web (si tienes)"></textarea>
                         <textarea placeholder="Cuéntanos qué servicio ofreces"></textarea>
                         <p>Tu información es privada y no se comparte con terceros. Solo la usamos para validar tu anuncio y contactarte por WhatsApp.</p>
+                        <p>Lea y acepte los <a href="./terminos.html">términos y condiciones</a></p>
                         <button type="submit" class="site-btn">ENVIAR</button>
                     </form>
                 </div>
@@ -215,11 +339,7 @@
         </div>
     </section>
     <!-- Work Section End -->
-
-    <div class="visitor-counter text-center mb-3">
-    👁️ Visitas: <span id="visit-count">Cargando...</span>
-    </div>
-
+ 
 
     <!-- Footer Section Begin -->
     <footer class="footer">
@@ -229,7 +349,7 @@
                     <div class="footer__about">
                         <div class="footer__about__logo">
                             <a href="./index.html"><img src="img/footer-logo.png" alt=""></a>
-                            <p>Donde clientes y tus servicios quedan enlazados</p>
+                            <p>Enlázate con nosotros</p>
                         </div>
                     </div>
                 </div>
@@ -317,64 +437,73 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
  // Cargar categorías y montar en columnas por letra (6 por columna)
-  // Cargar categorías y montar como muro fluido de chips
-// Cargar categorías y montar como muro fluido de chips
-fetch('categories.json')
+fetch('json/categories.json')
   .then(res => res.json())
-  .then(categories => {
-    const alphabetContainer = document.querySelector('#alphabetical-categories');
-    const allProfessionalsSection = document.querySelector('#all-professionals-section');
-
+  .then(groups => {
     // Limpiar el contenedor
     alphabetContainer.innerHTML = '';
-
-    // Normalizar y ordenar
-    categories = categories
-      .map(c => ({ ...c, title: String(c.title).trim() }))
-      .sort((a, b) => a.title.localeCompare(b.title, 'es'));
-
+ 
+ 
     // Crear botones tipo chips
-    categories.forEach(cat => {
-      const btn = document.createElement('button');
-      btn.className = 'category-chip';
-      btn.textContent = cat.title;
-      btn.dataset.category = cat.title.toLowerCase();
+    groups.forEach(group => {
 
-      btn.addEventListener('click', async (e) => {
-        e.preventDefault();
-        try {
-          // Mostrar profesionales filtrados
+      // Contenedor del bloque
+      const groupDiv = document.createElement('div');
+      groupDiv.className = 'hero-group';
+
+      // Título del grupo
+      const title = document.createElement('h2');
+      title.textContent = group.group;
+
+      // Contenedor de chips
+      const itemsContainer = document.createElement('div');
+      itemsContainer.className = 'hero-items';
+
+      // Ordenar por cantidad de caracteres (menor → mayor)
+      group.items.sort((a, b) => {
+        if (a.length === b.length) {
+          return a.localeCompare(b, 'es');
+        }
+        return a.length - b.length;
+      });
+
+      group.items.forEach(item => {
+
+        const btn = document.createElement('button');
+        btn.className = 'category-chip';
+        btn.textContent = item;
+        btn.dataset.category = item.toLowerCase();
+
+        btn.addEventListener('click', async (e) => {
+          e.preventDefault();
           await showProfessionals(btn.dataset.category, btn);
 
-          // Esperar un pequeño retardo y hacer scroll suave
           setTimeout(() => {
             allProfessionalsSection.scrollIntoView({
               behavior: 'smooth',
               block: 'start'
             });
           }, 200);
-        } catch (err) {
-          console.error(err);
-        }
+        });
+
+        itemsContainer.appendChild(btn);
       });
 
-      alphabetContainer.appendChild(btn);
+      groupDiv.appendChild(title);
+      groupDiv.appendChild(itemsContainer);
+ 
+      alphabetContainer.appendChild(groupDiv);
     });
+
   })
   .catch(err => {
     console.error('Error loading categories.json', err);
   });
 
 
-
-/**
-   * showProfessionals(category?: string, sourceButton?: HTMLElement)
-   * - Si category es undefined => carga inicial con todos los profesionales, mostrando destacados primero.
-   * - Si category definido => filtra por categoria y ordena destacados primero.
-   * - Devuelve una Promise que se resuelve cuando el render de la página actual termina (útil para scrollear).
-   */
+ 
 function showProfessionals(category, sourceButton) {
-  return fetch('professionals.json')
+  return fetch('json/professionals.json')
     .then(res => res.json())
     .then(data => {
 
@@ -448,19 +577,7 @@ function showProfessionals(category, sourceButton) {
                 </a>`);
             }
           }
-
-            // 👉 Skills solo si existen
-          /*  const skillsHTML = (p.skills && p.skills.length) ? `
-              <div class="skills-carousel" data-index="0">
-                <div class="skills-track"></div>
-                <div class="skills-counter">
-                  <span class="current">1</span> de <span class="total">${p.skills.length}</span>
-                </div>
-              </div>
-              <hr>
-            ` : '';*/
-
-          
+         
             //movimiento vertical 
             const skillsHTML = (p.skills && p.skills.length) ? `
             <div class="skills-box">
@@ -516,15 +633,7 @@ function showProfessionals(category, sourceButton) {
 
             </div>
               `;
-            
-              // 👉 Inicializar carrusel solo si hay skills
-            //  if (p.skills && p.skills.length) {
-            //    const carousel = divCol.querySelector('.skills-carousel');
-           //     if (carousel) {
-            //      initSkillsCarousel(carousel, p.skills);
-            //    }
-           //   }
-
+          
            // 👉 Inicializar ticker vertical solo si hay skills
           if (p.skills && p.skills.length) {
             const ticker = divCol.querySelector('.skills-ticker');
@@ -532,9 +641,6 @@ function showProfessionals(category, sourceButton) {
               initSkillsCarousel(ticker, p.skills);
             }
           }
-
-
-
           professionalsContainer.appendChild(divCol);
         });
           // tarjeta de anuncio (clickeable completa)
@@ -578,62 +684,27 @@ function showProfessionals(category, sourceButton) {
       render();
       
  
-
-
-        // Al mostrar la lista por primera vez, ocultar/mostrar secciones si deseas.
-        // por requerimiento: showProfessionals debe aparecer en primera pantalla por defecto.
-        // Hago scroll suave al section de profesionales (si viene del click lo gestiono afuera)
-        // Render inicial:
         return renderPage().then(() => {
-          // si showProfessionals fue llamado sin category (carga inicial), no forzamos scroll
           if (!category) {
-            // hacemos que la sección sea visible en primer plano: scroll to top of professionals
-            // y opcionalmente ocultamos la sección de categorías si quieres (comentado)
-            // categoriesSection.style.display = 'none';
-            // allProfessionalsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
         });
       });
   } // fin showProfessionals
 
-  // === Por defecto: cargar profesionales en primera pantalla ordenados por destacados ===
-  // llamamos showProfessionals() sin categoría. Asegura que aparezca en la primera vista.
   showProfessionals().catch(err => console.error(err));
-
-  // Si se hace clic en un rubro, en el handler de la construcción de categorías llamamos:
-  // showProfessionals(category, sourceButton).then(() => { scroll }).
-  // Para soportar el comportamiento "scroll suave desde el botón hasta el listado ya filtrado",
-  // hacemos que al resolver el render se haga scroll suave al contenedor de profesionales.
-  // Nota: el handler en el enlace de cada categoría ya llamó a showProfessionals(a.dataset.category, a)
-  // Asegurémonos de hacer el scroll cuando promise se resuelva.
-  // Para eso agregamos una pequeña colección que envuelva showProfessionals con scroll:
-  // (implementado dentro del addEventListener previamente: showProfessionals(a.dataset.category, a).then(...))
-
-  // Sincronizar: si el showProfessionals es llamado con sourceButton, lo scrollearé al terminar:
-  // para eso reescribimos temporalmente la función showProfessionals para reconocer el param sourceButton
-  // (ya está siendo recibido; agrego la lógica aquí por si fue llamado con el parámetro).
-  // Nota: como showProfessionals ya devuelve Promise, simplemente interceptamos llamadas directas hechas en listeners:
-  // Reemplazamos los listeners arriba por: showProfessionals(..., a).then(() => allProfessionalsSection.scrollIntoView({ behavior:'smooth', block:'start' }));
-  // Pero los listeners ya llaman showProfessionals(a.dataset.category, a).catch...
-  // Para garantizar el scroll, adjunto un listener global que escucha clicks en .text-button y gestiona el scroll final.
 
   document.addEventListener('click', function(e) {
     const target = e.target;
     if (target && target.matches && target.matches('a.text-button')) {
       const category = target.dataset.category;
-      // Llamo a showProfessionals y al terminar scrolleo.
-      // (llamada redundante si ya se llamó, pero garantiza comportamiento)
       showProfessionals(category, target).then(() => {
-        // hacer scroll al bloque de profesionales suave
-        // si quieres un pequeño offset para dejar header visible, cámbialo
         allProfessionalsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }).catch(err => console.error(err));
     }
   });
 
 });
-// <-- fin DOMContentLoaded
- 
+// <-- fin DOMContentLoaded 
 </script>
  <!--TERMINOS Y CONDICIONES POP-UP-->
 
@@ -644,13 +715,11 @@ function showProfessionals(category, sourceButton) {
     const btnAccept = document.getElementById("accept-terms");
     const btnDecline = document.getElementById("decline-terms");
     const legalContent = document.getElementById("legal-content");
-
     // Si ya lo aceptó antes, no mostrarlo. tecnica de storage local
     /*if (localStorage.getItem("acceptedTerms") === "yes") {
       banner.classList.add("hide"); 
       return;
-    }
-*/
+    }*/
 
      // Cargar términos
   fetch("./terminos.html")
@@ -678,60 +747,12 @@ function showProfessionals(category, sourceButton) {
   });
 </script> 
  
-<!--TYPEABLE TITLE EFFECT-->
-<script>
-const words = [
-  "servicios",
-  "profesionales",
-  "alquileres",
-  "reliquias"
-];
-
-const el = document.getElementById("type-word");
-let wordIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-
-function typeEffect() {
-  const currentWord = words[wordIndex];
-
-  if (!isDeleting) {
-    el.textContent = currentWord.slice(0, charIndex + 1);
-    charIndex++;
-
-    if (charIndex === currentWord.length) {
-      setTimeout(() => isDeleting = true, 1600);
-    }
-  } else {
-    el.textContent = currentWord.slice(0, charIndex - 1);
-    charIndex--;
-
-    if (charIndex === 0) {
-      isDeleting = false;
-      wordIndex = (wordIndex + 1) % words.length;
-    }
-  }
-
-  const speed = isDeleting ? 60 : 100;
-  setTimeout(typeEffect, speed);
-}
-
-typeEffect();
-</script>
 <script>
   function initSkillsCarousel(container, skills) {
   const track = container.querySelector('.skills-track');
-  //const currentEl = container.querySelector('.current');
-  //const totalEl = container.querySelector('.total');
   const itemHeight = 26;
 
   track.innerHTML = '';
-  // const total = skills.length;
- // totalEl.textContent = total;
- //  Render skills
-  //track.innerHTML = skills.map(skill =>
-  //  `<div class="skill-item"><span>${skill}</span></div>`
-  //).join('');
 
   // Crear items
   skills.forEach(skill => {
@@ -785,5 +806,17 @@ fetch("https://api.countapi.xyz/hit/enlaza2pe-tarjetas/visitas")
     });
 </script>
 
+<script>
+  //easter egg
+  document.addEventListener('keydown', (e) => {
+  if (e.ctrlKey && e.key === 'e') {
+    document.body.classList.add('modo-gold');
+
+    setTimeout(() => {
+      document.body.classList.remove('modo-gold');
+    }, 5000);
+  }
+});
+</script>
 </body>
 </html>

@@ -1,0 +1,81 @@
+[
+  {
+    "group": "Servicios para el Hogar",
+    "items": [
+      "Electricista",
+      "Gasfitero",
+      "Albañil",
+      "Jardinero",
+      "Técnico electrónico",
+      "Pintor",
+      "Carpintero",
+      "Soldador",
+      "Cerrajería",
+      "Mudanza",
+      "Tapicero",
+      "Mecánico",
+      "Limpieza",
+      "Drywall"
+    ]
+  },
+  {
+    "group": "Profesionales de oficio",
+    "items": [
+      "Abogado",
+      "Notario",
+      "Ingeniero",
+      "Arquitecto",
+      "Profesor",
+      "Contador",
+      "Técnicos"
+    ]
+  },
+    {
+    "group": "Salud/Bienestar",
+    "items": [
+      "Enfermero",
+      "Laboratorio",
+      "Policlínico",
+      "Doctores",
+      "Veterinario",
+      "Psicólogo",
+      "Cuidadoras"
+    ]
+  },
+  {
+    "group": "Proveedores / Emprendimientos",
+    "items": [
+      "Gas",
+      "Juguetes",
+      "Restaurante",
+      "Abarrotes",
+      "Ropa",
+      "Accesorios",
+      "Pollos a la brasa",
+      "Plantas",
+      "Artesanías",
+      "Panadería/Pastelería"
+    ]
+  },
+  {
+    "group": "Staff de Profesionales",
+    "items": [
+      "Estudio de diseñadores",
+      "Spa Terapistas",
+      "Salón de peluquería",
+      "Manicurista",
+      "Pedicurista",
+      "Animador de show",
+      "Paseador de Perros"
+    ]
+  },
+  {
+    "group": "Otros Servicios",
+    "items": [
+      "COMPRO",
+      "SE VENDE",
+      "SE ALQUILA",
+      "RECOMPENSAS"      
+    ]
+  }
+]

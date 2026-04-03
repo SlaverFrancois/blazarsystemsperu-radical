@@ -47,6 +47,14 @@ function cargarMasTarjetas() {
                 <div class="carousel-indicator" id="indicator-${index}">
                     1 de ${t.imagenes.length}
                 </div>
+
+                 <!--    <div class="listing__item__text__info__left">
+                        <span class="rubro-badge">${t.rubro}</span>
+                    </div> -->
+
+                <div class="listing__item__text__info__right btn-web">
+                        <a href="${t.web}" target="_blank">Visitar Sitio</a>
+                </div>
             </div>
 
             <div class="listing__item__text">
@@ -55,7 +63,7 @@ function cargarMasTarjetas() {
 
                     <div class="listing__item__text__rating">
                         <p>${t.representante}</p>
-                        <h6>${t.rango_precio}</h6>
+                    <!--    <h6>${t.rango_precio}</h6> -->
                     </div>
 
                     <ul>

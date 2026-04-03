@@ -2,7 +2,7 @@
   {
     "nombre_negocio": "ESTUDIO JURIDICO Abogados",
     "representante": "Dr. Akbar Carpio",
-    "rango_precio": "$40 - $70",
+    "_rango_precio": "$40 - $70",
     "imagenes": [
       "img/listing/list-1.jpg",
       "img/listing/list-1-2.jpg"
@@ -12,8 +12,7 @@
       "Sede Lima: Calle Grau 666 - San Juan de Lurigancho"
     ],
     "telefonos": [
-      "(+51) 999-111-222",
-      "(+51) 988-333-444"
+      "(+51) 999-111-222"
     ],
     "correo": "abogados@abogados.com",
     "rubro": "Abogados",
@@ -24,7 +23,7 @@
   {
     "nombre_negocio": "CRHISTELL Vidrios & Aluminio",
     "representante": "Grego S. Antezana",
-    "rango_precio": "$40 - $70",
+    "_rango_precio": "$40 - $70",
     "imagenes": [
       "img/listing/list-2.jpg"
     ],
@@ -33,9 +32,7 @@
       "calle grau 777 - Callao"
     ],
     "telefonos": [
-      "(01) 678-8767",
-      "(+51) 98077777",
-      "(+51) 987777733"
+      "(01) 678-8767"
     ],
     "correo": "vidrios@vidrios.com",
     "rubro": "vidrios y aluminio",
@@ -46,7 +43,7 @@
   {
     "nombre_negocio": "OSTEOPERÚ centro de diagnosticos por imagenes",
     "representante": "Fabiola Nuñez",
-    "rango_precio": "$40 - $70",
+    "_rango_precio": "$40 - $70",
     "imagenes": [
       "img/listing/list-4.jpg",
       "img/listing/list-4-2.jpg"
@@ -56,8 +53,7 @@
       "Sede Lima: Calle Grau 666 - San Juan de Lurigancho"
     ],
     "telefonos": [
-      "(+51) 999-111-222",
-      "(+51) 988-333-444"
+      "(+51) 999-111-222, (+51) 988-333-444"
     ],
     "correo": "abogados@abogados.com",
     "rubro": "Laboratorio Policlínico",
